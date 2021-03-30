@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="../anexos/icons/logoCircle64.png"/>
+    <link rel="stylesheet" href="../estilo.css">
+    <title>Mateus Notes</title>
+</head>
+<body>
+<div class="container-fluid">
+
+
+    <div class="row">
+        <div class="col-sm-12" id="menu">
+            <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="../index.html"><img src="../anexos/icons/logoCircle64.png" width="30px" height="auto"/> MateusNotes</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../contato.html">Contato</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12" id="titulo1">
+            <h1>Python3 base</h1>
+            <h6><strong>Sintaxe básica Python3</strong></h6>
+        </div>
+
+        <div class="col-sm-12">
+            <h4>Resumo</h4>
+            <p id="textoPost">Se procuras funções String ou algo do tipo, verifique o post 'Python3 URI', este resumo apresenta mais o lado da sintaxe base Python3</p>
+<small><pre><code>
+========== VARIÁVEIS ==========
+nome = "mateus"
+peso = 75.8
+print(nome, peso)
+print("Exibir nome %s" % (nome))
+frase = ‘ola, tudo bem’
+print(frase[0]) #print 1º caractere
+print(frase[0:8:2]) #print caracteres do 0 ao 8, pulando a cada 2
+print(frase[::-1]) #de trás pra frente, invertido
+
+========== ENTRADA DE DADOS ==========
+nome = input("Informe o nome: ")
+idade = int(input("Informe a idade: "))
+humano = True
+print("O valor de PI é ", str(3.14) #conversão float p/ str
+
+========== COMENTÁRIOS ==========
+# Comentário de linha
+"""
+comentário
+multiplas linhas
+"""
+
+========== OPERADORES DIFERENTES ==========
+Divisão Inteira(//): 5//2 (2)
+Resto da Divisão(%): 4%2 (0)
+Potenciação(**): 4**2 (16)
+
+========== SAÍDA FORMATADA ==========
+print('A soma vale{}'.format(soma))
+print('{1} {0}'.format('one', 'two')) #"two one"
+print('{0!s} {0!f}'.format(Data()) #"str float"
+print('{:06.2f}'.format(3.141592653589793)) #003.14
+#:06(qtde de espaços: esquerda p/ direita), .2f(nº float com 2 casas decimais)
+
+========== CONDIÇÃO ==========
+if x &gt 0:
+    print("maior que zero")
+elif x &lt 0:
+    print("menor que zero")
+else:
+    print("igual a zero")
+
+========== REPETIÇÃO ==========
+for i in range(0,11,2):
+    print(i)
+#print i no intervalo de 0 a 10, incrementando de 2 em 2
+
+========== CONDIÇÃO SEGUIDA DE REPETIÇÃO ==========
+while x &lt 5:
+    print(x)
+    x += 1
+
+========== REPETIÇÃO CONTÍNUA ==========
+while True:
+    print("olá")
+    break
+
+========== FUNÇÕES ==========
+def imprimir():
+    return "resposta da função"
+print(imprimir())
+
+#com parâmetros:
+def juntar(x1, x2):
+    return x1+" e "+x2
+juntar("hello","world")
+
+#com argumentos:
+def maiorNum(*args):
+    print max(args)
+    return max(args)
+maiorNum(-10,20,5,10)
+
+#com valor padrão(default)
+def soma(a=0,b=0):
+    return(a+b)
+soma(4+5)
+
+========== TUPLAS ==========
+lanche = ("Hamburger","Suco","Refri")
+print(lanche[1])
+print(lanche[-2])
+print(lanche[1::3])
+print(len(lanche)) #2
+coisas = ("Max",39,25.5)
+#só atribuo valores à tupla na sua criação
+#não há como deletar somente item x da tupla
+#tupla é imutável
+
+Percorrer tupla:
+for comida in lanche:
+    print(f"Eu vou comer {comida}")
+
+Deletar tupla:
+del(lanche)
+
+========== LISTAS ==========
+#lista é mutável
+animais = ["leão","gato","zebra"]
+animais[0] #leão
+animais[2] #zebra
+len(animais) #3
+
+Percorrer Lista:
+for i in lista:
+    print(i)
+
+Enumerar lista:
+for i in enumerate(lista):
+    print(i)
+
+Copiar Lista:
+#se alterar uma, altera tbm a outra!
+list_a = [6, 7, 8, 9]
+list_b = lista_a
+
+Clonar Lista:
+#se alterar uma, a outra não altera!
+list_a = [6, 7, 8, 9]
+list_b = lista_a[:]
+
+Juntar Listas(join):
+m = [1, 2, 3]
+n = [4, 5, 6]
+o = m + n
+print(o) #[1, 2, 3, 4, 5, 6]
+
+Inserir no final(append):
+nums = ["um"]
+nums.append("dois")
+nums.append("três")
+print(nums) #["um","dois","três"]
+
+Retornar Índice(index):
+animals = ["ant", "bat", "cat"]
+print(animals.index("bat")) #1
+
+Inserir elemento:
+animals = ["ant", "bat"]
+animals.insert(1,"dog")
+print(animals) #["ant", "dog", "bat"]
+
+Remover elemento:
+animals = ["ant", "bat", "cat"]
+animals.remove("ant")
+print(animals) #["bat", "cat"]
+
+Remove através do index(pop):
+animals = ["ant", "bat", "cat"]
+animals.pop(0) #'ant'
+print(animals) #["bat", "cat"]
+
+Ordenar lista(sort):
+lista = ["c","b","a"]
+lista.sort()
+print(lista) #['a','b','c']
+
+Ordenar lista decrescente:
+lista.sort(reverse=True)
+
+========== LISTAS COMPOSTAS ==========
+pessoas = [['Pedro',25],['Maria',19],['João',32]]
+print(pessoas[0][1]) #25
+print(pessoas[1][0]) #Maria
+
+Limpar Lista:
+pessoas.clear()
+
+========== DICIONÁRIOS ==========
+#possui chave e valor
+#pode-se inserir dicionários dentro de listas
+pessoa = {
+    "nome": "joão",
+    "idade": 60,
+    "prog": ["python","php"]
+}
+print(pessoa["nome"])
+print(pessoa["idade"])
+print(pessoa["prog"])
+
+Atribuir valores:
+pessoa["idade"] = 40
+
+Remover valores:
+del pessoa['idade']
+
+Dicionário dinâmico:
+dic = {}
+dic['name'] = "joao"
+dic['age']  = "39"
+
+Percorrer dicionários:
+dic = {'a': 'apple', 'b': 'berry', 'c': 'cherry'}
+for i in dic:
+    print i+" "+dic[i]
+
+for i,j in dic:
+    print(f'O {i} é {j}') #o 'a' é 'apple'
+print(lista[0]['filme']) #dict filmes em 'lista'
+
+Ver itens:
+dic.items()
+#([('a','apple'),('b','berry'),('c','cherry')])
+
+Ver índices(keys):
+dic.keys() #(['a','b','c'])
+
+Ver valores(values):
+dic.values() #(['apple','berry','cherry'])
+
+========== CONJUNTOS ==========
+#lista misturada com dicionário. Conjunto ñ tem itens repetidos, ñ tem indíces(ñ é ordenado). Mais ágil para percorrer, pesquisas...
+conjunto = {‘Gui’,’João’}
+conjunto.remove(‘João’)
+
+========== LAMBDAS ==========
+g = lambda x: x * 2
+print(g(6)) #12
+
+========== MÓDULOS E PACOTES ==========
+Módulo:
+Guardar determinado código, geralmente com defs, em um arquivo.py separado
+Código de ligação: import nomeArquivo
+
+Pacote(biblioteca): 
+Pasta com módulos
+ex: pacote 'uteis' tem arquivo 'numeros.py','cores.py'
+import uteis
+from uteis import cores #pra módulo específico
+from arquivo2 import * #pra import tudo
+defDoArquivo2() //função no arquivo 2 que printa ‘ola’
+
+Pacote dentro de pacote:
+fazer, dentro de cada pacote um módulo '___init___.py' colocamos o código python desejado e importamos no código principal
+
+========== ERROS & EXCEÇÕES ==========
+try:
+    operação
+except Exception as erro:
+    falhou com erro.(classe/genero...)
+except Exception as (erro2,erro3):
+    falhou com erro2.(classe/genero...) ou erro3
+except Exception as errado:
+    falhou com erro genérico do tipo errado.___cause___
+else:
+    deu certo
+finally:
+    deu certo, mas com erro, acima de tudo
+#o finally ocorre com ou sem erro
+
+========== MANIPULANDO ARQUIVOS ==========
+# open('pasta/arquivo.txt','w')
+# Modo 'r' é o padrão, de leitura
+# Modo 'w' é o de escrita(cria ou sobrescreve o arquivo)
+# 'r+' é leitura e escrita, não sobrescreve (ideal)
+# 'a' cria o arquivo no modo escrita append (vai inserindo dentro, no final do arquivo)
+# 'b' e 'rb' para abrir arquivos binários, como imagens, .exe...
+
+arquivo = open('arquivo.txt','r')
+arquivo.write("Conteúdo no arquivo") #ocorre somente no modo escrita
+print(arquivo.read()) #para ler troca-se o 'w' por 'r' no open()
+print(arquivo.readlines()) #similar ao acima
+print(arquivo.readline(3)) #ler 3 caracteres somente
+
+for linha in arquivo: #print 1 linha por vez
+    print(linha)
+
+arquivo.close() #fechar arquivo
+
+========== REQUISIÇÕES WEB ==========
+'''
+PIP: Gerenciador de bibliotecas externas nativo Python. pip3 pra Python3
+Instalar pip3 linux: sudo apt install python3-pip
+urllib: Biblioteca padrão pra requisições web python (mais baixo nível)
+requests: urllib em alto nível (necessário instalar: pip3 install requests)
+Verificar se requests já instalado: python3 -m pip install requests
+
+Muitas aplicações necessitam de bibliotecas externas, que são instaladas, no Python, com o PIP.
+Requisição web é entrar no site, solicitar algo ao servidor, via url.
+
+Métodos das requisições:
+- GET: Requisitar informações
+- POST: Enviar informações
+Dentro das requisições existem os headers(cabeçalhos). No browser, F12 na parte Network para verificá-los. Existem 2 tipos de Headers, cada um com seus parâmetros e valores:
+- Response Header: Cabeçalho de resposta
+- Request Header: Cabeçalho de requisição
+Status das requisições:
+200: Bem sucedida
+403: Permissão negada
+404: Página não encontrada
+500: Erro interno no servidor
+
+Site para fazer testes: putsreq.com (mostra detalhes de requisições). Após requisitar com a chave, no site consegue-se ver detalhes do log de requisições
+Para requisições mais avançadas, recomenda-se a biblioteca Beautiful Soup 4 / BS4 (pip3 install bs4)
+'''
+
+import requests
+requisicao = requests.get('https://google.com')
+#requisicao = requests.delete('https://google.com')
+#requisicao = requests.patch('https://google.com')
+#requisicao = requests.put('https://google.com')
+#requisicao = requests.head('https://google.com')
+#requisicao = requests.options('https://google.com')
+#requisicao = requests.post('https://google.com')
+#print(requisicao) #status da requisição
+#print(requisicao.status_code) #status da requisição(similar)
+print(requisicao.text) #codigo fonte
+conteudo = requisicao.text
+
+cabecalho = {'User-agent':'Windows 12','Referer':'https://Microsoft.com'}
+meusCookies = {'Visita':'10-10-2020'}
+dados = {'user':'mateus','senha':'abc'}
+requisicao = requests.post('https://google.com',headers=cabecalho,cookies=meusCookies,data=dados)
+
+========== API JSON ==========
+'''
+Api usada: OMDb API(www.omdbapi.com)
+Ver detalhes do filme pelo nome. 1º gerar uma APIKey para o funcionamento, no próprio site
+'''
+import requests,json #biblioteca json transforma arquivos json em dicionários
+req = requests.get('http://www.omdbapi.com/?t=interstellar&apikey=31f06394')
+print(req.text)
+dic = json.loads(req.text) #converte em dicionário
+print(dic)
+print(dic['Title'])
+print(dic['valor']['subvalor']['terceiroValor']) #dicionário dentro de dicionário
+print(dic['valor'][0]['subvalor']) #lista dentro de dicionário
+
+========== EXPRESSÕES REGULARES ==========
+'''
+(Regular Expressions / regex)
+Permitem encontrar padrões em textos. Há expressões regulares pra emails,telefones...
+Site pra montar expressões regulares e testar: regex101.com
+'''
+import re
+frase = 'O gato é bonito'
+padrao = re.search(r'ga.',frase)
+#'r' transforma em RAW String(torna caracteres especiais em String)
+#'.' qualquer coisa depois, inclusive espaços. Pode colocar '..' (2 quaisquer caracteres seguidos)
+#'\w' caractere unicode(a-z,A-Z,_). 'ga\w\w' terminaria com 2 quaisquer letras
+#'\w+' todos caracteres restantes unicode
+#'\w*' caractere opcional
+#'\d' caracteres numéricos(0-9).
+#'\D' caracteres não numéricos.
+#'\A' início de String
+#'\' tora caracteres especiais em String (r'ga\.' termina com um ponto)
+if padrao:
+    print(padrao.group()) #print texto com padrão informado
+else:
+    print('Padrão ñ encontrado')
+
+frase2 = 'O gato, a gata, os gatinhos, os gatoes'
+padrao2 = re.findall(r'gat\w+',frase2) #procura vários resultados
+print(padrao2)
+print(padrao2[1])
+
+padrao3 = re.findall(r'[gat]+',frase2) #procura letras separadas. O '+', opcional, insere tbm grupos 'gat'
+print(padrao3)
+
+padrao4 = re.findall(r'[gat]+\w+',frase2) #grupo de letras com mais um caractere unicode
+print(padrao4)
+
+email = 'mateus.sch@gmail.com'
+padraoEmail = re.findall(r'[\w\.-]+@[\w-]+\.[\w\.-]+',email) #procura emails
+print(padraoEmail)
+
+========== ARGUMENTOS E LINHA DE COMANDO ==========
+'''
+Ao executar esse arquivo.py no terminal, serão executados/solicitados os argumentos.
+Argumento 0: Caminho até o arquivo atual
+'''
+import sys
+argumentos = sys.argv
+print(argumentos[0])
+print(argumentos)
+if argumentos:
+    print(argumentos[1]+argumentos[2])
+#informe no terminal(linux): 'python arquivo.py sexta feira'(concatenará 'sexta' com 'feira')
+</code></pre></small>
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="../anexos/icons/logoCircle64.png"/>
+    <link rel="stylesheet" href="../estilo.css">
+    <title>Mateus Notes</title>
+</head>
+<body>
+<div class="container-fluid">
+
+
+    <div class="row">
+        <div class="col-sm-12" id="menu">
+            <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="../index.html"><img src="../anexos/icons/logoCircle64.png" width="30px" height="auto"/> MateusNotes</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../contato.html">Contato</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12" id="titulo1">
+            <h1>Converter Csv em Json com Php</h1>
+            <h6><strong>Código Php de conversão de arquivos Csv em Json</strong></h6>
+        </div>
+
+        <div class="col-sm-12">
+            <h4>Pré-requisitos</h4>
+            <p id="textoPost">Necessário ter o Xampp executando, criar diretório no <i>htdocs</i> para armazenar os arquivos de código e csv. Após, baixe o arquivo <i>.csv</i>, nomeando-o <b>planilha.csv</b> no mesmo diretório do <i>.php</i>. Caso pretendes modificar o nome do .csv, atualize-o também no .php! Precisa de inspiração pra baixar arquivos .csv? O governo federal dispõe dados públicos, nesse formato. Acesse abaixo.</p>
+            <a href="http://www.dados.gov.br/dataset" target="_blank" class="btn btn-link">Dados públicos ></a>
+            <br><br>
+            <h4>codigo.php</h4>
+<small><pre><code>
+&lt?php
+function csvToJson($file) {
+    if (!($fp = fopen($file,'r'))) {die("Não abriu");}
+    $key = fgetcsv($fp,"1024",",");    
+    $json = array();
+    while ($row = fgetcsv($fp,"1024",",")) {$json[] = array_combine($key,$row);}
+    fclose($fp);
+    return json_encode($json);
+}
+header('Content-Type: application/json');
+print(csvToJson("planilha.csv"));
+</code></pre></small>
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>

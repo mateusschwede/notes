@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="../anexos/icons/logoCircle64.png"/>
+    <link rel="stylesheet" href="../estilo.css">
+    <title>Mateus Notes</title>
+</head>
+<body>
+<div class="container-fluid">
+
+
+    <div class="row">
+        <div class="col-sm-12" id="menu">
+            <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="../index.html"><img src="../anexos/icons/logoCircle64.png" width="30px" height="auto"/> MateusNotes</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../contato.html">Contato</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12" id="titulo1">
+            <h1>Python3 PDO Base</h1>
+            <h6><strong>Sintaxe básica Python3 PDO</strong></h6>
+        </div>
+
+        <div class="col-sm-12">
+            <h4>Resumo</h4>
+            <small>Resumo compacto (somente o essencial do paradigma!)</small>
+<small><pre><code>
+========== BANCO DE DADOS ==========
+CREATE DATABASE agenda;
+USE agenda;
+CREATE TABLE contato (
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    nome varchar(30) NOT NULL,
+    telefone varchar(11) NOT NULL,
+    PRIMARY KEY(id)
+);
+
+========== CONEXÃO ==========
+import mysql.connector
+mydb = mysql.connector.connect(host="localhost",user="root",passwd="",database="agenda")
+
+========== INSERIR ==========
+mycursor = mydb.cursor()
+sql = "INSERT INTO contato(nome,telefone) VALUES (%s, %s)"
+val = [
+    ('Mateus','51992282929'),
+    ('Amy','55994663322'),
+    ('Hannah','51980146466')
+]
+#val = ("John", "Highway 21")
+mycursor.executemany(sql, val)
+mydb.commit()
+
+========== SELECT ==========
+mycursor = mydb.cursor()
+mycursor.execute("SELECT * FROM contato")
+myresult = mycursor.fetchall()
+for x in myresult:
+    print("Id:", x[0], "Nome:", x[1], "Tel:", x[2])
+
+========== DELETE ==========
+mycursor = mydb.cursor()
+sql = "DELETE FROM contato WHERE nome = %s"
+adr = ("Mateus", )
+mycursor.execute(sql, adr)
+mydb.commit()
+print(mycursor.rowcount, "linhas deleted")
+
+========== UPDATE ==========
+mycursor = mydb.cursor()
+sql = "UPDATE contato SET nome = %s WHERE nome = %s"
+val = ("Amyly", "Amy")
+mycursor.execute(sql, val)
+mydb.commit()
+</code></pre></small>
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>

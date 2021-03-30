@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="../anexos/icons/logoCircle64.png"/>
+    <link rel="stylesheet" href="../estilo.css">
+    <title>Mateus Notes</title>
+</head>
+<body>
+<div class="container-fluid">
+
+
+    <div class="row">
+        <div class="col-sm-12" id="menu">
+            <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="../index.html"><img src="../anexos/icons/logoCircle64.png" width="30px" height="auto"/> MateusNotes</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../contato.html">Contato</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12" id="titulo1">
+            <h1>Php7 PDO OOP</h1>
+            <h6><strong>Sintaxe Php7 PDO OOP</strong></h6>
+        </div>
+
+        <div class="col-sm-12">
+            <h4>Resumo</h4>
+<small><pre><code>
+-- COM 1 CLASSE --
+
+//Banco modelo:
+CREATE DATABASE aula16;
+USE aula16;
+CREATE TABLE Pessoa (
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(20) NOT NULL,
+    sobrenome VARCHAR(20) NOT NULL
+);
+INSERT INTO Pessoa (nome,sobrenome) VALUES ('Carlos','Garcia'),('Maria','Antunes'),('Cassio','Silva'),('Marcela','Moraes');
+
+//Classe Pessoa.class.php
+&lt?php
+    class Pessoa {
+        private $id;
+        private $nome;
+        private $sobrenome;
+
+        public function info() {
+            $r = '#'.$this->id;
+            $r .= ':'.$this->nome;
+            $r .= ' '.$this->sobrenome;
+            return $r;
+        }
+    }
+?&gt
+O nome dos atributos da classe deve coincidir com o nome dos campos da tabela!
+
+&lt?php
+    $db = new PDO('mysql:host=localhost;dbname=aula16;charset=utf8','root','');
+    $query = "SELECT id, nome, sobrenome FROM Pessoa";
+    $r = $db->query($query);
+    $r->setFetchMode(PDO::FETCH_CLASS,'Pessoa');
+    while($pessoa = $r->fetch()) {echo $pessoa->info()."&ltbr&gt\n";}
+?&gt
+
+
+-- COM 2 CLASSES --
+
+//Banco modelo:
+create database aula18;
+use aula18;
+create table equipe (
+    id integer not null primary key,
+    nome varchar(30) not null,
+    cidade varchar(30) not null
+);
+create table atleta (
+    id integer not null primary key,
+    nome varchar(30) not null,
+    sobrenome varchar(30) not null,
+    posicao varchar(30) not null,
+    equipe_id integer not null,
+    constraint equipe_fk foreign key (equipe_id) references equipe(id)
+);
+
+//Classe Equipe.class.php
+&lt?php
+    class Equipe {
+        private $id, $nome, $cidade, $atletas;
+        public function getId() {return $this->id;}
+        public function getNome() {return $this->nome;}
+        public function getCidade() {return $this->cidade;}
+        public function getAtletas() {return $this->atletas;}
+        public function addAtleta(Atleta $atleta) {$this->atletas[] = $atleta;}
+    }
+?&gt
+//$atletas: Atributo array para manter com a tabela 'atletas'
+
+//Classe Atleta.class.php
+&lt?php
+    class Atleta {
+        private $id, $nome, $sobrenome, $posicao, $equipe_id;
+        public function getId() {return $this ->id;}
+        public function getNome() {return $this ->nome;}
+        public function getSobrenome() {return $this ->sobrenome;}
+        public function getPosicao() {return $this ->posicao;}
+        public function getEquipeID() {return $this ->equipe_id;}
+    }
+?&gt
+
+//index.php
+&lt?php
+    $equipes = array();
+    $db = new PDO('mysql:host=localhost;dbname=aula18','root','');
+    $select1 = 'SELECT id, nome, cidade FROM Equipe';
+    $r1 = $db->query($select1);
+    $r1->setFetchMode(PDO::FETCH_CLASS,'Equipe');
+    $select2 = 'SELECT id, nome, sobrenome, posicao FROM Atleta WHERE equipe_id = :id';
+    $r2 = $db->prepare($select2);
+    while ($equipe = $r1->fetch()) {
+        $r2->bindValue(':id',$equipe->getId(),PDO::PARAM_INT);
+        $r2->execute();
+        $r2->setFetchMode(PDO::FETCH_CLASS,'Atleta');
+        while ($atleta = $r2->fetch()) {$equipe->addAtleta($atleta);}
+        $equipes[] = $equipe;
+    }
+?&gt
+</code></pre></small>
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>
