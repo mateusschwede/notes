@@ -53,13 +53,13 @@ INSERT INTO pessoa(nome) VALUES ("mateus"),("mateusa");
 </code></pre></small><br>
             <h4>con.php</h4>
 <small><pre><code>
-&lt;?
+&lt;?php
 $c = mysqli_connect("localhost","root","","agenda");
 if(!$c){echo "Erro conexão: ".mysqli_connect_error();}
 </code></pre></small><br>
             <h4>add.php</h4>
 <small><pre><code>
-&lt;?
+&lt;?php
 require 'con.php';
 $nome = $_POST['nome'];
 mysqli_query($c,"INSERT INTO pessoa(nome) VALUES ('$nome')");
@@ -67,7 +67,7 @@ header("location: index.php");
 </code></pre></small><br>
             <h4>ed.php</h4>
 <small><pre><code>
-&lt;?
+&lt;?php
 require 'con.php';
 if(isset($_GET['id'])) {
     $id = $_GET['id'];
@@ -76,10 +76,10 @@ if(isset($_GET['id'])) {
 }
 ?&gt;
 &lt;form action="" method="post"&gt;
-    &lt;input type="text" name="nome" placeholder="Nome" value="&lt;?=$r['nome']?&gt;" required&gt;
+    &lt;input type="text" name="nome" placeholder="Nome" value="&lt;?php=$r['nome']?&gt;" required&gt;
     &lt;input type="submit" value="Atualizar"&gt;
 &lt;/form&gt;
-&lt;?
+&lt;?php
 if(isset($_POST['nome'])) {
     $nome = $_POST['nome'];
     mysqli_query($c,"UPDATE pessoa SET nome='$nome' WHERE id=$id");
@@ -89,7 +89,7 @@ if(isset($_POST['nome'])) {
 </code></pre></small><br>
             <h4>del.php</h4>
 <small><pre><code>
-&lt;?
+&lt;?php
 require 'con.php';
 $id = $_GET['id'];
 mysqli_query($c,"DELETE FROM pessoa WHERE id='$id'");
@@ -97,7 +97,7 @@ header("location: index.php");
 </code></pre></small><br>
             <h4>index.php</h4>
 <small><pre><code>
-&lt;?
+&lt;?php
 require 'con.php';
     $d = mysqli_query($c,"SELECT * FROM pessoa");
     while($r = mysqli_fetch_assoc($d)){

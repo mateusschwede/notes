@@ -2,11 +2,11 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link  href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="anexos/icons/logoTit.png">
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="shortcut icon"  href="anexos/icons/logoTit.png">
+    <link rel="stylesheet"  href="estilo.css">
     <title>UB Social.ca</title>
 </head>
 <body id="fundoLinux">
@@ -17,13 +17,13 @@
         <div class="col-sm-12" id="menu">
             <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark shadow">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="index.html"><img src="anexos/icons/logoBranco.png" id="logo"> UB Social.ca</a>
+                    <a class="navbar-brand"  href="index.html"><img src="anexos/icons/logoBranco.png" id="logo"> UB Social.ca</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
-                            <li class="nav-item"><a class="nav-link" href="livros.html">Livros</a></li>
+                            <li class="nav-item"><a class="nav-link"  href="index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link"  href="contato.html">Contato</a></li>
+                            <li class="nav-item"><a class="nav-link"  href="livros.html">Livros</a></li>
                         </ul>
                     </div>
                 </div>
@@ -60,8 +60,8 @@
             <img src="anexos/linux/distros.jpg" width="250px" height="auto">
             <p>Uma distribuição Linux (distro) é um SO completo criado a partir do Kernel Linux. Há cerca de 600 distros atualmente, sendo a Debian a 'mãe' da maioria. Nem todas são totalmente gratuitas, como o Red Hat Enterprise Linux. Distros como Mint, Ubuntu e Kde são baseadas (criadas) a partir da Debian. A versão não modificada do Kernel Linux é chamada de 'Vanilla'. A 1ª distro foi a Yggdrasil Linux/GNU/X. A distro comunitária mais antiga é a Slackware, ainda ativa. Cada distro possui nomenclatura baseada em alguma referência cômica ou algo do tipo, como a Mint, que suas versões estáveis possuem nome feminino, e as instáveis, masculino (Por que supõe-se que, nas decisões da vida, as mulheres são mais estáveis do que os homens). A distro Debian possui nome como referência à esposa do criador, 'Debie', onde cada versão possui como nomenclatura um personagem do filme 'Toy Story'. Há uma teoria de que o logo da Debian, o redemoinho Magic Smoke, foi criado porque o personagem 'Buzz Lightyear' possui um redemoinho similar no queixo. As principais distros Linux são Mint, Ubuntu (mais usada), Fedora (Red Hat), openSuSE, CentOS, Zorin OS, Kde, Kali, Manjaro, Elementary OS, Raspbian, Arch, entre outras.</p>
             <ul>
-                <li>Timeline Distros Linux: <a href="https://commons.wikimedia.org/wiki/File:Linux_Distribution_Timeline.svg" target="_blank">Acesse</a></li>
-                <li>DistroWatch: <a href="https://distrowatch.com" target="_blank">Acesse</a></li>
+                <li>Timeline Distros Linux: <a id="btnLink" href="https://commons.wikimedia.org/wiki/File:Linux_Distribution_Timeline.svg" target="_blank">Acesse</a></li>
+                <li>DistroWatch: <a id="btnLink" href="https://distrowatch.com" target="_blank">Acesse</a></li>
             </ul>
         </div>
     </div>
@@ -164,8 +164,8 @@
             <h3><span id="capitulo">14</span> Migrando pro Linux</h3>
             <p>Nesse tipo de preparação, criaremos um pendrive específico de Boot(Pendrive Bootável), com o Linux Mint LMDE, para instalação via BIOS em máquina vazia ou com SO. Vale lembrar que, se a máquina possuir qualquer outro SO, nestas instruções O MESMO SERÁ REMOVIDO, assim como todos os arquivos presentes nele. Primeiramente, baixe a ISO do Mint LMDE no site oficial. Após, baixe o YUMI, que fará a criação de seu pendrive. Tenha, em mãos, um pendrive com 4GB, o qual será formatado na operação! Insira-o na máquina, execute o YUMI como administrador, selecione seu pendrive, selecione FAT32, escolha o SO Linux Mint, selecione a opção 'Show all ISOs' no explorador de arquivos, e procure por sua ISO. Clique em 'Create', aceite as mudanças e aguarde o processo de criação, que é um pouco lento. Finalizado o processo, desligue sua máquina e ligue-a novamente, segurando a tecla F2 para acessar a BIOS. Na sua BIOS, selecione a opção Boot, e verifique se seu pendrive encontra-se nas opções de Boot. Se sim, salve o processo, saia, e, no Boot novamente, segure F12 para entrar nas opções de Boot, selecionando a de seu pendrive. Com isso, iniciará a tela do YUMI Multiboot, onde você selecionará Linux Distributions, e sua opção Mint LMDE, que o Mint iniciará. Com o Mint iniciado, selecione a opção, no desktop Mint, Install Linux Mint. Selecione o idioma, região, teclado, informações de usuários, selecione a opção apagar disco e instalar Mint, selecione a opção de instalar GRUB gerenciador de boot e instale o sistema(processo demora um pouco). Após a instalação, desligue a máquina e remova o pendrive, seu Mint está instalado. Para configurações adicionais no Mint, assista a aula completa abaixo, do Curso em Vídeo. Detalhes sobre BIOS e erros com pendrive, assita à aula do segundo link. Você pode também tentar o método com Máquina Virtual(VM) direto no seu SO padrão, sem que o mesmo seja apagado e sem Linux sendo instalado. Ou, por fim, pode realizar tal instalação ao lado de seu SO padrão, modificando a configuração de particionamento de disco, dividindo-o com seu SO meio a meio, iniciando seu Boot com o GRUB.</p>
             <ul>
-                <li>Vídeo de instalação: <a href="https://www.youtube.com/watch?v=ZhLjvy23rrs" target="_blank">Clique</a></li>
-                <li>Vídeo de instalação ou erro: <a href="https://www.youtube.com/watch?v=EgPxsHGxspA" target="_blank">Clique</a></li>
+                <li>Vídeo de instalação: <a id="btnLink" href="https://www.youtube.com/watch?v=ZhLjvy23rrs" target="_blank">Clique</a></li>
+                <li>Vídeo de instalação ou erro: <a id="btnLink" href="https://www.youtube.com/watch?v=EgPxsHGxspA" target="_blank">Clique</a></li>
             </ul>
         </div>
     </div>
@@ -175,7 +175,7 @@
             <img src="anexos/linux/mintlmde.png" width="250px" height="auto">
             <p>Conceitos gerais sobre Linux, ambiente Mint LMDE, Snapshot(Timeshift), Cron, Grub, gestão de pacotes e instalações básicas. Para melhor entendimento, visualize abaixo.</p>
             <ul>
-                <li>Conhecendo Mint LMDE4: <a href="https://www.youtube.com/watch?v=7KsdRHwO2Sk" target="_blank">Clique</a></li>
+                <li>Conhecendo Mint LMDE4: <a id="btnLink" href="https://www.youtube.com/watch?v=7KsdRHwO2Sk" target="_blank">Clique</a></li>
             </ul>
         </div>
     </div>
@@ -478,21 +478,21 @@ Acessar pasta de meus lançadores: nautilus ~/.local/share/applications
         <div class="col-sm-8 shadow p-3 mb-5" id="licao">
             <h3><span id="capitulo">28</span> Na mídia</h3>
             <ul>
-                <li>Linux.org: <a href="https://www.linux.org" target="blank">Acesse</a></li>
-                <li>Linux.com: <a href="https://www.linux.com" target="_blank">Acesse</a></li>
-                <li>The Linux Foundation: <a href="https://www.linuxfoundation.org">Acesse</a></li>
-                <li>Eventos de Linux e Software Livre: <a href="https://www.lpi.org/pt/events" target="_blank">Acesse</a></li>
-                <li>Comunidades Linux(Viva o Linux): <a href="https://www.vivaolinux.com.br/comunidades" target="_blank">Acesse</a></li>
-                <li>Free Software Foundation(FSF): <a href="https://www.fsf.org" target="_blank">Acesse</a></li>
-                <li>Open Source Initiative: <a href="https://opensource.org" target="_blank">Acesse</a></li>
-                <li>GNU Project: <a href="https://www.gnu.org" target="_blank">Acesse</a></li>
-                <li>Curso de Linux(CeV): <a href="https://www.cursoemvideo.com/course/linux" target="_blank">Acesse</a></li>
-                <li>Curso de Linux(4Linux): <a href="https://www.4linux.com.br/curso/linux-gratis" target="_blank">Acesse</a></li>
-                <li>Associação do Software Livre(ASL): <a href="http://softwarelivre.org/asl" target="_blank">Acesse</a></li>
-                <li>Software Livre Brasil: <a href="http://softwarelivre.org" target="_blank">Acesse</a></li>
-                <li>Blog do Edivaldo: <a href="https://www.edivaldobrito.com.br" target="_blank">Acesse</a></li>
-                <li>Diolinux: <a href="https://diolinux.com.br" target="_blank">Acesse</a></li>
-                <li>Guia Foca(Guia Definitivo do Linux): <a href="https://www.guiafoca.org" target="_blank">Acesse</a></li>
+                <li>Linux.org: <a id="btnLink" href="https://www.linux.org" target="blank">Acesse</a></li>
+                <li>Linux.com: <a id="btnLink" href="https://www.linux.com" target="_blank">Acesse</a></li>
+                <li>The Linux Foundation: <a id="btnLink" href="https://www.linuxfoundation.org">Acesse</a></li>
+                <li>Eventos de Linux e Software Livre: <a id="btnLink" href="https://www.lpi.org/pt/events" target="_blank">Acesse</a></li>
+                <li>Comunidades Linux(Viva o Linux): <a id="btnLink" href="https://www.vivaolinux.com.br/comunidades" target="_blank">Acesse</a></li>
+                <li>Free Software Foundation(FSF): <a id="btnLink" href="https://www.fsf.org" target="_blank">Acesse</a></li>
+                <li>Open Source Initiative: <a id="btnLink" href="https://opensource.org" target="_blank">Acesse</a></li>
+                <li>GNU Project: <a id="btnLink" href="https://www.gnu.org" target="_blank">Acesse</a></li>
+                <li>Curso de Linux(CeV): <a id="btnLink" href="https://www.cursoemvideo.com/course/linux" target="_blank">Acesse</a></li>
+                <li>Curso de Linux(4Linux): <a id="btnLink" href="https://www.4linux.com.br/curso/linux-gratis" target="_blank">Acesse</a></li>
+                <li>Associação do Software Livre(ASL): <a id="btnLink" href="http://softwarelivre.org/asl" target="_blank">Acesse</a></li>
+                <li>Software Livre Brasil: <a id="btnLink" href="http://softwarelivre.org" target="_blank">Acesse</a></li>
+                <li>Blog do Edivaldo: <a id="btnLink" href="https://www.edivaldobrito.com.br" target="_blank">Acesse</a></li>
+                <li>Diolinux: <a id="btnLink" href="https://diolinux.com.br" target="_blank">Acesse</a></li>
+                <li>Guia Foca(Guia Definitivo do Linux): <a id="btnLink" href="https://www.guiafoca.org" target="_blank">Acesse</a></li>
             </ul>
         </div>
     </div>
@@ -500,16 +500,16 @@ Acessar pasta de meus lançadores: nautilus ~/.local/share/applications
         <div class="col-sm-8 shadow p-3 mb-5" id="licao">
             <h3><span id="capitulo">29</span> 10 Software Livre sucesso</h3>
             <ul>
-                <li>Audacity(Edição áudio): <a href="https://www.audacityteam.org" target="_blank">Acesse</a></li>
-                <li>Inkscape(Edição vetorial): <a href="https://inkscape.org" target="_blank">Acesse</a></li>
-                <li>GIMP(Edição de imagem): <a href="https://www.gimp.org" target="_blank">Acesse</a></li>
-                <li>Kdenlive(Edição de vídeo): <a href="https://kdenlive.org/en" target="_blank">Acesse</a></li>
-                <li>OBS Studio(Streaming): <a href="https://obsproject.com" target="_blank">Acesse</a></li>
-                <li>Blender(Edição gráfica): <a href="https://www.blender.org" target="_blank">Acesse</a></li>
-                <li>WordPress(Sites): <a href="https://wordpress.org" target="_blank">Acesse</a></li>
-                <li>LibreOffice(Office): <a href="https://www.libreoffice.org" target="_blank">Acesse</a></li>
-                <li>Firefox(Browser): <a href="https://www.mozilla.org/en-US/firefox/new" target="_blank">Acesse</a></li>
-                <li>VLC(Media Player): <a href="https://www.videolan.org/vlc" target="_blank">Acesse</a></li>
+                <li>Audacity(Edição áudio): <a id="btnLink" href="https://www.audacityteam.org" target="_blank">Acesse</a></li>
+                <li>Inkscape(Edição vetorial): <a id="btnLink" href="https://inkscape.org" target="_blank">Acesse</a></li>
+                <li>GIMP(Edição de imagem): <a id="btnLink" href="https://www.gimp.org" target="_blank">Acesse</a></li>
+                <li>Kdenlive(Edição de vídeo): <a id="btnLink" href="https://kdenlive.org/en" target="_blank">Acesse</a></li>
+                <li>OBS Studio(Streaming): <a id="btnLink" href="https://obsproject.com" target="_blank">Acesse</a></li>
+                <li>Blender(Edição gráfica): <a id="btnLink" href="https://www.blender.org" target="_blank">Acesse</a></li>
+                <li>WordPress(Sites): <a id="btnLink" href="https://wordpress.org" target="_blank">Acesse</a></li>
+                <li>LibreOffice(Office): <a id="btnLink" href="https://www.libreoffice.org" target="_blank">Acesse</a></li>
+                <li>Firefox(Browser): <a id="btnLink" href="https://www.mozilla.org/en-US/firefox/new" target="_blank">Acesse</a></li>
+                <li>VLC(Media Player): <a id="btnLink" href="https://www.videolan.org/vlc" target="_blank">Acesse</a></li>
             </ul>
         </div>
     </div>
@@ -519,19 +519,19 @@ Acessar pasta de meus lançadores: nautilus ~/.local/share/applications
             <img src="anexos/linux/lpi.png" width="100px" height="auto">
             <p>Principais órgãos certificadores Linux do mundo são Linux Professional Institute(LPI), Red Hat e The Linux Foundation. Nosso Mundo Linux prepara você para concluir a certificação LPI Linux Essentials, a certificação básica do LPI. A prova para certificação possui custo de aproximadamente R$ 600,00, com 40 questões e 60 minutos de duração. Essa certificação é reconhecida mundialmente no mercado profissional.</p>
             <ul>
-                <li>Simulado Online(Rankdone): <a href="https://www2.rankdone.com/pt_BR/candidate/login?redirect=%2Frecruitment%2Fsubscribe%2FqIlX9HD94W9cC7Jgqj" target="_blank">Acesse</a></li>
-                <li>LPI: <a href="https://www.lpi.org" target="_blank">Acesse</a></li>
-                <li>LPI Brasil: <a href="https://lpibrasil.com.br" target="_blank">Acesse</a></li>
-                <li>Conteúdos da LPI Essentials: <a href="https://lpibrasil.com.br/linux-essentials" target="_blank">Acesse</a></li>
-                <li>Detalhes da prova: <a href="https://www.lpi.org/pt/our-certifications/linux-essentials-overview" target="_blank">Acesse</a></li>
-                <li>Material de estudo: <a href="https://lpibrasil.com.br/auto-estudo-lpi" target="_blank">Acesse</a></li>
+                <li>Simulado Online(Rankdone): <a id="btnLink" href="https://www2.rankdone.com/pt_BR/candidate/login?redirect=%2Frecruitment%2Fsubscribe%2FqIlX9HD94W9cC7Jgqj" target="_blank">Acesse</a></li>
+                <li>LPI: <a id="btnLink" href="https://www.lpi.org" target="_blank">Acesse</a></li>
+                <li>LPI Brasil: <a id="btnLink" href="https://lpibrasil.com.br" target="_blank">Acesse</a></li>
+                <li>Conteúdos da LPI Essentials: <a id="btnLink" href="https://lpibrasil.com.br/linux-essentials" target="_blank">Acesse</a></li>
+                <li>Detalhes da prova: <a id="btnLink" href="https://www.lpi.org/pt/our-certifications/linux-essentials-overview" target="_blank">Acesse</a></li>
+                <li>Material de estudo: <a id="btnLink" href="https://lpibrasil.com.br/auto-estudo-lpi" target="_blank">Acesse</a></li>
             </ul>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-12" id="cardMD">
             <h4><b>Faltou algo essencial?</b></h4>
-            <p>Envie-me um email com o assunto,<br><a href="mailto:mateus1908.schwede@gmail.com">clique aqui!</a></p>
+            <p>Envie-me um email com o assunto,<br><a id="btnLink" href="mailto:mateus1908.schwede@gmail.com">clique aqui!</a></p>
             <h6><i>Obrigado e bons estudos!</i></h6>
         </div>
     </div>
