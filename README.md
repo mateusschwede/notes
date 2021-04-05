@@ -3,7 +3,7 @@
 Seja bem-vindo(a) ao site pessoal do Mateus!
 
 ## O que encontrarei aqui?
-Posts e resumos sobre linguagens de programação, Linux e software livre. Acesse o site através do QR Code abaixo.
+Posts, resumos e artigos sobre linguagens de programação, Linux, metodologias e demais conteúdos da área de TI, e software livre. Acesse o site através do QR Code abaixo.
 ![QRCode](anexos/icons/qrcode.png)
 
 ## Objetivo
