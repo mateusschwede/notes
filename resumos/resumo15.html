@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="../anexos/icons/logoTit.png">
+    <link rel="stylesheet" href="../estilo.css">
+    <title>UB Social.ca</title>
+</head>
+<body>
+<div class="container-fluid">
+
+
+    <div class="row">
+        <div class="col-sm-12" id="menu">
+            <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light shadow">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="../index.html"><img src="../anexos/icons/logo.png" id="logo"> UB Social.ca</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../contato.html">Contato</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../livros.html">Livros</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12" id="titulo1">
+            <h1>Bootstrap</h1>
+            <h6><strong>Biblioteca Frontend CDN</strong></h6>
+        </div>
+
+        <div class="col-sm-12">
+            <p id="textoPost">O Bootstrap é uma biblioteca frontend de componentes UI previamente prontos, onde pode ser utilizada em conjunto de soluções Backend, complementando o Frontend, a fim da menor utilização e gasto de tempo com estilização de conteúdos. Fornece uma gama de componentes muito variada e tecnológica, favorecendo o desenvolvimento de aplicações responsivas, de forma ágil e com pouco código. A maioria dos componentes Bootstrap econtram-se no atributo <i>class</i>, sendo nesse ponto a localização de suas propriedades.</p>
+            <a href="">Site oficial</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <br><h4>Instalação</h4>
+            Para executar o Bootstrap em seu sistema, de forma CDN (Simplesmente import), basta importar, no &lt;header&gt; de seu Html, os códigos abaixo.
+<small><pre><code>
+&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous"&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"&gt;&lt;/script&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+</code></pre></small>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <br><h4>Layout</h4>
+            O Booststrap trabalha, principalmente, com Grid Layout, onde a tela é dividida em linhas &lt;row&gt;, sendo cada linha dividida em até 12 colunas &lt;col&gt;. Cada coluna pode possuir, em seu interior, linhas e colunas, respectivamente. O exemplo a seguir dividirá a tela em 2 linhas, onde a 1ª possui 4 colunas e a 2ª 3 colunas.
+<small><pre><code>    
+&lt;div class="container-fluid"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-sm-3"&gt;
+            Linha 1, coluna 1
+        &lt;/div&gt;
+        &lt;div class="col-sm-3"&gt;
+            Linha 1, coluna 2
+        &lt;/div&gt;
+        &lt;div class="col-sm-3"&gt;
+            Linha 1, coluna 3
+        &lt;/div&gt;
+        &lt;div class="col-sm-3"&gt;
+            Linha 1, coluna 4
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-sm-3"&gt;
+            Linha 2, coluna 1
+        &lt;/div&gt;
+        &lt;div class="col-sm-3"&gt;
+            Linha 2, coluna 2
+        &lt;/div&gt;
+        &lt;div class="col-sm-3"&gt;
+            Linha 2, coluna 3
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre></small>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <br><h4>Accordion</h4>
+            Usado para fornecer listagem dinâmica, que pode ser extendida/compactada.
+<small><pre><code>
+&lt;div class="accordion" id="accordionExemplo"&gt;
+    &lt;div class="accordion-item"&gt;
+        &lt;h2 class="accordion-header" id="heading1"&gt;
+        &lt;button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#accordion1" aria-expanded="true" aria-controls="accordion1"&gt;Item 1&lt;/button&gt;
+        &lt;/h2&gt;
+        &lt;div id="accordion1" class="accordion-collapse collapse show" aria-labelledby="heading1" data-bs-parent="#accordionExemplo"&gt;
+            &lt;div class="accordion-body"&gt;
+                Conteúdo 1
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="accordion-item"&gt;
+        &lt;h2 class="accordion-header" id="heading2"&gt;
+        &lt;button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion2" aria-expanded="false" aria-controls="accordion2"&gt;Item 2&lt;/button&gt;
+        &lt;/h2&gt;
+        &lt;div id="accordion2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#accordionExemplo"&gt;
+            &lt;div class="accordion-body"&gt;
+                Conteúdo 2
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="accordion-item"&gt;
+        &lt;h2 class="accordion-header" id="heading3"&gt;
+        &lt;button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion3" aria-expanded="false" aria-controls="accordion3"&gt;Item 3&lt;/button&gt;
+        &lt;/h2&gt;
+        &lt;div id="accordion3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#accordionExemplo"&gt;
+            &lt;div class="accordion-body"&gt;
+                Conteúdo 3
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre></small>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <br><h4>Alert</h4>
+            Mensagens, estáticas ou dinâmicas, para representar possíveis feedbacks do sistema.
+<small><pre><code>
+&lt;div class="alert alert-primary" role="alert"&gt;Mensagem estática&lt;/div&gt;
+
+&lt;div class="alert alert-warning alert-dismissible fade show" role="alert"&gt;
+    Mensagem dinâmica
+    &lt;button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"&gt;&lt;/button&gt;
+&lt;/div&gt;
+</code></pre></small>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <br><h4>Badge</h4>
+            Destaque de texto para informações extras.
+<small><pre><code>
+<b>Badge comum</b>
+&lt;h1&gt;Examplo texto &lt;span class="badge bg-secondary"&gt;Texto badges&lt;/span&gt;&lt;/h1&gt;
+
+<b>Badge em botão</b>
+&lt;button type="button" class="btn btn-primary"&gt;
+    Notificações &lt;span class="badge bg-secondary"&gt;4&lt;/span&gt;
+&lt;/button&gt;
+
+<b>Badge circular (Pill)</b>
+&lt;span class="badge rounded-pill bg-primary"&gt;Badge circular&lt;/span&gt;
+</code></pre></small>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <br><h4>Breadcrumb</h4>
+            Menus Breadcrumb (Migalhas de Pão) representam o caminho de páginas em que o usuário está situado.
+<small><pre><code>
+&lt;nav aria-label="breadcrumb"&gt;
+    &lt;ol class="breadcrumb"&gt;
+        &lt;li class="breadcrumb-item"&gt;&lt;a href="#"&gt;Pagina1&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="breadcrumb-item"&gt;&lt;a href="#"&gt;Pagina2&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="breadcrumb-item active" aria-current="page"&gt;PaginaAtual&lt;/li&gt;
+    &lt;/ol&gt;
+&lt;/nav&gt;
+</code></pre></small>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <br><h4>Botões</h4>
+            Botões estilizados para utilização no sistema.
+<small><pre><code>
+<b>Botões comuns</b>
+&lt;button type="button" class="btn btn-primary"&gt;Clique&lt;/button&gt;
+&lt;button type="button" class="btn btn-link"&gt;Link&lt;/button&gt;
+&lt;button type="button" class="btn btn-outline-primary"&gt;Clique(Outline)&lt;/button&gt;
+&lt;button type="button" class="btn btn-primary btn-lg"&gt;Clique grande&lt;/button&gt;
+&lt;button type="button" class="btn btn-primary btn-sm"&gt;Clique pequeno&lt;/button&gt;
+&lt;button type="button" class="btn btn-lg btn-primary" disabled&gt;Clique desativado&lt;/button&gt;
+
+<b>Botões em bloo</b>
+&lt;div class="d-grid gap-2"&gt;
+    &lt;button class="btn btn-primary" type="button"&gt;Botão de bloco&lt;/button&gt;
+&lt;/div&gt;
+</code></pre></small>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <br><h4>Grupo de Botões</h4>
+            Grupo de botões para utilização no sistema.
+<small><pre><code>
+<b>Grupo comum</b>
+&lt;div class="btn-group" role="group" aria-label="Basic example"&gt;
+    &lt;button type="button" class="btn btn-primary"&gt;Botão 1&lt;/button&gt;
+    &lt;button type="button" class="btn btn-primary"&gt;Botão 2&lt;/button&gt;
+    &lt;button type="button" class="btn btn-primary"&gt;Botão 3&lt;/button&gt;
+&lt;/div&gt;
+
+<b>Barra de grupos</b>
+&lt;div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups"&gt;
+    &lt;div class="btn-group me-2" role="group" aria-label="First group"&gt;
+        &lt;button type="button" class="btn btn-primary"&gt;1&lt;/button&gt;
+        &lt;button type="button" class="btn btn-primary"&gt;2&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="btn-group me-2" role="group" aria-label="Second group"&gt;
+        &lt;button type="button" class="btn btn-secondary"&gt;3&lt;/button&gt;
+        &lt;button type="button" class="btn btn-secondary"&gt;4&lt;/button&gt;
+        &lt;button type="button" class="btn btn-secondary"&gt;5&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="btn-group" role="group" aria-label="Third group"&gt;
+        &lt;button type="button" class="btn btn-info"&gt;6&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+<b>Grupo com Sub-Botão</b>
+&lt;div class="btn-group" role="group" aria-label="Button group with nested dropdown"&gt;
+    &lt;button type="button" class="btn btn-primary"&gt;1&lt;/button&gt;
+    &lt;button type="button" class="btn btn-primary"&gt;2&lt;/button&gt;
+    &lt;div class="btn-group" role="group"&gt;
+        &lt;button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"&gt;Sub-Botão&lt;/button&gt;
+        &lt;ul class="dropdown-menu" aria-labelledby="btnGroupDrop1"&gt;
+            &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Sub-Botão 1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Sub-Botão 2&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+<b>Grupo com alinhamento vertical</b>
+&lt;div class="btn-group-vertical"&gt;
+    Para grupo de botões na vertical, coloque os botões aqui dentro
+&lt;/div&gt;
+</code></pre></small>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <br><h4>Card</h4>
+            Container de conteúdo visual, sendo este para utilização única ou em grupo.
+<small><pre><code>
+<b>Card comum</b>
+&lt;div class="card" style="width: 18rem;"&gt;
+    &lt;img src="..." class="card-img-top" alt="..."&gt;
+    &lt;div class="card-body"&gt;
+        &lt;h5 class="card-title"&gt;Título&lt;/h5&gt;
+        &lt;p class="card-text"&gt;Conteúdo&lt;/p&gt;
+        &lt;a href="#" class="btn btn-primary"&gt;Clique&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+<b>Card somente texto</b>
+&lt;div class="card" style="width: 18rem;"&gt;
+    &lt;div class="card-body"&gt;
+        &lt;h5 class="card-title"&gt;Título&lt;/h5&gt;
+        &lt;h6 class="card-subtitle mb-2 text-muted"&gt;Subtítulo&lt;/h6&gt;
+        &lt;p class="card-text"&gt;Conteúdo&lt;/p&gt;
+        &lt;a href="#" class="card-link"&gt;Link 1&lt;/a&gt;
+        &lt;a href="#" class="card-link"&gt;Link 2&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+<b>Card com lista</b>
+&lt;div class="card" style="width: 18rem;"&gt;
+    &lt;img src="..." class="card-img-top" alt="..."&gt;
+    &lt;div class="card-body"&gt;
+        &lt;h5 class="card-title"&gt;Título&lt;/h5&gt;
+        &lt;p class="card-text"&gt;Conteúdo&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;ul class="list-group list-group-flush"&gt;
+        &lt;li class="list-group-item"&gt;ItemLista 1&lt;/li&gt;
+        &lt;li class="list-group-item"&gt;ItemLista 2&lt;/li&gt;
+        &lt;li class="list-group-item"&gt;ItemLista 3&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;div class="card-body"&gt;
+        &lt;a href="#" class="card-link"&gt;Link 1&lt;/a&gt;
+        &lt;a href="#" class="card-link"&gt;Link 2&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+<b>Card com cabeçalho e rodapé</b>
+<i>Para centralizar o conteúdo, utilize o 'text-center' após o 'card' no 1º class</i>
+&lt;div class="card"&gt;
+    &lt;div class="card-header"&gt;Cabeçalho&lt;/div&gt;
+    &lt;div class="card-body"&gt;
+        &lt;h5 class="card-title"&gt;Título&lt;/h5&gt;
+        &lt;p class="card-text"&gt;Conteúdo&lt;/p&gt;
+        &lt;a href="#" class="btn btn-primary"&gt;Clique&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class="card-footer text-muted"&gt;Rodapé&lt;/div&gt;
+&lt;/div&gt;
+
+<b>Card com imagem à esquerda</b>
+&lt;div class="card mb-3" style="max-width: 540px;"&gt;
+    &lt;div class="row g-0"&gt;
+        &lt;div class="col-md-4"&gt;&lt;img src="..." alt="..."&gt;&lt;/div&gt;
+        &lt;div class="col-md-8"&gt;
+            &lt;div class="card-body"&gt;
+                &lt;h5 class="card-title"&gt;Título&lt;/h5&gt;
+                &lt;p class="card-text"&gt;Conteúdo&lt;/p&gt;
+                &lt;p class="card-text"&gt;&lt;small class="text-muted"&gt;Subconteúdo&lt;/small&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+<b>Card colorido</b>
+&lt;div class="card text-white bg-primary mb-3" style="max-width: 18rem;"&gt;
+    &lt;div class="card-header"&gt;Cabeçalho&lt;/div&gt;
+    &lt;div class="card-body"&gt;
+        &lt;h5 class="card-title"&gt;Título&lt;/h5&gt;
+        &lt;p class="card-text"&gt;Conteúdo&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+<b>Card borda colorida</b>
+&lt;div class="card border-primary mb-3" style="max-width: 18rem;"&gt;
+    &lt;div class="card-header"&gt;Cabeçalho&lt;/div&gt;
+    &lt;div class="card-body text-primary"&gt;
+        &lt;h5 class="card-title"&gt;Título&lt;/h5&gt;
+        &lt;p class="card-text"&gt;Conteúdo/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+<b>Grupo de Cards</b>
+&lt;div class="card-group"&gt;
+    &lt;div class="card"&gt;
+        &lt;img src="..." class="card-img-top" alt="..."&gt;
+        &lt;div class="card-body"&gt;
+            &lt;h5 class="card-title"&gt;Título&lt;/h5&gt;
+            &lt;p class="card-text"&gt;Conteúdo&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="card"&gt;
+        &lt;img src="..." class="card-img-top" alt="..."&gt;
+        &lt;div class="card-body"&gt;
+            &lt;h5 class="card-title"&gt;Título&lt;/h5&gt;
+            &lt;p class="card-text"&gt;Conteúdo&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="card"&gt;
+        &lt;img src="..." class="card-img-top" alt="..."&gt;
+        &lt;div class="card-body"&gt;
+            &lt;h5 class="card-title"&gt;Título&lt;/h5&gt;
+            &lt;p class="card-text"&gt;Conteúdo&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+<b>Grid de Cards</b>
+&lt;div class="row row-cols-1 row-cols-md-2 g-4"&gt;
+    &lt;div class="col"&gt;
+        &lt;div class="card"&gt;
+            &lt;img src="..." class="card-img-top" alt="..."&gt;
+            &lt;div class="card-body"&gt;
+                &lt;h5 class="card-title"&gt;Título&lt;/h5&gt;
+                &lt;p class="card-text"&gt;Conteúdo&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col"&gt;
+        &lt;div class="card"&gt;
+            &lt;img src="..." class="card-img-top" alt="..."&gt;
+            &lt;div class="card-body"&gt;
+                &lt;h5 class="card-title"&gt;Título&lt;/h5&gt;
+                &lt;p class="card-text"&gt;Conteúdo&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col"&gt;
+        &lt;div class="card"&gt;
+            &lt;img src="..." class="card-img-top" alt="..."&gt;
+            &lt;div class="card-body"&gt;
+                &lt;h5 class="card-title"&gt;Título&lt;/h5&gt;
+                &lt;p class="card-text"&gt;Conteúdo&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col"&gt;
+        &lt;div class="card"&gt;
+            &lt;img src="..." class="card-img-top" alt="..."&gt;
+            &lt;div class="card-body"&gt;
+                &lt;h5 class="card-title"&gt;Título&lt;/h5&gt;
+                &lt;p class="card-text"&gt;Conteúdo&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre></small>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <br><h4>Carousel</h4>
+            Apresentação de imagem destaque, com ou sem coteúdo relacionado.
+<small><pre><code>
+<b>Carousel com controles</b>
+&lt;div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel"&gt;
+    &lt;div class="carousel-indicators"&gt;
+        &lt;button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"&gt;&lt;/button&gt;
+        &lt;button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"&gt;&lt;/button&gt;
+        &lt;button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"&gt;&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="carousel-inner"&gt;
+        &lt;div class="carousel-item active"&gt;&lt;img src="..." class="d-block w-100" alt="Imagem 1"&gt;&lt;/div&gt;
+        &lt;div class="carousel-item"&gt;&lt;img src="..." class="d-block w-100" alt="Imagem 2"&gt;&lt;/div&gt;
+        &lt;div class="carousel-item"&gt;&lt;img src="..." class="d-block w-100" alt="Imagem 3"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev"&gt;
+        &lt;span class="carousel-control-prev-icon" aria-hidden="true"&gt;&lt;/span&gt;
+        &lt;span class="visually-hidden"&gt;Previous&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next"&gt;
+        &lt;span class="carousel-control-next-icon" aria-hidden="true"&gt;&lt;/span&gt;
+        &lt;span class="visually-hidden"&gt;Next&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+<b>Carousel com legendas</b>
+&lt;div id="carouselLegenda" class="carousel slide" data-bs-ride="carousel"&gt;
+    &lt;div class="carousel-indicators"&gt;
+        &lt;button type="button" data-bs-target="#carouselLegenda" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"&gt;&lt;/button&gt;
+        &lt;button type="button" data-bs-target="#carouselLegenda" data-bs-slide-to="1" aria-label="Slide 2"&gt;&lt;/button&gt;
+        &lt;button type="button" data-bs-target="#carouselLegenda" data-bs-slide-to="2" aria-label="Slide 3"&gt;&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="carousel-inner"&gt;
+        &lt;div class="carousel-item active"&gt;
+            &lt;img src="..." class="d-block w-100" alt="Imagem 1"&gt;
+            &lt;div class="carousel-caption d-none d-md-block"&gt;
+                &lt;h5&gt;Legenda 1&lt;/h5&gt;
+                &lt;p&gt;Descrição 1&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;div class="carousel-item"&gt;
+        &lt;img src="..." class="d-block w-100" alt="Imagem 2"&gt;
+        &lt;div class="carousel-caption d-none d-md-block"&gt;
+            &lt;h5&gt;Legenda 2&lt;/h5&gt;
+            &lt;p&gt;Descrição 2&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="carousel-item"&gt;
+        &lt;img src="..." class="d-block w-100" alt="Imagem 3"&gt;
+        &lt;div class="carousel-caption d-none d-md-block"&gt;
+            &lt;h5&gt;Legenda 3&lt;/h5&gt;
+            &lt;p&gt;Descrição 3&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;button class="carousel-control-prev" type="button" data-bs-target="#carouselLegenda" data-bs-slide="prev"&gt;
+        &lt;span class="carousel-control-prev-icon" aria-hidden="true"&gt;&lt;/span&gt;
+        &lt;span class="visually-hidden"&gt;Previous&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;button class="carousel-control-next" type="button" data-bs-target="#carouselLegenda" data-bs-slide="next"&gt;
+        &lt;span class="carousel-control-next-icon" aria-hidden="true"&gt;&lt;/span&gt;
+        &lt;span class="visually-hidden"&gt;Next&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+</code></pre></small>
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>
