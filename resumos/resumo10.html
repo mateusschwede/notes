@@ -38,7 +38,6 @@
         </div>
 
         <div class="col-sm-12">
-            <h4>Resumo (Github)</h4>
 <small><pre><code>
 Database -&gt; Conjunto de tables -&gt; Conjunto de registros (linhas, tuplas) -&gt; Compostas por campos (columns)
 
@@ -286,7 +285,7 @@ CREATE TABLE Usuario (
 );
 
 CREATE TABLE Navio (
-    idNavio VARCHAR(7) AUTO_INCREMENT PRIMARY KEY,
+    idNavio VARCHAR(7) NOT NULL PRIMARY KEY,
     transportadora VARCHAR(20) NOT NULL,
     comandante VARCHAR(20) NOT NULL,
     idUsuario INTEGER NOT NULL,

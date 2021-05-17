@@ -38,12 +38,12 @@
         </div>
 
         <div class="col-sm-12">
-            <h4>Arquivos</h4>
-            <p id="textoPost">Faça o download, no link abaixo (Mega), dos arquivos de sintaxe Java 8 base, OOP e GUI. Os arquivos compõem-se de slides com conteúdo e códigos de exemplo. A parte GUI foi desenvolvida com o Eclipse WindowBuilder.</p>
+            <p id="textoPost">Como o foco do site não é Java, faça o download, no link abaixo (Mega), dos arquivos de sintaxe Java 8 base, OOP e GUI. Os arquivos compõem-se de slides com conteúdo e códigos de exemplo. A parte GUI foi desenvolvida com o Eclipse WindowBuilder.</p>
             <a class="btn btn-link" id="btnLink" href="https://mega.nz/file/bZwh0AzD#yglXrdJe24plaMyBNPhObl6JGrw5nN7FTrBeKqnxWjA" target="_blank">Java 8 conteúdo</a>
             
             <br><br><h4>Java URI</h4>
 <small><pre><code>
+<b>===== CÓDIGO MODELO =====</b>
 // O 'package' deve ser removido e devem ser inseridos os imports abaixo
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -65,12 +65,12 @@ public class Main { //classe SEMPRE com nome 'Main'
 }
 
 
-========== CONVERTER VARIAVEL ==========
+<b>===== CONVERTER VARIAVEL =====</b>
 int i = 10;
 double i2 = (double) i;
 
 
-========== FUNÇÕES MATEMÁTICAS ==========
+<b>===== FUNÇÕES MATEMÁTICAS =====</b>
 Math.abs(x); // Valor absoluto
 Math.ceil(x); // Arredonda para cima
 Math.floor(x); // Arredonda para baixo
@@ -86,7 +86,7 @@ for(int i = 0; i &lt; 30; i++) {
 }
 
 
-========== FUNÇÕES STRINGS ==========
+<b>===== FUNÇÕES STRINGS =====</b>
 String cidade = "Feliz";
 System.out.println(cidade.charAt(0)); //letra 'F'
 int tamanho = cidade.length(); //tamanho da cidade
@@ -135,7 +135,7 @@ String teste = "Programacao em Java";
 System.out.println(teste.substring(0,5)); //entre indice 0 e 5
 
 
-========== ARRAYS ==========
+<b>===== ARRAYS =====</b>
 int[] valores = {44,12,23,12,17,81,4,9};
 System.out.println(valores[0]);
 int[] valores = new int[3]; // cria array vazio
@@ -159,7 +159,7 @@ int[] intArray = {1, 2, 5, 67, 800, 2112};
 int posicao1 = Arrays.binarySearch(intArray, 80); //retorna index do elemento
 
 
-========== PILHAS (Last In, First Out) ==========
+<b>===== PILHAS (Last In, First Out) =====</b>
 push(...) | pop() | empty()
 Stack&lt;Livro&gt; pilha = new Stack&lt;Livro&gt;();
 Livro l1 = new Livro();
@@ -172,7 +172,7 @@ while(!pilha.empty()) {
 }
 
 
-========== FILAS (First In, First Out) ==========
+<b>===== FILAS (First In, First Out) =====</b>
 add(...) | pool() | isEmpty()
 Queue&lt;Pessoa&gt; fila = new LinkedList&lt;Pessoa&gt;();
 Pessoa p1 = new Pessoa();
@@ -182,7 +182,7 @@ fila.add(p1);
 Pessoa temp = fila.poll();
 
 
-========== DIRETORIOS ==========
+<b>===== DIRETORIOS =====</b>
 File dir = new File("NovaPasta");
 dir.mkdir(); //cria diretorio
 dir.delete(); //apaga diretorio
@@ -190,7 +190,7 @@ File dir2 = new File("NovaPasta/OutraAqui");
 dir2.mkdir(); //cria subdiretorio
 
 
-========== ARQUIVOS ==========
+<b>===== ARQUIVOS =====</b>
 File arquivo = new File("NovaPasta/Texto1.txt");
 try {
     arquivo.createNewFile();
@@ -211,7 +211,7 @@ try {
 } catch (IOException e) {e.printStackTrace();}
 
 
-========== /* RESOLUÇÃO PARCIAL 1131-Grenais */ ==========
+<b>===== /* RESOLUÇÃO PARCIAL 1131-Grenais */ =====</b>
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -238,7 +238,7 @@ public class Main {
 }
 
 
-======================== EXEMPLOS ========================
+<b>===== EXEMPLO MODELO =====</b>
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

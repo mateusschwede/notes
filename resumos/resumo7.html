@@ -40,7 +40,7 @@
         <div class="col-sm-12">
             <h4>Base</h4>
 <small><pre><code>
-========== VARIÁVEIS ==========
+<b>===== VARIÁVEIS =====</b>
 nome = "mateus"
 peso = 75.8
 print(nome, peso)
@@ -50,32 +50,32 @@ print(frase[0]) #print 1º caractere
 print(frase[0:8:2]) #print caracteres do 0 ao 8, pulando a cada 2
 print(frase[::-1]) #de trás pra frente, invertido
 
-========== ENTRADA DE DADOS ==========
+<b>===== ENTRADA DE DADOS =====</b>
 nome = input("Informe o nome: ")
 idade = int(input("Informe a idade: "))
 humano = True
 print("O valor de PI é ", str(3.14) #conversão float p/ str
 
-========== COMENTÁRIOS ==========
+<b>===== COMENTÁRIOS =====</b>
 # Comentário de linha
 """
 comentário
 multiplas linhas
 """
 
-========== OPERADORES DIFERENTES ==========
+<b>===== OPERADORES DIFERENTES =====</b>
 Divisão Inteira(//): 5//2 (2)
 Resto da Divisão(%): 4%2 (0)
 Potenciação(**): 4**2 (16)
 
-========== SAÍDA FORMATADA ==========
+<b>===== SAÍDA FORMATADA =====</b>
 print('A soma vale{}'.format(soma))
 print('{1} {0}'.format('one', 'two')) #"two one"
 print('{0!s} {0!f}'.format(Data()) #"str float"
 print('{:06.2f}'.format(3.141592653589793)) #003.14
 #:06(qtde de espaços: esquerda p/ direita), .2f(nº float com 2 casas decimais)
 
-========== CONDIÇÃO ==========
+<b>===== CONDIÇÃO =====</b>
 if x &gt; 0:
     print("maior que zero")
 elif x &lt; 0:
@@ -83,22 +83,22 @@ elif x &lt; 0:
 else:
     print("igual a zero")
 
-========== REPETIÇÃO ==========
+<b>===== REPETIÇÃO =====</b>
 for i in range(0,11,2):
     print(i)
 #print i no intervalo de 0 a 10, incrementando de 2 em 2
 
-========== CONDIÇÃO SEGUIDA DE REPETIÇÃO ==========
+<b>===== CONDIÇÃO SEGUIDA DE REPETIÇÃO =====</b>
 while x &lt; 5:
     print(x)
     x += 1
 
-========== REPETIÇÃO CONTÍNUA ==========
+<b>===== REPETIÇÃO CONTÍNUA =====</b>
 while True:
     print("olá")
     break
 
-========== FUNÇÕES ==========
+<b>===== FUNÇÕES =====</b>
 def imprimir():
     return "resposta da função"
 print(imprimir())
@@ -119,7 +119,7 @@ def soma(a=0,b=0):
     return(a+b)
 soma(4+5)
 
-========== TUPLAS ==========
+<b>===== TUPLAS =====</b>
 lanche = ("Hamburger","Suco","Refri")
 print(lanche[1])
 print(lanche[-2])
@@ -137,7 +137,7 @@ for comida in lanche:
 Deletar tupla:
 del(lanche)
 
-========== LISTAS ==========
+<b>===== LISTAS =====</b>
 #lista é mutável
 animais = ["leão","gato","zebra"]
 animais[0] #leão
@@ -201,7 +201,7 @@ print(lista) #['a','b','c']
 Ordenar lista decrescente:
 lista.sort(reverse=True)
 
-========== LISTAS COMPOSTAS ==========
+<b>===== LISTAS COMPOSTAS =====</b>
 pessoas = [['Pedro',25],['Maria',19],['João',32]]
 print(pessoas[0][1]) #25
 print(pessoas[1][0]) #Maria
@@ -209,7 +209,7 @@ print(pessoas[1][0]) #Maria
 Limpar Lista:
 pessoas.clear()
 
-========== DICIONÁRIOS ==========
+<b>===== DICIONÁRIOS =====</b>
 #possui chave e valor
 #pode-se inserir dicionários dentro de listas
 pessoa = {
@@ -251,16 +251,16 @@ dic.keys() #(['a','b','c'])
 Ver valores(values):
 dic.values() #(['apple','berry','cherry'])
 
-========== CONJUNTOS ==========
+<b>===== CONJUNTOS =====</b>
 #lista misturada com dicionário. Conjunto ñ tem itens repetidos, ñ tem indíces(ñ é ordenado). Mais ágil para percorrer, pesquisas...
 conjunto = {‘Gui’,’João’}
 conjunto.remove(‘João’)
 
-========== LAMBDAS ==========
+<b>===== LAMBDAS =====</b>
 g = lambda x: x * 2
 print(g(6)) #12
 
-========== MÓDULOS E PACOTES ==========
+<b>===== MÓDULOS E PACOTES =====</b>
 Módulo:
 Guardar determinado código, geralmente com defs, em um arquivo.py separado
 Código de ligação: import nomeArquivo
@@ -276,7 +276,7 @@ defDoArquivo2() //função no arquivo 2 que printa ‘ola’
 Pacote dentro de pacote:
 fazer, dentro de cada pacote um módulo '___init___.py' colocamos o código python desejado e importamos no código principal
 
-========== ERROS & EXCEÇÕES ==========
+<b>===== ERROS & EXCEÇÕES =====</b>
 try:
     operação
 except Exception as erro:
@@ -291,7 +291,7 @@ finally:
     deu certo, mas com erro, acima de tudo
 #o finally ocorre com ou sem erro
 
-========== MANIPULANDO ARQUIVOS ==========
+<b>===== MANIPULANDO ARQUIVOS =====</b>
 # open('pasta/arquivo.txt','w')
 # Modo 'r' é o padrão, de leitura
 # Modo 'w' é o de escrita(cria ou sobrescreve o arquivo)
@@ -310,7 +310,7 @@ for linha in arquivo: #print 1 linha por vez
 
 arquivo.close() #fechar arquivo
 
-========== REQUISIÇÕES WEB ==========
+<b>===== REQUISIÇÕES WEB =====</b>
 '''
 PIP: Gerenciador de bibliotecas externas nativo Python. pip3 pra Python3
 Instalar pip3 linux: sudo apt install python3-pip
@@ -355,7 +355,7 @@ meusCookies = {'Visita':'10-10-2020'}
 dados = {'user':'mateus','senha':'abc'}
 requisicao = requests.post('https://google.com',headers=cabecalho,cookies=meusCookies,data=dados)
 
-========== API JSON ==========
+<b>===== API JSON =====</b>
 '''
 Api usada: OMDb API(www.omdbapi.com)
 Ver detalhes do filme pelo nome. 1º gerar uma APIKey para o funcionamento, no próprio site
@@ -369,7 +369,7 @@ print(dic['Title'])
 print(dic['valor']['subvalor']['terceiroValor']) #dicionário dentro de dicionário
 print(dic['valor'][0]['subvalor']) #lista dentro de dicionário
 
-========== EXPRESSÕES REGULARES ==========
+<b>===== EXPRESSÕES REGULARES =====</b>
 '''
 (Regular Expressions / regex)
 Permitem encontrar padrões em textos. Há expressões regulares pra emails,telefones...
@@ -407,7 +407,7 @@ email = 'mateus.sch@gmail.com'
 padraoEmail = re.findall(r'[\w\.-]+@[\w-]+\.[\w\.-]+',email) #procura emails
 print(padraoEmail)
 
-========== ARGUMENTOS E LINHA DE COMANDO ==========
+<b>===== ARGUMENTOS E LINHA DE COMANDO =====</b>
 '''
 Ao executar esse arquivo.py no terminal, serão executados/solicitados os argumentos.
 Argumento 0: Caminho até o arquivo atual
@@ -422,11 +422,11 @@ if argumentos:
 </code></pre></small><br>
             <h4>Python URI</h4>
 <small><pre><code>
-========== MULTIPLAS ENTRADAS ==========
+<b>===== MULTIPLAS ENTRADAS =====</b>
 x,y = list(map(int,unput().split()))
 
 
-========== SAÍDA FORMATADA ===========
+<b>===== SAÍDA FORMATADA =====</b>=
 print('A soma vale{}'.format(soma))
 '{1} {0}'.format('one', 'two') #"two one"
 print('{0!s} {0!f}'.format(Data()) #"str float"
@@ -434,7 +434,7 @@ print('{:06.2f}'.format(3.141592653589793)) #003.14
 #:06(qtde de espaços: esquerda p/ direita), .2f(nº float com 2 casas decimais)
 
 
-========== EXERCÍCIO ENTRADA VAZIA ==========
+<b>===== EXERCÍCIO ENTRADA VAZIA =====</b>
 while True:
     try:
         x = input()
@@ -448,13 +448,13 @@ while True:
         break
 
 
-========== OPERADORES ARITMÉTICOS ==========
+<b>===== OPERADORES ARITMÉTICOS =====</b>
 Divisão Inteira(//): 5//2 (2)
 Resto da Divisão(%): 4%2 (0)
 Potenciação(**): 4**2 (16)
 
 
-========== FUNÇÕES STRING ==========
+<b>===== FUNÇÕES STRING =====</b>
 Tamanho da String:
 x = "max"
 print(len(x))
@@ -521,7 +521,7 @@ s.split() #['n', 'o', 'm', 'e']
 s.split(" ") #['n', 'o', 'm', 'e']
 
 
-========== FUNÇÕES MATEMÁTICAS (math) ==========
+<b>===== FUNÇÕES MATEMÁTICAS (math) =====</b>
 import math
 from math import sqrt,ceil #pra específicos
 
@@ -538,7 +538,7 @@ Nºs Aleatórios: import random
 random.randint(1,10) #int entre 1 e 10
 
 
-========== DATAS ==========
+<b>===== DATAS =====</b>
 from datetime import datetime
 now = datetime.now()
 print(now)
@@ -551,7 +551,7 @@ print('%s/%s/%s' % (now.day, now.month, now.year))
 print('%s:%s:%s' % (now.hour, now.minute, now.second))
 
 
-========== FUNÇÕES (Modularização) ==========
+<b>===== FUNÇÕES (Modularização) =====</b>
 def imprimir():
     return "resposta da função"
 print(imprimir())
@@ -573,7 +573,7 @@ def soma(a=0,b=0):
 soma(4+5)
 
 
-========== TUPLAS ==========
+<b>===== TUPLAS =====</b>
 lanche = ("Hamburger","Suco","Refri")
 print(lanche[1])
 print(lanche[-2])
@@ -591,7 +591,7 @@ Deletar tupla:
 del(lanche)
 
 
-========== LISTAS (Lists) ==========
+<b>===== LISTAS (Lists) =====</b>
 animais = ["leão","gato","zebra"]
 animais[0] #leão
 len(animais) #3
@@ -649,7 +649,7 @@ lista.sort()
 lista.sort(key=len,reverse=True) #Descrescente
 
 
-========== LISTAS COMPOSTAS ==========
+<b>===== LISTAS COMPOSTAS =====</b>
 pessoas = [['Pedro',25],['Maria',19],['João',32]]
 print(pessoas[0][1]) #25
 print(pessoas[1][0]) #Maria
@@ -697,7 +697,7 @@ Ver valores(values):
 dic.values() #(['apple','berry','cherry'])
 
 
-========== MATRIZES ==========
+<b>===== MATRIZES =====</b>
 turma = [[5.0, 4.5, 6.1],[2.1, 6.5], [8.6, 7.0]]
 
 CRIAR MATRIZ:
@@ -767,7 +767,7 @@ print("A matriz possui %d linhas" % len(matriz))
 print("A matriz possui %d colunas" % len(matriz[0]))
 
 
-========== LAMBDAS ==========
+<b>===== LAMBDAS =====</b>
 g = lambda x: x * 2
 print(g(6)) #12
 '''
@@ -778,7 +778,7 @@ print(f(6))
 '''
 
 
-========== ERROS & EXCEÇÕES ==========
+<b>===== ERROS & EXCEÇÕES =====</b>
 try:
     operação
 except Exception as erro:
@@ -794,7 +794,7 @@ finally:
 #o finally ocorre com ou sem erro
 
 
-========== ATIV PRONTA NºS PRIMOS ==========
+<b>===== ATIV PRONTA NºS PRIMOS =====</b>
 numero = int(input())
 divisores = 0
 for divisor in range(1, numero):
@@ -810,7 +810,7 @@ else:
 </code></pre></small><br>
             <h4>OOP</h4>
 <small><pre><code>
-========== Criação Classe ==========
+<b>===== Criação Classe =====</b>
 class Carro(object): #object(padrão): classe herdada
     pass #indica classe vazia
 
@@ -826,7 +826,7 @@ fusca.idade = "novo"
 print(fusca.idade)
 
 
-========== Métodos(self) ==========
+<b>===== Métodos(self) =====</b>
 #self indica que o método é da própria classe
 class Carro(object):
     def dirigir(self):
@@ -844,7 +844,7 @@ class Carro(object):
     c2.dirigir()
     print(c2.estado) #usado
 
-========== Construtor(__init__) ==========
+<b>===== Construtor(__init__) =====</b>
 class Carro(object):
     def __init__(self,estado):
         self.estado = estado
@@ -853,7 +853,7 @@ class Carro(object):
     print(bmw.estado) #semi-novo
 
 
-========== Herança ==========
+<b>===== Herança =====</b>
 class Veiculo(object):
     estado = "novo"
     def getEstado(self):
@@ -873,7 +873,7 @@ from carro import Carro
 </code></pre></small><br>
             <h4>PDO</h4>
 <small><pre><code>
-========== BANCO DE DADOS ==========
+<b>===== BANCO DE DADOS =====</b>
 CREATE DATABASE agenda;
 USE agenda;
 CREATE TABLE contato (
@@ -883,11 +883,11 @@ CREATE TABLE contato (
     PRIMARY KEY(id)
 );
 
-========== CONEXÃO ==========
+<b>===== CONEXÃO =====</b>
 import mysql.connector
 mydb = mysql.connector.connect(host="localhost",user="root",passwd="",database="agenda")
 
-========== INSERIR ==========
+<b>===== INSERIR =====</b>
 mycursor = mydb.cursor()
 sql = "INSERT INTO contato(nome,telefone) VALUES (%s, %s)"
 val = [
@@ -899,14 +899,14 @@ val = [
 mycursor.executemany(sql, val)
 mydb.commit()
 
-========== SELECT ==========
+<b>===== SELECT =====</b>
 mycursor = mydb.cursor()
 mycursor.execute("SELECT * FROM contato")
 myresult = mycursor.fetchall()
 for x in myresult:
     print("Id:", x[0], "Nome:", x[1], "Tel:", x[2])
 
-========== DELETE ==========
+<b>===== DELETE =====</b>
 mycursor = mydb.cursor()
 sql = "DELETE FROM contato WHERE nome = %s"
 adr = ("Mateus", )
@@ -914,7 +914,7 @@ mycursor.execute(sql, adr)
 mydb.commit()
 print(mycursor.rowcount, "linhas deleted")
 
-========== UPDATE ==========
+<b>===== UPDATE =====</b>
 mycursor = mydb.cursor()
 sql = "UPDATE contato SET nome = %s WHERE nome = %s"
 val = ("Amyly", "Amy")
