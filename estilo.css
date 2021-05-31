@@ -1,12 +1,12 @@
-#logo {width: 7px; height: auto;}
+#logo {width: 11px; height: auto;}
 #menu {padding: 0%;}
 #titulo1 {padding: 80px 0% 20px 0%; text-align: center;}
+#serifada {font-family: 'Ovo', serif;}
 #textoPost {text-align: justify;}
 #btnLink {text-decoration: none;}
 
 /* MundoLinux */
-#titLinux {color: #ffeb3c;}
+#titLinux {color: #ffeb3c; font-family: 'Ovo', serif;}
 #fundoLinux {background-color: #222222; color: white;}
 #licao {background-color: #ffeb3c; color: #222222; border-radius: 0px 18px 18px 0px; margin: 0px 10px 0px 0px;}
-#capitulo {background-color: #222222; color: #ffff33; padding: 5px;}
-#cardMD {text-align: center;background: linear-gradient(90deg, #d53369 0%, #daae51 100%); padding: 20px 10px 20px 10px; border-radius: 30px 30px 0px 0px;}
+#capitulo {background-color: #222222; color: #ffff33; padding: 5px 10px 5px 10px;}
