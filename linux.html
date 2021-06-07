@@ -261,6 +261,19 @@
 <b>Listar conteúdo de arquivo com paginação:</b> less /etc/services (Less: 'n' pula pra próxima página, '/palavra' procura palavra)
 <b>Listar conteúdo de pasta:</b> ls nomepasta/
 </code></pre></small>
+            <p>Conceitos ls -l:</p>
+<small><pre><code>
+[tipoArquivo] [permissões(proprietário/grupo/outros)] [contagem linksFisicos] [proprietárioDoUsuario] [proprietárioDoGrupo] [tamanhoArquivoBouKB] [dthrRegistro] [nomeArquivo.extensao]
+<i><b>Exemplo (Arquivo):</b> -rw-r--r-- 1 root root 18047 Dec 20 2021 alternatives.log</i>
+<i><b>Exemplo (Diretório):</b> drwxr-x--- 2 root adm 4096 Dec 20 2021 apache2</i>
+<b>d:</b> Diretório
+<b>-:</b> Arquivo regular (Indica que é arquivo, não sendo diretório
+<b>l:</b> Link simbólico (Aponta para outro arquivo)
+<b>s:</b> Tomada (Comunicação entre processos)
+<b>p:</b> Tubo (Comunicação entre processos)
+<b>b:</b> Bloquear arquivo (Comunicação com hardware)
+<b>c:</b> Arquivo de caracteres (Comunicação com hardware)
+</code></pre></small>
         </div>
     </div>
     <div class="row">
