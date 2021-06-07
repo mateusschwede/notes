@@ -462,7 +462,7 @@ Acessar pasta de meus lançadores: nautilus ~/.local/share/applications
 <b>Utilitários:</b> Categories=Utility;
 </code></pre></small>
             <h4>Processos</h4>
-            <p>Todos processos possuem um <b>PID</b>(Process Identification), com prioridade de execução, que vai do -19 ao 20(mais significativo). Processos criados pelo usuário comum possuem, por padrão, prioridade 0. O root possui poder de alterar a prioridade. Outros termos relevantes são o <b>TTY</b>(Nome do terminal do processo), <b>TIME</b>(Total de tempo usado pelo processador no processo) e <b>CMD</b>(Comando que iniciou o processo).</p>
+            <p>Todos processos possuem um <b>PID</b>(Process Identification) e <b>PPID</b>(PID pai do processo. O ID do processo que iniciou este processo específico), com prioridade de execução, que vai do -19 ao 20(mais significativo). Processos criados pelo usuário comum possuem, por padrão, prioridade 0. O root possui poder de alterar a prioridade. Outros termos relevantes são o <b>TTY</b>(Nome do terminal do processo), <b>TIME</b>(Total de tempo usado pelo processador no processo) e <b>CMD</b>(Comando que iniciou o processo).</p>
 <small><pre><code>
 <b>Ver discos:</b> df -h / df -i(inodes-buracos de memória no hardware de cada partição, arquivos em branco tbm ocupam)
 <b>Discos e uso:</b> du -sh *(Ver tudo no diretório, do maior pro menor)
