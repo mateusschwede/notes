@@ -291,11 +291,19 @@ cd (change directory)
 <b>Volta à pasta raíz:</b> cd / (Na pasta raíz tem-se o acesso de todo o sistema)
 </code></pre></small>
             <h4>Caracteres globais(Globbing)</h4>
+            <p>Também conhecidos como Expressões Regulares, quando caracteres Regex são utilizados em conjunto.</p>
 <small><pre><code>
+<b>.</b> Referência a qualquer caractere único
 <b>*</b> Referência a conjunto de caracteres (presente no prompt do Windows)
-<b>?</b> Referência a apenas 1 caractere (presente no prompt do Windows)
+<b>?</b> Referência a apenas 1 caractere / O padrão anterior é opcional(Quando usado de forma composta) (presente no prompt do Windows)
 <b>[ ]</b> Referência de faixa de caracteres (busca faixas de caracteres, como a até m, u até l)
-<b>{ }</b> Referência a padrões de caracteres
+<b>[^ ]</b> Referência de faixa de caracteres ausentes
+<b>{ }</b> Referência a padrões de caracteres / Especifique correspondências mínimas, máximas ou exatas do padrão anterior(Quando usado de forma composta)
+<b>^</b> Se o 1º caractere do padrão, o padrão deve estar no início da linha para corresponder, senão, apenas um literal ^
+<b>$</b> Se o último caractere do padrão, o padrão deve estar no final da linha para corresponder, senão, apenas um literal $
+<b>+</b> 1 ou mais do padrão anterior
+<b>|</b> Alternativa ao <b>-</b> um 'ou' lógico
+<b>( )</b> Criar grupos
 <u>Obs</u>: Há diferença entre maiúsculas e minúsculas
 
 <b>Listar tudo que começa com 'x':</b> ls /etc/x*
@@ -310,6 +318,7 @@ cd (change directory)
 <b>Listar tudo que, por 2º, liste ou 'am' ou(OR) 'ul', depois qualquer coisa:</b> ls /etc/?{am,ul}*
 <b>Lista tudo que, por 2º, liste sequência do 'a' até 'm' ou do 'u' até 'l' (não é necessário o traço '-'), depois qualquer coisa:</b> ls /etc/?[am,ul]*
 <b>Listar tudo que termina com ou 'tab' ou 'swd':</b> ls /etc/*{tab,swd}
+<b>Procurar em 'arquivo.txt' termos que terminam com 'teste':</b> grep '$teste' arquivo.txt
 </code></pre></small>
             <h4>Manipulação de arquivos</h4>
 <small><pre><code>
