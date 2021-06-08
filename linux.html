@@ -480,13 +480,14 @@ Acessar pasta de meus lançadores: nautilus ~/.local/share/applications
 <small><pre><code>
 <b>Ver discos:</b> df -h / df -i(inodes-buracos de memória no hardware de cada partição, arquivos em branco tbm ocupam)
 <b>Discos e uso:</b> du -sh *(Ver tudo no diretório, do maior pro menor)
-<b>Ver processos:</b> ps -ef / pf -aux
-<b>Ver processos filtro:</b> ps -ef | grep init(Todos processos 'init')
+<b>Ver processos:</b> ps -ef / pf -aux / ps -r (-r para somente processos em execução)
+<b>Ver processos filtro:</b> ps -ef | grep init(Todos processos 'init') / ps --pid nº ou --ppid nº (Filtro por id)
 <b>Processos e detalhes:</b> top(Processos e detalhes da máquina)
+<b>Processos de usuário específico:</b> top -u usuario
 <b>Processos em tree:</b> pstree
 <b>Matar processo(cuidado!):</b> kill -9 PID(Nº processo)
 <b>Matar todos processos de software:</b> killall nomesoftware | pkill nomesoftware(associa palavra-chave informada)
-<b>Alterar prioridade:</b> renice numPrioridade -p PID
+<b>Alterar prioridade:</b> renice numPrioridade -p numPid / nice -n numPrioridade nomeProcesso (Nice prioridade vai do -20 à 19, padrão 0)
 </small></pre></code>
         </div>
     </div>
