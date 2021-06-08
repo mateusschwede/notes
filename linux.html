@@ -491,9 +491,98 @@ Acessar pasta de meus lançadores: nautilus ~/.local/share/applications
 </small></pre></code>
         </div>
     </div>
+    
+    
+    
     <div class="row">
         <div class="col-sm-8 shadow p-3 mb-5" id="licao">
-            <h3 id="serifada"><span id="capitulo">22. Pacotes</span></h3>
+            <h3 id="serifada"><span id="capitulo">22. Editor de Texto</span></h3>
+            <img src="anexos/linux/vim.png" width="90px" height="auto">
+            <p>O principal editor de texto CLI Linux é o <b>Vi</b>, antigo <i>Ex editor</i>, porém existem outros, como <b>nano</b> e  <b>emacs</b>. O <b>Vim</b> é a evolução do Vi, sendo o <b>gVim</b> a evolução do Vim, onde há presença de GUI. Para criar/editar arquivos no Vi, basta seguir o comando 'vi nomearquivo'. O editor abrirá no modo visual. Existem vários modos de operação, onde as teclas funcionam de diferentes maneiras, sendo o <b>Ex Mode</b> o modo inicial, ao abrir o arquivo (Também considerado como modo de visualização ou modo de Comandos). Para sair dos modos, basta usar a tecla 'Esc'. Ouve-se a frase de que um usuário estava usando o Vim há anos, não porque gostava, mas porque não sabia como sair do editor.</p>
+            <h4>Ex Mode</h4>
+            <p>O antigo Ex editor permitia ao usuário somente trabalhar de 1 linha por vez, sendo o novo Vi o antigo 'modo visual' do Ex, onde o usuário visualizava todas as linhas do arquivo em questão. A evolução incorporou o modo Ex ao Vi. Neste modo, considerado modo de Comandos, é realizada a manipulação do arquivo de forma geral, onde, logicamente, não é possível editar conteúdo do arquivo. Para os comandos abaixo, o <b>!</b> realizará o comando forçadamente, descartando warnings e consequências, como por exemplo <i>:q!</i> sairá forçadamente do arquivo, não salvando-o e não informando mensagem para tal.</p>
+<small><pre><code>
+<b>Comandos Ex Mode:</b>
+<b>:i</b> - Entrar no modo Inserção
+<b>:w</b> - Salvar o arquivo atual no sistema de arquivos
+<b>:w nome_arquivo</b> - Salvar uma cópia do arquivo atual como nome_arquivo
+<b>:w!</b> - Forçar salvar arquivo atual
+<b>:1</b> - Vá para a linha 1 ou qualquer nº fornecido
+<b>:e nome_arquivo</b> - Abrir nome_arquivo
+<b>:q</b> - Sair se nenhuma alteração for feita no arquivo (Se houver, avisará para salvar)
+<b>:q!</b> - Sair forçadamente, sem salvar as alterações no arquivo
+<b>:wq</b> - Sair e salvar arquivo
+</small></pre></code>
+            <h4>Modo de Inserção (i)</h4>
+            <p>Neste modo, o usuário poderá modificar o conteúdo interno do arquivo. Neste modo, utilize 'delete' para apagar conteúdo. Use 'esc' para sair do modo e voltar a utilizar o Ex Mode.</p>
+<small><pre><code>
+<b>Teclas de ações:</b>
+<b>a</b> - Entrar no modo de inserção logo após o cursor
+<b>A</b> - Entrar no modo de inserção no final da linha
+<b>i</b> - Entrar no modo de inserção logo antes do cursor
+<b>I</b> - Entrar no modo de inserção no início da linha
+<b>o</b> - Entrar no modo de inserção em uma linha em branco após o cursor
+<b>O</b> - Entrar no modo de inserção em uma linha em branco antes do cursor
+</small></pre></code>
+            <h4>Movimentações</h4>
+            <p>O Vim possibilita, além das teclas abaixo, movimentações por meio das setas direcionáveis.</p>
+<small><pre><code>
+<b>h</b> - Deixou um caractere
+<b>j</b> - Abaixo 1 linha
+<b>k</b> - Acima 1 linha
+<b>I</b> - 1 caractere à direita
+<b>w</b> - 1 palavra para a frente
+<b>b</b> - 1 palavra atrás
+<b>^</b> - Início da linha
+<b>$</b> - Fim da linha
+<u>Ex:</u> <b>3w</b> moverá o cursor 3 palavras para a direita
+<u>Ex2:</u> <b>5h</b> moverá o cursor 5 caracteres para a esquerda
+</small></pre></code>
+            <h4>Manipulações</h4>
+<small><pre><code>
+<b>d</b> - Deletar (Cut)
+<b>y</b> - Copiar (Copy)
+<b>P | p</b> - Colar (Paste)
+<u>Ex:</u> <b>3y</b> copia as 3 letras em frente (cursor + 2 letras seguintes). <p>p</p> colará, após o cursor, essas 3 letras
+</small></pre></code>
+            <h4>Exclusões</h4>
+<small><pre><code>
+<b>dd</b> - Excluir linha atual
+<b>3dd</b> - Excluir as próximas 3 linhas
+<b>dw</b> - Excluir palavra atual
+<b>d3w</b> - Excluir as próximas 3 palavras
+<b>d4h</b> - Excluir 4 caracteres à esquerda
+</small></pre></code>
+            <h4>Modificações</h4>
+<small><pre><code>
+<b>cc</b> - Mudar linha atual
+<b>cw</b> - Mudar palavra atual
+<b>c3w</b> - Mudar as próximas 3 palavras
+<b>c5h</b> - Mudar 5 caracteres para a esquerda
+</small></pre></code>
+            <h4>Arrancar (Yank)</h4>
+            <p>Yank coloca conteúdo no buffer sem excluí-lo.</p>
+<small><pre><code>
+<b>yy</b> - Arranque a linha atual
+<b>3yy</b> - Arranque as próximas 3 linhas
+<b>yw</b> - Arranque as próximas 3 linhas
+<b>y$</b> - Arranque até o fim da linha
+</small></pre></code>
+            <h4>Colocar (Colar)</h4>
+<small><pre><code>
+<b>p</b> - Colocar (colar) após o cursor
+<b>P</b> - Colocar antes do cursor
+</small></pre></code>
+            <h4>Pesquisa</h4>
+            <p>O Vi aceita termos e expressões regulares para pesquisa. Pesquise, no Ex Mode, a partir da posição atual do cursor, usando <b>/</b> para iniciar a pesquisa, digite o termo de pesquisa e pressione 'Enter' para pesquisar. O cursor se moverá para a 1ª correspondência que for encontrada. Use 'n' para seguir para as próximas correspondências, usando 'N' para retroceder. Para pesquisar para trás da posição do cursor, use <b>?</b> seguido do termo e pressione 'Enter'.</p>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-sm-8 shadow p-3 mb-5" id="licao">
+            <h3 id="serifada"><span id="capitulo">23. Pacotes</span></h3>
             <img src="anexos/linux/snapstore.jpeg" width="250px" height="auto">
             <p>Todo Linux trabalha com repositórios de pacotes, os <b>PPAs</b>(Personal Package Archive), que são atualizados em conjunto, de forma automática ou com 1 comando via terminal. Repositórios são servidores que hospedam pacotes. Determinados softwares não possuem seus repositórios inseridos por padrão nativos na Distro, portanto precisam ser acrescentados antes da instalação de seu determinado software. Toda Distro possui sua tabela de repositórios, que pode ser manipulada. Repositórios locais, no Brasil, tendem a ser mais rápidos que os demais, como o da Universidade Federal do Paraná por exemplo. Entre os principais gerenciadores de pacotes, tem-se o <b>apt</b> e <b>dpkg</b> para Distros Debian, o <b>yum</b> e <b>rpm</b> para Distros Red Hat, o <b>yast</b> e <b>zypp</b> para Distros Suse e o <b>pacman</b> para Distros Arch. Dentro desse assunto, tem-se também o <b>launchpad</b>, plataforma colaborativa, criada pela Canonical, para desenvolvimento e instalação de Software Livre. A lista de repositórios do Linux fica no arquivo <i>/etc/apt/sources.list</i>. O diretório <i>/etc/apt/sources.list.d</i> possui os repositórios de determinados softwares instalados no Linux. O comando <i>aptitude</i> serve como ferramenta CLI para gerenciamento de pacotes. O comando para procurar pacotes apt é <i>sudo apt search pacotePesquisado</i>.</p>
             <h5>Synaptic</h5>
@@ -506,27 +595,27 @@ Acessar pasta de meus lançadores: nautilus ~/.local/share/applications
     </div>
     <div class="row">
         <div class="col-sm-8 shadow p-3 mb-5" id="licao">
-            <h3 id="serifada"><span id="capitulo">23. Software terceiros</span></h3>
+            <h3 id="serifada"><span id="capitulo">24. Software terceiros</span></h3>
             <img src="anexos/linux/wine.png" width="55px" height="auto">
             <p>Wine(Wine Is Not Emulator) tem função de interpretar chamadas de sistemas de um software nativo Windows, traduzindo-o para Linux. É uma implementação livre da Api do Windows, com seus trabalhos em progresso. Juntamente com o Wine, tem-se o PlayOnLinux, aplicação de gestão de softwares Windows compatíveis com interpretação Linux, como jogos e outros softwares, como Microsoft Office e Adobe Photoshop por exemplo. Todo o processo de interpretação é realizado com Engenharia Reversa de produtos Windows, que não são abertos, o que dificulta no progresso de soluções do tipo. Para utilizar MacOS Catalina diretamente no Linux, via VM, pode-se baixar o snap Sosumi.</p>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-8 shadow p-3 mb-5" id="licao">
-            <h3 id="serifada"><span id="capitulo">24. Comunidade</span></h3>
+            <h3 id="serifada"><span id="capitulo">25. Comunidade</span></h3>
             <img src="anexos/linux/debianLogoDiver.png" width="100px" height="auto">
             <p>Todo Software Livre, assim como o Linux, possui em sua essência os conceitos de liberdade e igualdade. O Ubuntu tem como logotipo 3 pessoas dando-se as mãos, o termo Ubuntu é sul-africano zulu, em homenagem ao seu criador, significando "Eu sou o que sou porque nós somos", que fora até referenciada a Nelson Mandela. O próprio Debian possui seu logotipo personalizado, em homenagem à diversidade de cultura e gênero, conforme acima. O Kde possui uma das maiores e mais acolhedoras comunidades de desenvolvedores, tudo isso sem cobrar absolutamente nada. Linux é grátis, é aberto, é livre. Todas suas Distros possuem recursos avançados de acessibilidade, sendo muito recomendadas para a introdução à informática, àqueles que estão tendo seus primeiros contatos com um computador. Linux é leve, não necessita de hardware caro/avançado, a Distro ZorinOS Lite funciona, de forma completa, com apenas 300MB. O próprio slogan do Mint afirma "For freedom came elegance!"(Por liberdade e elegância!). O Dia da Liberdade de Software ocorre anualmente, a todo 3º sábado de setembro, homenageando o Software Livre. Outro grande marco é a Lei de Linus, que afirma "Given enough eyeballs, all bugs are shallow"(Dados olhos suficientes, todos os erros são óbvios), conceituando o fato de que todo software de código aberto pode ser aprimorado por outra pessoa(olho), assim como todo o conceito da ética hacker também envolvida. Organizações como a Free Software Foundation(FSF) têm lutado durante anos pela iniciativa do Software Livre, tendo como grande criações o projeto GNU, muito popularizado no mundo linux. Os termos FOSS(Free Open Source Software) e FLOSS(Free/Libre and Open Source Software) também estão presentes dentro da história do GNU e Software Livre.</p>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-8 shadow p-3 mb-5" id="licao">
-            <h3 id="serifada"><span id="capitulo">25. Rede</span></h3>
+            <h3 id="serifada"><span id="capitulo">26. Rede</span></h3>
             <p>Muitas distros Linux possuem sincronização automática com contas populares, como documentos do Google Drive e eventos do Hotmail e Facebook. Entre os comandos no terminal para gerenciamento de redes, tem-se o <b>route</b>, usado para visualizar e manipular a tabela de roteamento IP. O comando <b>ifconfig</b> é usado para gestão de informações sobre parâmetros TCP/IP, como endereçamento IP e Mac Address(Geralmente listado como HWaddr, no campo designado eth1 ou wlan0), geralmente dedicado à redes com fio. O comando <b>iwconfig</b> possui o mesmo padrão, sendo dedicado à redes sem fio. O comando <b>netstat</b> mostra todas as conexões de entrada e saída de rede, tabelas de roteamento e estatísticas do protocolo de rede. <b>netstat -atunp</b> mostra com detalhes de PID, TCP e UDP. No Mint, se quiser achar o Mac Address, basta digitar o comando <b>inxi -Nn</b>, na opção em que o state é "up", esse é o MacAddress de sua máquina. Outro comando é o <b>ping</b>, que mostra o tempo de envio/recebimento de resposta em rede, verificando assim a conectividade entre 2 máquinas (Ex: <i>ping -c 4 192.168.1.2</i> (Ping para esse IPV4 limitado em 4 iterações)). Por fim, o comando <b>host -opcao host</b> é um comando com função de localizar informações de rede, como, por exemplo, determinado IPV4(opção -4) ou IPV6(opção -6) de determinado host(localhost por exemplo).</p>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-8 shadow p-3 mb-5" id="licao">
-            <h3 id="serifada"><span id="capitulo">26. Usuários</span></h3>
+            <h3 id="serifada"><span id="capitulo">27. Usuários</span></h3>
             <p>O <b>administrador</b> possui permissão total de utilização do sistema, como gerenciar arquivos e diretórios, além de executar aplicações, instalá-las e removê-las. Também pode executar qualquer comando do terminal. O <b>usuário comum</b> é aquele padrão no Linux, para seu uso, possuindo algumas restrições em terminal e sistema. Entretanto, o usuário comum que instalou o Linux tem permissão para executar comandos/programas no modo administrador, utilizando o comando "sudo". O <b>usuário de sistema</b> é um usuário fictício criado durante a instalação de algum programa, a fim de executar tarefas específicas do mesmo. Não possui capacidade de login no sistema. Por fim, tem-se o <b>root</b>(sudo su), como sendo um "super-usuário", capaz de fazer absolutamente TUDO no Linux. O que difere o root de outros usuários é o fato dele ser o único capaz de gerenciar coisas fora de seu diretório pessoal.</p>
 <small><pre><code>
 <b>Atualizar senha de usuários:</b> <i>passwd [parâmetros] [utilizador]</i>
@@ -544,7 +633,7 @@ Acessar pasta de meus lançadores: nautilus ~/.local/share/applications
     </div>
     <div class="row">
         <div class="col-sm-8 shadow p-3 mb-5" id="licao">
-            <h3 id="serifada"><span id="capitulo">27. Terminais</span></h3>
+            <h3 id="serifada"><span id="capitulo">28. Terminais</span></h3>
             <img src="anexos/linux/terminal.png" width="250px" height="auto">
             <ul>
                 <li><b>Terminal(TTY):</b> Era um hardware(teletype ou terminal de vídeo) que os usuários utilizavam para se conectar ao mainframe;</li>
@@ -564,7 +653,7 @@ Acessar pasta de meus lançadores: nautilus ~/.local/share/applications
     </div>
     <div class="row">
         <div class="col-sm-8 shadow p-3 mb-5" id="licao">
-            <h3 id="serifada"><span id="capitulo">28. Repercussões</span></h3>
+            <h3 id="serifada"><span id="capitulo">29. Repercussões</span></h3>
             <img src="anexos/linux/linuxFoundation.png" width="180px" height="auto">
             <ul>
                 <li>Linux.org: <a id="btnLink" href="https://www.linux.org" target="blank">Acesse</a></li>
@@ -587,7 +676,7 @@ Acessar pasta de meus lançadores: nautilus ~/.local/share/applications
     </div>
     <div class="row">
         <div class="col-sm-8 shadow p-3 mb-5" id="licao">
-            <h3 id="serifada"><span id="capitulo">29. Software Livre</span></h3>
+            <h3 id="serifada"><span id="capitulo">30. Software Livre</span></h3>
             <img src="anexos/linux/opensoftware.png" width="150px" height="auto">
             <ul>
                 <li>Audacity(Edição áudio): <a id="btnLink" href="https://www.audacityteam.org" target="_blank">Acesse</a></li>
