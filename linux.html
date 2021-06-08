@@ -498,7 +498,7 @@ Acessar pasta de meus lançadores: nautilus ~/.local/share/applications
         <div class="col-sm-8 shadow p-3 mb-5" id="licao">
             <h3 id="serifada"><span id="capitulo">22. Editor de Texto</span></h3>
             <img src="anexos/linux/vim.png" width="90px" height="auto">
-            <p>O principal editor de texto CLI Linux é o <b>Vi</b>, antigo <i>Ex editor</i>, porém existem outros, como <b>nano</b> e  <b>emacs</b>. O <b>Vim</b> é a evolução do Vi, sendo o <b>gVim</b> a evolução do Vim, onde há presença de GUI. Para criar/editar arquivos no Vi, basta seguir o comando 'vi nomearquivo'. O editor abrirá no modo visual. Existem vários modos de operação, onde as teclas funcionam de diferentes maneiras, sendo o <b>Ex Mode</b> o modo inicial, ao abrir o arquivo (Também considerado como modo de visualização ou modo de Comandos). Para sair dos modos, basta usar a tecla 'Esc'. Ouve-se a frase de que um usuário estava usando o Vim há anos, não porque gostava, mas porque não sabia como sair do editor.</p>
+            <p>O principal editor de texto CLI Linux é o <b>Vi</b>, antigo <i>Ex editor</i>, porém existem outros, como <b>nano</b> e  <b>emacs</b>. O <b>Vim</b> é a evolução do Vi, sendo o <b>gVim</b>, também conhecido como <i>vimtutor</i>, a evolução do Vim, onde há presença de GUI. Para criar/editar arquivos no Vi, basta seguir o comando 'vi nomearquivo'. O editor abrirá no modo visual. Existem vários modos de operação, onde as teclas funcionam de diferentes maneiras, sendo o <b>Ex Mode</b> o modo inicial, ao abrir o arquivo (Também considerado como modo de Visualização ou modo de Comandos). Para sair dos modos, basta usar a tecla 'Esc'. Ouve-se a frase de que um usuário estava usando o Vim há anos, não porque gostava, mas porque não sabia como sair do editor.</p>
             <h4>Ex Mode</h4>
             <p>O antigo Ex editor permitia ao usuário somente trabalhar de 1 linha por vez, sendo o novo Vi o antigo 'modo visual' do Ex, onde o usuário visualizava todas as linhas do arquivo em questão. A evolução incorporou o modo Ex ao Vi. Neste modo, considerado modo de Comandos, é realizada a manipulação do arquivo de forma geral, onde, logicamente, não é possível editar conteúdo do arquivo. Para os comandos abaixo, o <b>!</b> realizará o comando forçadamente, descartando warnings e consequências, como por exemplo <i>:q!</i> sairá forçadamente do arquivo, não salvando-o e não informando mensagem para tal.</p>
 <small><pre><code>
@@ -512,41 +512,53 @@ Acessar pasta de meus lançadores: nautilus ~/.local/share/applications
 <b>:q</b> - Sair se nenhuma alteração for feita no arquivo (Se houver, avisará para salvar)
 <b>:q!</b> - Sair forçadamente, sem salvar as alterações no arquivo
 <b>:wq</b> - Sair e salvar arquivo
-</small></pre></code>
-            <h4>Modo de Inserção (i)</h4>
-            <p>Neste modo, o usuário poderá modificar o conteúdo interno do arquivo. Neste modo, utilize 'delete' para apagar conteúdo. Use 'esc' para sair do modo e voltar a utilizar o Ex Mode.</p>
-<small><pre><code>
-<b>Teclas de ações:</b>
-<b>a</b> - Entrar no modo de inserção logo após o cursor
-<b>A</b> - Entrar no modo de inserção no final da linha
-<b>i</b> - Entrar no modo de inserção logo antes do cursor
-<b>I</b> - Entrar no modo de inserção no início da linha
-<b>o</b> - Entrar no modo de inserção em uma linha em branco após o cursor
-<b>O</b> - Entrar no modo de inserção em uma linha em branco antes do cursor
-</small></pre></code>
+<b>:u</b> - Desfazer última ação
+<b>Cntrl+r</b> - Repetir/Refazer comando
+<b>:X</b> - Criptografa o arquivo
+</small></pre></code>            
             <h4>Movimentações</h4>
             <p>O Vim possibilita, além das teclas abaixo, movimentações por meio das setas direcionáveis.</p>
 <small><pre><code>
-<b>h</b> - Deixou um caractere
+<b>gg</b> - Ir para início do arquivo
+<b>G</b> - Ir para final do arquivo
+<b>36G</b> - Ir para a 36ª linha
+<b>h</b> - Voltar 1 caractere
+<b>H</b> - Ir para a 1ª linha exibida na tela
+<b>L</b> - Ir para a última linha exibida na tela
 <b>j</b> - Abaixo 1 linha
+<b>J</b> - Juntar linha atual com linha seguinte
 <b>k</b> - Acima 1 linha
 <b>I</b> - 1 caractere à direita
 <b>w</b> - 1 palavra para a frente
 <b>b</b> - 1 palavra atrás
 <b>^</b> - Início da linha
 <b>$</b> - Fim da linha
+<b>Cntrl+B</b> - Voltar 1 página
+<b>Cntrl+F</b> - Avançar 1 página
+<b>F1</b> - Exibir tela de ajuda (<i>:q</i> Sair da tela de ajuda)
 <u>Ex:</u> <b>3w</b> moverá o cursor 3 palavras para a direita
 <u>Ex2:</u> <b>5h</b> moverá o cursor 5 caracteres para a esquerda
 </small></pre></code>
             <h4>Manipulações</h4>
 <small><pre><code>
-<b>d</b> - Deletar (Cut)
-<b>y</b> - Copiar (Copy)
-<b>P | p</b> - Colar (Paste)
+<b>Y</b> - Copiar linha
+<b>s</b> - Deletar caractere atual e Colar linha
+<b>S</b> - Deletar linha atual e Colar linha
+<b>yw</b> - Copiar palavra sob cursor
+<b>dw</b> - Recortar palavra sob cursor
+<b>V</b> - Selecionar linha(s), usando teclas de movimentações para seleção
+<b>v</b> - Selecionar palavra(s), usando teclas de movimentações para seleção
+<b>y</b> - Copiar trecho selecionado
+<b>d</b> - Recortar trecho selecionado
+<b>p</b> - Colar trecho selecionado/copiado após o cursor
+<b>P</b> - Colar trecho selecionado/copiado antes do cursor
+<b>r</b> - Substituir caractere atual
+<b>R</b> - Substituir conjunto de caracteres
 <u>Ex:</u> <b>3y</b> copia as 3 letras em frente (cursor + 2 letras seguintes). <p>p</p> colará, após o cursor, essas 3 letras
 </small></pre></code>
             <h4>Exclusões</h4>
 <small><pre><code>
+<b>x</b> - Excluir caractere sob cursor
 <b>dd</b> - Excluir linha atual
 <b>3dd</b> - Excluir as próximas 3 linhas
 <b>dw</b> - Excluir palavra atual
@@ -561,20 +573,27 @@ Acessar pasta de meus lançadores: nautilus ~/.local/share/applications
 <b>c5h</b> - Mudar 5 caracteres para a esquerda
 </small></pre></code>
             <h4>Arrancar (Yank)</h4>
-            <p>Yank coloca conteúdo no buffer sem excluí-lo.</p>
+            <p>Yank coloca conteúdo no buffer sem excluí-lo (Copiar).</p>
 <small><pre><code>
 <b>yy</b> - Arranque a linha atual
 <b>3yy</b> - Arranque as próximas 3 linhas
 <b>yw</b> - Arranque as próximas 3 linhas
 <b>y$</b> - Arranque até o fim da linha
 </small></pre></code>
-            <h4>Colocar (Colar)</h4>
-<small><pre><code>
-<b>p</b> - Colocar (colar) após o cursor
-<b>P</b> - Colocar antes do cursor
-</small></pre></code>
             <h4>Pesquisa</h4>
-            <p>O Vi aceita termos e expressões regulares para pesquisa. Pesquise, no Ex Mode, a partir da posição atual do cursor, usando <b>/</b> para iniciar a pesquisa, digite o termo de pesquisa e pressione 'Enter' para pesquisar. O cursor se moverá para a 1ª correspondência que for encontrada. Use 'n' para seguir para as próximas correspondências, usando 'N' para retroceder. Para pesquisar para trás da posição do cursor, use <b>?</b> seguido do termo e pressione 'Enter'.</p>
+            <p>O Vi aceita termos e expressões regulares para pesquisa. Pesquise, no Ex Mode, a partir da posição atual do cursor, usando <b>/</b> para iniciar a pesquisa, digite o termo de pesquisa e pressione 'Enter' para pesquisar. O cursor se moverá para a 1ª correspondência que for encontrada. Use 'n' para seguir para as próximas correspondências, usando 'N' para retroceder. Para pesquisar para trás da posição do cursor, use <b>?</b> seguido do termo e pressione 'Enter'. No Ex mode, para substituir todas as palavras 'Caza' por 'Casa' utilize '<i>:%s/Caza/Casa/g</i>'.</p>
+            <h4>Modo de Inserção (i)</h4>
+            <p>Neste modo, o usuário poderá modificar o conteúdo interno do arquivo. Neste modo, utilize 'delete' para apagar conteúdo. Use 'esc' para sair do modo e voltar a utilizar o Ex Mode. O modo de Inserção, por padrão, faz a inserção de texto à esquerda do cursor. Caso desejar o contrário, informe a tecla <b>a</b> para inserção de texto à direita do cursor, ou seguindo as demais ações abaixo.</p>
+<small><pre><code>
+<b>Teclas de ações:</b>
+<b>a</b> - Entrar no modo de inserção logo após o cursor
+<b>A</b> - Entrar no modo de inserção no final da linha
+<b>i</b> - Entrar no modo de inserção logo antes do cursor
+<b>I</b> - Entrar no modo de inserção no início da linha
+<b>o</b> - Entrar no modo de inserção em uma linha em branco após o cursor
+<b>O</b> - Entrar no modo de inserção em uma linha em branco antes do cursor
+<b>Esc</b> - Sair do modo (Funciona para todos os modos)
+</small></pre></code>
         </div>
     </div>
 
