@@ -96,7 +96,8 @@
         <div class="col-sm-8 shadow p-3 mb-5" id="licao">
             <h3 id="serifada"><span id="capitulo">7. Desktop Environment</span></h3>
             <img src="anexos/linux/gnome.png" width="250px" height="auto">
-            <p>Distros Linux são construídas com GUIs Desktops previamente já desenvolvidas. Em muitas situações, o usuário pode escolher qual ambiente gráfico sua Distro possuirá. Os quesitos para a escolha são beleza e desempenho. Os termos Desktop Environment e Interface Gráfica não são a mesma coisa: o 1º engloba a interface em conjunto com os aplicativos da Distro. Uma Distro pode usar interface gráfica X, e aplicativos 'tema' de uma interface gráfica Y. Entre as principais encontram-se Gnome(GNU Network Object Model Environment, foto acima), Kde(K Desktop Environment), Cinnamon, Pantheon, Deepin, Unity(7 é desktop, 8 é também mobile), MATE, LXDE e XFCE, sendo essas últimas duas para hardware mais fraco. Esses ambientes são altamente personalizáveis, onde pode-se trocar tudo, com temas à instalar, ou até mesmo trocar pontos chave, como ícones, texto e cores, mantendo a essência do ambiente padrão.</p>
+            <p>Distros Linux são construídas com gerenciadores de janelas previamente já desenvolvidos. Em muitas situações, o usuário pode escolher qual ambiente gráfico sua Distro possuirá. Por exemplo, em uma distro com 3 usuários diferentes, cada um pode optar por utilizar um gerenciador de janelas diferente. Os gerenciadores de janelas são diferentes entre si no que diz respeito de recursos de uso no dispositivo, customização e aparência, configuração de menus, Interface Gráfica(GUI) e capacidade de uso de vários dispositivos. Os principais quesitos para a escolha são beleza e desempenho. Os termos Desktop Environment e Interface Gráfica não são a mesma coisa: o 1º engloba a interface em conjunto com os aplicativos da Distro. Uma Distro pode usar interface gráfica X, e aplicativos 'tema' de uma interface gráfica Y. Entre as GUIs principais encontram-se Gnome(GNU Network Object Model Environment, foto acima), Kde(K Desktop Environment), Cinnamon, Pantheon, Deepin, Unity(7 é desktop, 8 é também mobile), MATE, LXDE e XFCE, sendo essas últimas duas para hardware mais fraco. Esses ambientes são altamente personalizáveis, onde pode-se trocar tudo, com temas à instalar, ou até mesmo trocar pontos chave, como ícones, texto e cores.</p>
+            <i>"Sempre existirá uma distro Linux à sua cara. Se não houver, você poderá montá-la."</i>
         </div>
     </div>
     <div class="row">
@@ -125,7 +126,7 @@
         <div class="col-sm-8 shadow p-3 mb-5" id="licao">
             <h3 id="serifada"><span id="capitulo">10. Estrutura</span></h3>
             <img src="anexos/linux/arquivos.png" width="250px" height="auto">
-            <p>Derivado do Unix, no Linux não existem, de fato, programas/drivers/extensões: Tudo é considerado arquivo. Diretório/pasta são arquivos que contém arquivos. Por exemplo, todo movimento do mouse é baseado na incrementação de conteúdo no arquivo correspondente, fazendo com que o cursor mova-se de acordo com este conteúdo. Todo arquivo possui caminho de passagem, por meio de seus antecessores e sucessores. Caminho Absoluto origina-se a partir do root (<i>/</i>), até sua localização atual (Ex arquivo sysadmin: <i>/home/Documents/Admin/sysadmin</i>). Caminho Relativo origina-se a partir de um diretório qualquer como a localização atual (Ex arquivo sysadmin: <i>Admin/sysadmin</i>). O caractere <i>.</i> (ponto) representa o diretório atual. O caractere <i>~</i> representa o diretório home. O diretório <b>root/raíz(/)</b> é o primeiro de todos diretórios, ou seja, onde estão todos os diretórios e arquivos do Linux para acesso, sendo somente acessado pelo usuário root. Compõe-se dos seguintes diretórios:</p>
+            <p>Derivado do Unix, no Linux não existem, de fato, programas/drivers/extensões: Tudo é considerado arquivo. Diretório/pasta são arquivos que contém arquivos. Por exemplo, todo movimento do mouse é baseado na incrementação de conteúdo no arquivo correspondente, fazendo com que o cursor mova-se de acordo com este conteúdo. Todo arquivo possui caminho de passagem, por meio de seus antecessores e sucessores. Caminho Absoluto origina-se a partir do root (<i>/</i>), até sua localização atual (Ex arquivo sysadmin: <i>/home/Documents/Admin/sysadmin</i>). Caminho Relativo origina-se a partir de um diretório qualquer como a localização atual (Ex arquivo sysadmin: <i>Admin/sysadmin</i>). O caractere <i>.</i> (ponto) representa o diretório atual. O caractere <i>~</i> representa o diretório home. O diretório <b>root/raíz(/)</b> é o primeiro de todos diretórios, ou seja, onde estão todos os diretórios e arquivos do Linux para acesso, sendo somente acessado pelo usuário root(#). Todo arquivo oculto inicia-se com um ponto na frente. Linux dispensa uso de ambiente gráfico para ser operado, pois todo o sistema é dividido em camadas: Possui Kernel como centro do sistema, que comunica-se com o hardware, fazendo a interface de gerenciamento de usuários, aplicações e processos/execuções. Linux compõe-se da seguinte estrutura:</p>
             <ul>
                 <li><b>bin:</b> Onde estão os comandos do bash</li>
                 <li><b>boot:</b> Onde está o kernel</li>
@@ -286,7 +287,7 @@ Tempo: <i>dia_da_semana mês dia hora:minuto:segundo ano UTC</i>
 <b>Listar pastas e subpastas:</b> ls -R
 <b>Listar conteúdos dentro da pasta atual com informações:</b> ls -l
 <b>Listar conteúdos com informações aprimoradas de armazenamento:</b> ls -l -h
-<b>Listar com arquivos ocultos:</b> ls -a
+<b>Listar com arquivos ocultos:</b> ls -a (Todo arquivo oculto possui um ponto na frente)
 <b>Listar com informações incluindo armazenamento e arquivos ocultos e subpastas:</b> ls -Rlah (tipo do arquivo: d(diretório), arquivo comum(-), dispositivo de bloco(b), de caracteres(c), link(l))
 <b>Listar conteúdo de arquivo:</b> cat nomearquivo.tipo
 <b>Listar conteúdo de arquivo de trás pra frente:</b> tac nomearquivo.tipo
@@ -417,6 +418,7 @@ to-tgz -> Converte arquivo para .tgz
         <div class="col-sm-8 shadow p-3 mb-5" id="licao">
             <h3 id="serifada"><span id="capitulo">21. Bash 5: Gestão</span></h3>
             <h4>Permissões de acesso (chmod)</h4>
+            <p>De forma nativa, no Linux nada pode ser executado por padrão. Precisa-se aplicar permissão para tal.</p>
 <small><pre><code>
 <b>Exemplo:</b> -rw-r--r-- 1 sysadmin sysadmin 647 Dec 20 2017 hello.sh
 <b>Ordenação:</b>
@@ -653,7 +655,7 @@ Acessar pasta de meus lançadores: nautilus ~/.local/share/applications
     <div class="row">
         <div class="col-sm-8 shadow p-3 mb-5" id="licao">
             <h3 id="serifada"><span id="capitulo">27. Usuários</span></h3>
-            <p>O <b>administrador</b> possui permissão total de utilização do sistema, como gerenciar arquivos e diretórios, além de executar aplicações, instalá-las e removê-las. Também pode executar qualquer comando do terminal. O <b>usuário comum</b> é aquele padrão no Linux, para seu uso, possuindo algumas restrições em terminal e sistema. Entretanto, o usuário comum que instalou o Linux tem permissão para executar comandos/programas no modo administrador, utilizando o comando "sudo". O <b>usuário de sistema</b> é um usuário fictício criado durante a instalação de algum programa, a fim de executar tarefas específicas do mesmo. Não possui capacidade de login no sistema. Por fim, tem-se o <b>root</b>(sudo su), como sendo um "super-usuário", capaz de fazer absolutamente TUDO no Linux. O que difere o root de outros usuários é o fato dele ser o único capaz de gerenciar coisas fora de seu diretório pessoal.</p>
+            <p>O <b>administrador(sudo)</b> possui permissão total de utilização do sistema, como gerenciar arquivos e diretórios, além de executar aplicações, instalá-las e removê-las. Também pode executar qualquer comando do terminal. O <b>usuário comum($)</b> é aquele padrão no Linux, para seu uso, possuindo algumas restrições em terminal e sistema. Entretanto, o usuário comum que instalou o Linux tem permissão para executar comandos/programas no modo administrador, utilizando o comando "sudo". O <b>usuário de sistema</b> é um usuário fictício criado durante a instalação de algum programa, a fim de executar tarefas específicas do mesmo. Não possui capacidade de login no sistema. Por fim, tem-se o <b>root(#, id 0)</b>(sudo su), como sendo um "super-usuário", capaz de fazer absolutamente TUDO no Linux. O que difere o root de outros usuários é o fato dele ser o único capaz de gerenciar coisas fora de seu diretório pessoal. Por essa razão, priva-se a utilização com este usuário.</p>
 <small><pre><code>
 <b>Atualizar senha de usuários:</b> <i>passwd [parâmetros] [utilizador]</i>
 <u>Ex:</u> passwd -S sysadmin
