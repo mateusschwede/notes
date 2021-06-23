@@ -744,7 +744,37 @@ EXEMPLO: <b>1  | 1  | 1  | 0  | 0 | 0 | 0 | 0</b>, onde a soma dos true, <i>128+
                 <li>zsh (Z Shell)</li>
             </ul>
             <p>Para chamar outro tipo de shell, basta digitar o nome do mesmo, ou através do comando <i>chsh -s /bin/sh</i> (chsh - change shell). O comando <i>exit</i> voltará para o shell padrão.</p>
-            <h4></h4>
+            <h4>Variáveis:</h4>
+            <p>Espaços de memória que armazenam valores. Têm função de fornecimento de dados variáveis para o dispositivo, envolvendo seus programas. A chamada de conteúdo na tela do shell é através do comando <b>echo</b> (Ex: <i>echo olá</i>, mostrará olá na tela do shell). Para mostrar todas as variáveis do SO, têm-se os comandos <i>set</i>(locais), <i>env</i>(globais) e <i>printenv</i>.</p>
+            <ul>
+                <li><b>Variáveis Locais:</b> Disponíveis somente para o shell atual, ou seja, são voláteis, possuindo assim visibilidade restrita ao ambiente ao qual foi definida. Sintaxe: <i>nome=valor</i></li>
+                <li><b>Variáveis Globais (De ambiente)</b>: Não possuem restrição de ambiente, sendo visíveis e utilizáveis a todo o restante do sistema, como subprocessos, outros shells e demais ambientes em que não foi definida. Sintaxe: <i>export nome=valor</i></li>
+            </ul>
+<small><pre><code>
+<b>Exemplo:</b>
+idade=22
+export NOME=”mateus”
+echo $idade (Toda vez que idade for chamada, representará seu valor, no caso, 22)
+unset idade (Desabilita variável)
+
+<b>Exemplo2:</b>
+Variável global HOME (echo $HOME)
+</small></pre></code>
+            <h5>Variáveis Globais:</h5>
+            <ul>
+                <li>HOME: Identifica o diretório do usuário</li>
+                <li>HOSTTYPE: Identifica a plataforma do dispositivo</li>
+                <li>HISTSIZE: Armazena limite de comando armazenados em histórico (Histfile)</li>
+                <li>HISTFILE: Identifica local onde histórico de comandos é armazenado</li>
+                <li>HISTFILESIZE: Armazena limite de linhas que o histórico (Histfile) pode possuir</li>
+                <li>SHELL: Identifica o shell atual</li>
+                <li>TERM: Identifica o terminal atual</li>
+                <li>USER: Identifica o usuário atual</li>
+                <li>PATH: Identifica caminhos que determinam onde os diretórios devem pesquisar (Separados por <b>:</b>)</li>
+                <li>PS1: Representa as informações exibidas no prompt(Na linha do shell para comando, como <i>usuario@nomeMaquina:~$</i>)</li>
+                <li>LOGNAME: Identifica nome do usuário logado atual</li>
+                <li>OSTYPE: Identifica SO atual</li>
+            </ul>
         </div>
     </div>
     <div class="row">
