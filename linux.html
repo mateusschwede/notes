@@ -126,7 +126,28 @@
         <div class="col-sm-8 shadow p-3 mb-5" id="licao">
             <h3 id="serifada"><span id="capitulo">10. Estrutura</span></h3>
             <img src="anexos/linux/arquivos.png" width="250px" height="auto">
-            <p>Derivado do Unix, no Linux não existem, de fato, programas/drivers/extensões: Tudo é considerado arquivo. Diretório/pasta são arquivos que contém arquivos. Por exemplo, todo movimento do mouse é baseado na incrementação de conteúdo no arquivo correspondente, fazendo com que o cursor mova-se de acordo com este conteúdo. Todo arquivo possui caminho de passagem, por meio de seus antecessores e sucessores. Caminho Absoluto origina-se a partir do root (<i>/</i>), até sua localização atual (Ex arquivo sysadmin: <i>/home/Documents/Admin/sysadmin</i>). Caminho Relativo origina-se a partir de um diretório qualquer como a localização atual (Ex arquivo sysadmin: <i>Admin/sysadmin</i>). O caractere <i>.</i> (ponto) representa o diretório atual. O caractere <i>~</i> representa o diretório home. O diretório <b>root/raíz(/)</b> é o primeiro de todos diretórios, ou seja, onde estão todos os diretórios e arquivos do Linux para acesso, sendo somente acessado pelo usuário root(#). Todo arquivo oculto inicia-se com um ponto na frente. Linux dispensa uso de ambiente gráfico para ser operado, pois todo o sistema é dividido em camadas(layers): Possui Kernel como centro do sistema, que comunica-se com o hardware, fazendo a interface de gerenciamento de usuários, aplicações e processos/execuções. Linux compõe-se da seguinte estrutura:</p>
+            <p>Derivado do Unix, no Linux não existem, de fato, programas/drivers/extensões: Tudo é considerado arquivo. Diretório/pasta são arquivos que contém arquivos. Por exemplo, todo movimento do mouse é baseado na incrementação de conteúdo no arquivo correspondente, fazendo com que o cursor mova-se de acordo com este conteúdo. Todo arquivo possui caminho de passagem, por meio de seus antecessores e sucessores. Caminho Absoluto origina-se a partir do root (<i>/</i>), até sua localização atual (Ex arquivo sysadmin: <i>/home/Documents/Admin/sysadmin</i>). Caminho Relativo origina-se a partir de um diretório qualquer como a localização atual (Ex arquivo sysadmin: <i>Admin/sysadmin</i>). O caractere <i>.</i> (ponto) representa o diretório atual. O caractere <i>~</i> representa o diretório home. O diretório <b>root/raíz(/)</b> é o primeiro de todos diretórios, ou seja, onde estão todos os diretórios e arquivos do Linux para acesso, sendo somente acessado pelo usuário root(#). Todo arquivo oculto inicia-se com um ponto na frente. Linux dispensa uso de ambiente gráfico para ser operado, pois todo o sistema é dividido em camadas(layers): Possui Kernel como centro do sistema, que comunica-se com o hardware, fazendo a interface de gerenciamento de usuários, aplicações e processos/execuções.</p>
+            <h4>Funcionamento da máquina:</h4>
+            <ol>
+                <li>Aperta botão power</li>
+                <li>Aciona BIOS/MBR</li>
+                <li>Gerenciador de Boot (Grub2)</li>
+                <li>Usuário escolhe o Kernel</li>
+                <li>Kernel chamará processo init, que carregará os serviços</li>
+                <li>Gerenciador de login, que dará acesso direto ao interpretador de comandos</li>
+                <li>Desktop Environment</li>
+            </ol>
+            <h4>Camadas distro Linux:</h4>
+            <ol>
+                <li><b>Hardware:</b> Ambientação física da máquina</li>
+                <li><b>Kernel Linux:</b> Núcleo mediador entre hardware e camadas superiores</li>
+                <li><b>Sistema Operacional:</b> Camada que auxilia e hospeda todos os programas das camadas superiores</li>
+                <li><b>Teletypes (tty1, tty2, tty3, tty4, tty5, tty6):</b> Terminais virtuais, responsável por interpretar/converter os comandos(programas) introduzidos pelo usuário à máquina. Por padrão, tem-se 6 ttys, mas ao todo tem-se 63 (<i>ls /dev tty*</i>)</li>
+                <li><b>DM (Display Manager):</b> Gerenciamento de logins, selecionando tipo de ambiente gráfico</li>
+                <li><b>Ambiente de Trabalho (Desktop Environment):</b> Ambiente de hospedagem dos programas, cujo funcionamento depende do uso de Interface Gráfica(GUI)</li>
+            </ol>
+            <h4>Estrutura de arquivos:</h4>
+            <p>Linux compõe-se da seguinte estrutura de arquivos:</p>
             <ul>
                 <li><b>bin:</b> Onde estão os comandos do bash</li>
                 <li><b>boot:</b> Onde está o kernel</li>
