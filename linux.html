@@ -245,10 +245,11 @@
 
 <b>Desligamento:</b> <i>shutdown [parâmetros] tempo [mensagem]</i>
 Tempo: <i>dia_da_semana mês dia hora:minuto:segundo ano UTC</i>
-<b>Ex:</b> shutdown now
+<b>Ex(Imediato):</b> shutdown now OU halt -p OU poweroff OU init 0
 <b>Ex2:</b> shutdown +1 "Goodbye World!"
 <b>Ex3:</b> shutdown -h 21:42 (Agendado desligamento para às 21:42)
-<b>Reiniciar:</b> reboot
+<b>Reiniciar(Imediato):</b> shutdown -r OU init 6 OU reboot OU cntrl+alt+del (Algumas distros)
+<b>Reiniciar daqui a 10min:</b> shutdown -r 10
 </code></pre></small>
         </div>
     </div>
@@ -624,7 +625,7 @@ Acessar pasta de meus lançadores: nautilus ~/.local/share/applications
         <div class="col-sm-8 shadow p-3 mb-5" id="licao">
             <h3 id="serifada"><span id="capitulo">23. Pacotes</span></h3>
             <img src="anexos/linux/snapstore.jpeg" width="250px" height="auto">
-            <p>Todo Linux trabalha com repositórios de pacotes, os <b>PPAs</b>(Personal Package Archive), que são atualizados em conjunto, de forma automática ou com 1 comando via terminal. Repositórios são servidores que hospedam pacotes. Determinados softwares não possuem seus repositórios inseridos por padrão nativos na Distro, portanto precisam ser acrescentados antes da instalação de seu determinado software. Toda Distro possui sua tabela de repositórios, que pode ser manipulada. Repositórios locais, no Brasil, tendem a ser mais rápidos que os demais, como o da Universidade Federal do Paraná por exemplo. Entre os principais gerenciadores de pacotes, tem-se o <b>apt</b> e <b>dpkg</b> para Distros Debian, o <b>yum</b> e <b>rpm</b> para Distros Red Hat(Red Hat Package Manager), o <b>yast</b> e <b>zypp</b> para Distros Suse e o <b>pacman</b> para Distros Arch. Dentro desse assunto, tem-se também o <b>launchpad</b>, plataforma colaborativa, criada pela Canonical, para desenvolvimento e instalação de Software Livre. A lista de repositórios do Linux fica no arquivo <i>/etc/apt/sources.list</i>. O diretório <i>/etc/apt/sources.list.d</i> possui os repositórios de determinados softwares instalados no Linux. O comando <i>aptitude</i> serve como ferramenta CLI para gerenciamento de pacotes. O comando para procurar pacotes apt é <i>sudo apt search pacotePesquisado</i>.</p>
+            <p>Todo Linux trabalha com repositórios de pacotes, os <b>PPAs</b>(Personal Package Archive), que são atualizados em conjunto, de forma automática ou com 1 comando via terminal. Repositórios são servidores que hospedam pacotes. Determinados softwares não possuem seus repositórios inseridos por padrão nativos na Distro, portanto precisam ser acrescentados antes da instalação de seu determinado software. Toda Distro possui sua tabela de repositórios, que pode ser manipulada. Repositórios locais, no Brasil, tendem a ser mais rápidos que os demais, como o da Universidade Federal do Paraná por exemplo. Entre os principais gerenciadores de pacotes, tem-se o <b>apt</b> e <b>dpkg</b> para Distros Debian, o <b>yum</b> e <b>rpm</b> para Distros Red Hat(Red Hat Package Manager), o <b>yast</b> e <b>zypp</b> para Distros Suse e o <b>pacman</b> para Distros Arch. Dentro desse assunto, tem-se também o <b>launchpad</b>, plataforma colaborativa, criada pela Canonical, para desenvolvimento e instalação de Software Livre. A lista de repositórios do Linux fica no arquivo <i>/etc/apt/sources.list</i>. O diretório <i>/etc/apt/sources.list.d</i> possui os repositórios de determinados softwares instalados no Linux. O comando <i>aptitude</i> serve como ferramenta CLI para gerenciamento de pacotes. <i>aptitude search nomeprograma</i> localiza pacotes disponíveis. O comando <i>aptitude install nomeprograma</i> instala pacotes disponíveis. O comando para procurar pacotes apt é <i>sudo apt search pacotePesquisado</i>.</p>
             <h5>Synaptic</h5>
             <p>Gerenciador de pacotes criados por Brasileiros para uso em conjunto com o sistema de empacotamento Codecs, funcionando como, basicamente, um front-end para o apt, que serve para manipulação de repositórios, para baixar instalações de programas/pacotes. Serve mais para atualização de pacotes em geral, assim como até mesmo a Distro em si.</p>
             <h5>Snap e Flatpack</h5>
