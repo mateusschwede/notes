@@ -733,6 +733,18 @@ EXEMPLO: <b>1  | 1  | 1  | 0  | 0 | 0 | 0 | 0</b>, onde a soma dos true, <i>128+
             <p>No ambiente gráfico, para acessar a tty, basta utilizar as teclas <i>cntrl+alt+Fnumtty</i> (Ex: cntrl+alt+F2 acessa a tty2). Para alternar entre as ttys, basta utilizar <i>alt+Fnumtty</i> (Ex: alt+F4 altera para a tty4). As ttys 1 à 6 são modo texto. A tty7 é Interface Gráfica, então <i>alt+F7</i> voltará para a tty7.</p>
             <h4>Sessões:</h4>
             <p>Após iniciar um dispositivo Linux modo texto, tem-se a conexão a uma sessão, que solicitará login. Uma sessão é composta pelos dados gerados após o login de um usuário válido cadastrado no sistema e efetuado com sucesso no ambiente. Tudo o que o usuário fizer, como comandos, ficará armazenado na respectiva sessão. Um mesmo usuário pode possuir várias sessões abertas ao mesmo tempo. As sessões são iniciadas através dos terminais, que são caracterizados como um terminal virtual somente em modo texto (Pseudo-terminais), inicializados a partir de um modo gráfico. A única diferença entre eles é a forma de acesso: Em um SO modo texto, o acesso é direto. Em um SO gráfico, basta acessar o Bash (Cada Bash aberto, ao mesmo tempo, é a criação de um terminal virtual). Programas como <b>ssh</b>, <b>telnet</b> acessam terminais virtuais remotamente ou localmente. Comandos como <b>sudo su</b> e <b>bash</b> abrem sessões, comandos como <b>exit</b>, <b>cntrl+d</b> e <b>logout</b>(algumas distros) saem da respectiva sessão, onde usados repetitivamente sairão das sessões abertas do usuário até o ponto de sair do Bash.</p>
+            <h4>Shell</h4>
+            <p>Entre as camadas do dispositivo, tem-se Hardware, Kernel, Programas e Shell. Shell é a camada de acesso ao sistema básico, que pode ser acessado por modo gráfico ou texto, sendo totalmente personalizado, como automatização de tarefas repetitivas, através de Alias e recursos. Há diversos tipos de shell disponíveis para distribuições GNU/Linux:</p>
+            <ul>
+                <li>sh (Bourne Shell, desenvolvido por Stephen R. Bourne)</li>
+                <li>bash (Bourne Again Shell, evolução do sh)</li>
+                <li>csh (C Shell)</li>
+                <li>tcsh (Turbo C Shell, evolução do csh)</li>
+                <li>ksh (Korn Shell)</li>
+                <li>zsh (Z Shell)</li>
+            </ul>
+            <p>Para chamar outro tipo de shell, basta digitar o nome do mesmo, ou através do comando <i>chsh -s /bin/sh</i> (chsh - change shell). O comando <i>exit</i> voltará para o shell padrão.</p>
+            <h4></h4>
         </div>
     </div>
     <div class="row">
