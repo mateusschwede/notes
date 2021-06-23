@@ -775,6 +775,35 @@ Variável global HOME (echo $HOME)
                 <li>LOGNAME: Identifica nome do usuário logado atual</li>
                 <li>OSTYPE: Identifica SO atual</li>
             </ul>
+            <h4>Arquivos de configuração shell:</h4>
+            <h5>Arquivos de variáveis:</h5>
+            <p>Arquivos que contém variáveis, alias e demais comandos do sistema. Alias é um apelido que pode ser dado à determinada rotina, para que haja maior facilidade no momento de sua chamada.</p>
+<small><pre><code>
+<b>Exemplo Alias:</b>
+alias j="ls -l"
+j (ao digitar j será executado seu valor, no caso, o comando descrito)
+unalias j (descarta o alias)
+</small></pre></code>
+            <ol>
+                <b>Geral:</b>
+                <li><i>/etc/profile:</i> Arquivo lido antes que os demais, no momento do login, por definir e armazenar comandos e variáveis para usuários do sistema.</li>
+                <li><i>/etc/environment:</i> Arquivo de distros <i>.deb</i> para definição de variáveis globais, sendo inicializado no momento do login, juntamente com o profile.</li>
+                <br><b>Diretório home (Usuário específico):</b>
+                <li><i>.bashrc</i></li>
+                <li><i>.profile</i></li>
+                <li><i>._profile</i> (Algumas distros)</li>
+                <li><i>._login</i></li>
+                <li><i>._logout</i></li>
+            </ol>
+            <p>Voltar ao padrão, utiliza-se o comando <b>source</b>, como <i>source /etc/profile</i>.</p>
+            <h5>Arquivos de exibição de mensagens:</h5>
+            <p>Responsáveis por armazenar as mensagens padrão que o Linux traz consigo.</p>
+            <ol>
+                <li><i>/etc/issue:</i> Armazena mensagens antes do login do sistema</li>
+                <li><i>/etc/motd:</i> Armazena mensagens após o login do sistema</li>
+                <li><i>/etc/issue.net:</i> Armazena mensagens via rede, logins remotos</li>
+                <li><i>~/.bash_history:</i> Armazena histórico dos comandos</li>
+            </ol>
         </div>
     </div>
     <div class="row">
