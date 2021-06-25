@@ -249,6 +249,9 @@
             <p>Assim como GUI (Graphical User Interface), há também CLI (Command Line Interface), onde há somente texto e manuseio via teclado. Como exemplo, o Bash (Bourne Again Shell) é um dos interpretadores/shell de comandos Linux <small>(bash --version)</small>, geralmente o interpretador padrão. O interpretador de comandos tem função de interpretar comandos, juntamente com seus argumentos/parâmetros, executáveis localizados na pasta <i>bin</i>. Diferente do prompt do Windows, no Linux os comandos são externos, nos quais o interpretador tem a função de somente interpretá-los e executá-los. Linux opera de forma case-sensitive. Todo comando é minúsculo (exceção de nome de arquivos e pastas). CLI são muito usados para administração de servidores Linux para computação em nuvem. Todo comando possui parâmetros ou argumentos, dos quais modificam a saída do comando, parâmetros são seguidos de 1 traço e letra ou 2 traços e palavra. Argumento não possui traços antecessores. <small>(Ex: cd .. (cd comando, .. argumento))</small>. No caso, parâmetro altera o comportamento do comando, argumento especifica algo para o comando agir. Alguns autores, ao invés de 'parâmetros', nomeiam 'opções'. Todo SO possui uma entrada padrão(teclado) e saída padrão(tela e saída de erro). Essa, por sua vez, pode ser modificada, como a saída para criação de um arquivo ou algo do tipo. No Linux tudo é arquivo, inclusive os diretórios(pastas). Um pendrive, quando plugado, torna-se um arquivo, salvo na pasta 'device', assim como o teclado. Vale lembrar que esse conteúdo é baseado em distros <b>debian</b>!</p>
             <p><b>Sintaxe:</b> comando -parametro argumento</p>
             <p>No caso, o parâmetro modificará a saída do comando para determinado argumento.</p>
+            <ul>
+                <li>Site identificador de comandos: <a id="btnLink" href="https://explainshell.com" target="_blank">Clique</a></li>
+            </ul>
             <h4>Atalhos úteis</h4>
             <ul>
                 <li><b>Tab</b> autocompleta o comando</li>
@@ -290,6 +293,8 @@
 <b>Histórico dos comandos do 2 ao 6:</b> fc -l 2 6
 <b>Histórico dos comandos executados na última hora:</b> fc -l h
 <b>Repetir comando x do history:</b> !34 (executará o comando 34 do history)
+<b>Informações sobre hardware:</b> lshw
+<b>Executar 2 comandos em 1 só linha (;):</b> cd ../ ; ls | grep passwd
 
 <b>Desligamento:</b> <i>shutdown [parâmetros] tempo [mensagem]</i>
 Tempo: <i>dia_da_semana mês dia hora:minuto:segundo ano UTC</i>
@@ -565,7 +570,7 @@ Acessar pasta de meus lançadores: nautilus ~/.local/share/applications
         <div class="col-sm-8 shadow p-3 mb-5" id="licao">
             <h3 id="serifada"><span id="capitulo">22. Editor de Texto</span></h3>
             <img src="anexos/linux/vim.png" width="90px" height="auto">
-            <p>O principal editor de texto CLI Linux é o <b>Vi</b>, antigo <i>Ex editor</i>, porém existem outros, como <b>nano</b> e  <b>emacs</b>. O <b>Vim</b> é a evolução do Vi, sendo o <b>gVim</b>, também conhecido como <i>vimtutor</i>, a evolução do Vim, onde há presença de GUI. Para criar/editar arquivos no Vi, basta seguir o comando 'vi nomearquivo'. O editor abrirá no modo visual. Existem vários modos de operação, onde as teclas funcionam de diferentes maneiras, sendo o <b>Ex Mode</b> o modo inicial, ao abrir o arquivo (Também considerado como modo de Visualização ou modo de Comandos). Para sair dos modos, basta usar a tecla 'Esc'. Ouve-se a frase de que um usuário estava usando o Vim há anos, não porque gostava, mas porque não sabia como sair do editor.</p>
+            <p>O principal editor de texto CLI Linux é o <b>Vi</b>, antigo <i>Ex editor</i>, porém existem outros, como <b>nano</b> e  <b>emacs</b>. O <b>Vim</b>(Vi Improved) é a evolução do Vi, sendo o <b>gVim</b>, também conhecido como <i>vimtutor</i>, a evolução do Vim, onde há presença de GUI. Para criar/editar arquivos no Vi, basta seguir o comando 'vi nomearquivo'. O editor abrirá no modo visual. Existem vários modos de operação, onde as teclas funcionam de diferentes maneiras, sendo o <b>Ex Mode</b> o modo inicial, ao abrir o arquivo (Também considerado como modo de Visualização ou modo de Comandos). Para sair dos modos, basta usar a tecla 'Esc'. Ouve-se a frase de que um usuário estava usando o Vim há anos, não porque gostava, mas porque não sabia como sair do editor.</p>
             <h4>Ex Mode</h4>
             <p>O antigo Ex editor permitia ao usuário somente trabalhar de 1 linha por vez, sendo o novo Vi o antigo 'modo visual' do Ex, onde o usuário visualizava todas as linhas do arquivo em questão. A evolução incorporou o modo Ex ao Vi. Neste modo, considerado modo de Comandos, é realizada a manipulação do arquivo de forma geral, onde, logicamente, não é possível editar conteúdo do arquivo. Para os comandos abaixo, o <b>!</b> realizará o comando forçadamente, descartando warnings e consequências, como por exemplo <i>:q!</i> sairá forçadamente do arquivo, não salvando-o e não informando mensagem para tal.</p>
 <small><pre><code>
