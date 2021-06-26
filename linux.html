@@ -355,12 +355,14 @@ Tempo: <i>dia_da_semana mês dia hora:minuto:segundo ano UTC</i>
 <i><b>Exemplo (Arquivo):</b> -rw-r--r-- 1 root root 18047 Dec 20 2021 alternatives.log</i>
 <i><b>Exemplo (Diretório):</b> drwxr-x--- 2 root adm 4096 Dec 20 2021 apache2</i>
 <b>d:</b> Diretório
-<b>-:</b> Arquivo regular (Indica que é arquivo, não sendo diretório
+<b>-:</b> Arquivo regular (Indica que é arquivo, não sendo diretório)
 <b>l:</b> Link simbólico (Aponta para outro arquivo)
-<b>s:</b> Tomada (Comunicação entre processos)
-<b>p:</b> Tubo (Comunicação entre processos)
-<b>b:</b> Bloquear arquivo (Comunicação com hardware)
-<b>c:</b> Arquivo de caracteres (Comunicação com hardware)
+<b>s:</b> Arquivo é um socket (Comunicação entre processos)
+<b>p:</b> Arquivo é um fifo, named pipe (Comunicação entre processos. Fifo- FistIn FirstOut, muito usado para filas de elementos em lista de espera)
+<b>b:</b> Arquivo é dispositivo de bloco (Comunicação com hardware, com buffer: região temporária de memória para escrita/leitura)
+<b>c:</b> Arquivo é dispositivo de caractere (Comunicação com hardware, sem buffer)
+<b>u:</b> O mesmo que <i>c</i>
+
 </code></pre></small>
             <h4>Impressão (Básica)</h4>
 <small><pre><code>
@@ -392,13 +394,19 @@ cd (change directory)
 <b>*</b> Referência a conjunto de caracteres (presente no prompt do Windows)
 <b>?</b> Referência a apenas 1 caractere / O padrão anterior é opcional(Quando usado de forma composta) (presente no prompt do Windows)
 <b>[ ]</b> Referência de faixa de caracteres (busca faixas de caracteres, como a até m, u até l)
+<b>[a-z][0-9]</b> Caracteres de 'a' até 'z', caracteres de '0' até '9'
+<b>[a,z][0,9]</b> Caracteres 'a' e 'z', caracteres '0' e '9'
+<b>[a-z,1,0]</b> Caracteres de 'a' até 'z' ou '1' ou '0'
 <b>[^ ]</b> Referência de faixa de caracteres ausentes
 <b>{ }</b> Referência a padrões de caracteres / Especifique correspondências mínimas, máximas ou exatas do padrão anterior(Quando usado de forma composta)
+<b>x{ab,01}</b> Sequência de caracteres 'xab' ou 'x01'
+<b>x{a-c,f}</b> Sequência de caracteres 'xa', 'xb', 'xc' ou 'xf'
 <b>^</b> Se o 1º caractere do padrão, o padrão deve estar no início da linha para corresponder, senão, apenas um literal ^
 <b>$</b> Se o último caractere do padrão, o padrão deve estar no final da linha para corresponder, senão, apenas um literal $
 <b>+</b> 1 ou mais do padrão anterior
 <b>|</b> Alternativa ao <b>-</b> um 'ou' lógico
 <b>( )</b> Criar grupos
+<b>!</b> Exclui caractere da operação
 <u>Obs</u>: Há diferença entre maiúsculas e minúsculas
 
 <b>Listar tudo que começa com 'x':</b> ls /etc/x*
