@@ -931,9 +931,43 @@ unalias j (descarta o alias)
     <!--MundoLinux Avançado-->
     <div class="row">
         <div class="col-sm-8 shadow p-3 mb-5" id="licao2">
-            <h3 id="serifada"><span id="capitulo">32. Novidades</span></h3>
-            <img src="anexos/linux/tuxMascote.png" width="80px" height="auto">
-            <p>Novidades e conteúdo avançado, em breve...</p>
+            <h3 id="serifada"><span id="capitulo">32. Diretórios</span></h3>
+            <h5>/ (Raíz):</h5>
+            <p>Dentro do diretório raíz(<b>/</b>) encontram-se todos os demais diretórios.</p>
+            <h5>/bin:</h5>
+            <p>Todos os comandos alias são referenciados neste diretório. Por exemplo, o comando alias <i>ls</i> refere-se ao <i>/bin/ls</i>. Neste caso, <i>ls /boot/grub</i> é o mesmo que <i>/bin/ls /boot/grub</i>.</p>
+            <h5>/boot:</h5>
+            <p>Onde ficam os arquivos estáticos necessários para a inicialização do sistema, como o gerenciador de boot, como o <i>grub</i>.</p>
+            <h5>/dev:</h5>
+            <p>Onde ficam todos os dispositivos, como periféricos, onde a comunicação ocorre por meio de links. Por exemplo, o dispositivo controlador do mouse no cursor na tela. Neste diretório encontram-se o hd(<i>sda</i> ou <i>vda</i>), periféricos, ttys. Ao acessar o arquivo de escrita em disco, pode-se utilizar o <i>ctrl+h</i> para resetar e sair do mesmo.</p>
+            <h5>/etc:</h5>
+            <p>Onde ficam todos os arquivos de configuração do sistema, como scripts de inicialização, tabela de sistema de arquivos, configuração de serviços, configuração de usuários. Arquivos de configuração de usuário como o <i>/etc/passwd</i>, que possui todas as informações dos usuários, cujas informações, separadas por '<b>:</b>', constitui, respectivamente, login do usuário, senha (Geralmente x, que determina que a senha está em <i>/etc/shadow</i>, ou <b>*</b>, determinando que o login está desabilitado, se linha em branco, determinando que a conta não possuirá senha), UID (User Identification), GID (Group Identification), GComs (Comentários do usuário, separados por vírgulas, como nome, id, telefone, endereço), localização home do usuário (Como <i>/home/nomeUsuario</i>) e, por fim, shell do usuário (Como <i>/bin/bash</i> ou <i>/usr/sbin/nologin</i>). No arquivo <i>/etc/shadow</i> encontram-se os seguintes campos para cada usuário: login do usuário, senha criptografada, data em nº de dias, desde 1970 até atual, com relação à última modificação de senha, nº de dias antes do sistema permitir nova modificação de senha, nº de dias que usuário pode permanecer com a mesma senha, nº de dias antes da expiração de senha, nº de dias após expiração de senha, nº de dias, de 1970 até expiração da senha e, por fim, reservado para campo futuro (Esses últimos 3 campos geralmente encontram-se em branco). Neste contexto, o comando <b>pwconv</b> é usado para criar o arquivo <i>/etc/shadow</i> a partir do <i>/etc/passwd</i>. O comando <b>pwunconv</b> realiza a operação inversa. O comando <i>getent passwd</i> é mais recomendado para abrir o passwd, do que acessar diretamente o arquivo em si.</p>
+            <h5>/lib:</h5>
+            <p>Onde ficam todas as bibliotecas compartilhadas, módulos do kernel. Bibliotecas (Libraries) são funções que podem ser utilizadas por programas (como se fossem dll's). Cada kernel possui suas respectivas libraries (também chamados de módulos). Para conferir todos os módulos do kernel, tem-se o comando <i>ls /lib/modules/$(uname -r)/kernel</i>.</p>
+            <h5>/media:</h5>
+            <p>Serve de ponto de montagem para mídias removíveis, como cdrom, floppy, câmeras, hd externos, pendrives, entre outros.</p>
+            <h5>/mnt:</h5>
+            <p>Usado para montagem temporária de sistemas de arquivos, como Windows, outros GNU/Linux. Este diretório geralmente encontra-se vazio, caso a máquina não possua tais operações no momento.</p>
+            <h5>/opt:</h5>
+            <p>Geralmente utilizado por programas proprietários, até mesmo não licenciados pela GNU.</p>
+            <h5>/sbin:</h5>
+            <p>Onde ficam todos os super binários, comandos utilizados pelos administradores do sistema, essenciais ao mesmo. Comandos de inicialização, reparação, restauração, recuperação, verificação de informações preciosas (Rede).</p>
+            <h5>/srv:</h5>
+            <p>Usado para gerenciar dados de serviços(Services), fornecidos pelo sistema. Geralmente administradores utilizam tal diretório para instalação de servidores, como servidor web (Ex: <i>/srv/www</i>), servidores ftp (Ex: <i>/srv/ftp</i>), entre outros serviços.</p>
+            <h5>/tmp:</h5>
+            <p>Onde ficam os arquivos temporários, pois é um diretório virtual, volátil assim que o sistema é reiniciado. Geralmente utilizado a fins didáticos, para não criar 'lixo' no interior do sistema. Diretório com pequenos arquivos, como informações de downloads, entre outros arquivos temporários.</p>
+            <h5>/usr:</h5>
+            <p>Subdiretório, onde tem-se, em seu interior, diretórios como <i>/bin</i>, <i>/lib</i>, <i>/sbin</i>, <i>/share</i>, <i>/src</i>, entre outros diretórios, que são pertencentes ao /usr. Dessa forma, possui programas que não são essenciais ao sistema, mas que seguem o padrão GNU, como por exemplo browsers, desktop environment, código fonte do kernel (<i>/src</i>).</p>
+            <h5>/var:</h5>
+            <p>Diretório de informações variáveis, onde tem-se logs, arquivos de impressão (<i>/spool</i>).</p>
+            <h5>/proc:</h5>
+            <p>Diretório virtual, volátil, onde tem-se todas as informações da máquina, como <i>cpuinfo</i>, <i>meminfo</i>, <i>version</i>, <i>partitions</i>, entre outros. Tem-se também os processos em execução, representados por seus respectivos PID, ou seja, em números.</p>
+            <h5>/sys:</h5>
+            <p>Mesmo que <i>/proc</i>, mas dispõe de categorias, sendo assim mais organizado.</p>
+            <h5>/home:</h5>
+            <p>Contém arquivos pessoais dos usuários no sistema. Caso o sistema tenha 10 usuários, terão-se 10 pastas dentro de <i>/home</i>, cada uma com os arquivos pessoais de cada respectivo usuário.</p>
+            <h5>/root:</h5>
+            <p>Contém arquivos pessoais do usuário administrador root, onde pode-se manipular interface de rede, usuários e grupos, alterar prioridades, entre outras funções avançadas fundamentais ao sistema.</p>
         </div>
     </div>
 
