@@ -294,8 +294,10 @@
 <b>Histórico dos comandos executados na última hora:</b> fc -l h
 <b>Repetir comando x do history:</b> !34 (executará o comando 34 do history)
 <b>Informações sobre hardware:</b> lshw
+<b>Ver versão do kernel:</b> uname -r (Release)
+<b>Comentário no Bash:</b> #comentario aqui (Comentários não afetam/executam programas)
 <b>Executar 2 comandos em 1 só linha (;):</b> cd ../ ; ls | grep passwd
-
+<b>Ver detalhes do kernel:</b> uname -a
 <b>Desligamento:</b> <i>shutdown [parâmetros] tempo [mensagem]</i>
 Tempo: <i>dia_da_semana mês dia hora:minuto:segundo ano UTC</i>
 <b>Ex(Imediato):</b> shutdown now OU halt -p OU poweroff OU init 0
@@ -312,8 +314,8 @@ Tempo: <i>dia_da_semana mês dia hora:minuto:segundo ano UTC</i>
             <h4>Criar</h4>
 <small><pre><code>
 <b>Criar pasta:</b> mkdir nomepasta1 nomepasta2 nomepasta3
-<b>Criar pasta com subpasta:</b> mkdir -p pasta1/pasta2/pasta\ 3/ (o '\' representa não interpretar o próximo espaço em branco como um comando, pode-se trocar o nome do arquivo com espaços por seu nome por extenso entre aspas duplas)
-<b>Criar arquivo:</b> touch nomearquivo.tipo
+<b>Criar pasta com subpasta:</b> mkdir -p pasta1/pasta2/pasta\ 3/ (o '\' representa não interpretar o próximo espaço em branco como um comando, pode-se trocar o nome do arquivo com espaços por seu nome por extenso entre aspas duplas. O -p não sobrescreve, caso o nome já exista)
+<b>Criar arquivo:</b> touch nomearquivo.tipo (O comando touch nasceu com o intuito de modificar a data de criação e modificação de um arquivo)
 <b>Comando mais direto:</b> touch Documents/Cursos/Linux/Modulo\ 1/aula1.txt
 </code></pre></small>
             <h4>Editar</h4>
@@ -325,9 +327,9 @@ Tempo: <i>dia_da_semana mês dia hora:minuto:segundo ano UTC</i>
 <small><pre><code>
 <b>Remover pasta/arquivo(cuidado):</b> rm nomepasta/ ('rm' remove definitivamente, não move à lixeira)
 <b>Remover arquivox na pasta Documents:</b> rm Documents/arquivox
-<b>Remover pasta:</b> rmdir nomepasta/
+<b>Remover pasta:</b> rmdir nomepasta/ ((Diretórios com conteúdo precisam ser removidos de forma recursiva, pois seu conteúdo também será removido))
 <b>Remover pasta com conteúdo dentro:</b> rm -rf nomepasta
-<b>Remover sob confirmação:</b> rm -i nomepasta
+<b>Remover sob confirmação:</b> rm -i nomepasta (Interactive)
 <b>Remover sob confirmação com mais de 4 arquivos:</b> rm -I (i maiúsculo, -r apaga recursivamente, f forçar)
 </code></pre></small>
             <h4>Apelidos</h4>
@@ -426,7 +428,9 @@ cd (change directory)
 </code></pre></small>
             <h4>Manipulação de arquivos</h4>
 <small><pre><code>
-<b>Copiar e colar arquivo:</b> cp nomearquivo.tipo Pastadestino/ (no modo gráfico basta segurar o cntrl e mover o arquivo para o destino)
+<b>Copiar e colar arquivo:</b> cp nomearquivo.tipo diretorioDestino/
+<b>Copiar e colar recursivamente:</b> cp -r diretorioOrigem diretorioDestino
+<b>Copiar e colar, mantendo metadados:</b> cp -p diretorioOrigem diretorioDestino (Mantém usuárioCriador, datas, horas, de criação intactas)
 <b>Mover arquivo:</b> mv nomearquivo.tipo Pastadestino/
 <b>Renomear arquivo:</b> mv pastaantiga/ Pastanova/
 <b>Copiar e colar tudo com final '.conf' para dentro de uma pasta:</b> cp /etc/*.conf Pastadestino/
@@ -579,7 +583,7 @@ Acessar pasta de meus lançadores: nautilus ~/.local/share/applications
         <div class="col-sm-8 shadow p-3 mb-5" id="licao">
             <h3 id="serifada"><span id="capitulo">22. Editor de Texto</span></h3>
             <img src="anexos/linux/vim.png" width="90px" height="auto">
-            <p>O principal editor de texto CLI Linux é o <b>Vi</b>, antigo <i>Ex editor</i>, porém existem outros, como <b>nano</b> e  <b>emacs</b>. O <b>Vim</b>(Vi Improved) é a evolução do Vi, sendo o <b>gVim</b>, também conhecido como <i>vimtutor</i>, a evolução do Vim, onde há presença de GUI. Para criar/editar arquivos no Vi, basta seguir o comando 'vi nomearquivo'. O editor abrirá no modo visual. Existem vários modos de operação, onde as teclas funcionam de diferentes maneiras, sendo o <b>Ex Mode</b> o modo inicial, ao abrir o arquivo (Também considerado como modo de Visualização ou modo de Comandos). Para sair dos modos, basta usar a tecla 'Esc'. Ouve-se a frase de que um usuário estava usando o Vim há anos, não porque gostava, mas porque não sabia como sair do editor.</p>
+            <p>O principal editor de texto CLI Linux é o <b>Vi</b>, antigo <i>Ex editor</i>, porém existem outros, como <b>nano</b>, <b>emacs</b>, Joe, Pico, Mcedit, ed, entre outros. O <b>Vim</b>(Vi Improved) é a evolução do Vi, sendo o <b>gVim</b>, também conhecido como <i>vimtutor</i>, a evolução do Vim, onde há presença de GUI. Para criar/editar arquivos no Vi, basta seguir o comando 'vi nomearquivo'. O editor abrirá no modo visual. Existem vários modos de operação, onde as teclas funcionam de diferentes maneiras, sendo o <b>Ex Mode</b> o modo inicial, ao abrir o arquivo (Também considerado como modo de Visualização ou modo de Comandos). Para sair dos modos, basta usar a tecla 'Esc'. Ouve-se a frase de que um usuário estava usando o Vim há anos, não porque gostava, mas porque não sabia como sair do editor.</p>
             <h4>Ex Mode</h4>
             <p>O antigo Ex editor permitia ao usuário somente trabalhar de 1 linha por vez, sendo o novo Vi o antigo 'modo visual' do Ex, onde o usuário visualizava todas as linhas do arquivo em questão. A evolução incorporou o modo Ex ao Vi. Neste modo, considerado modo de Comandos, é realizada a manipulação do arquivo de forma geral, onde, logicamente, não é possível editar conteúdo do arquivo. Para os comandos abaixo, o <b>!</b> realizará o comando forçadamente, descartando warnings e consequências, como por exemplo <i>:q!</i> sairá forçadamente do arquivo, não salvando-o e não informando mensagem para tal. Abaixo, seguem comandos do Ex Mode:</p>
 <small><pre><code>
