@@ -581,9 +581,8 @@ Acessar pasta de meus lançadores: nautilus ~/.local/share/applications
             <img src="anexos/linux/vim.png" width="90px" height="auto">
             <p>O principal editor de texto CLI Linux é o <b>Vi</b>, antigo <i>Ex editor</i>, porém existem outros, como <b>nano</b> e  <b>emacs</b>. O <b>Vim</b>(Vi Improved) é a evolução do Vi, sendo o <b>gVim</b>, também conhecido como <i>vimtutor</i>, a evolução do Vim, onde há presença de GUI. Para criar/editar arquivos no Vi, basta seguir o comando 'vi nomearquivo'. O editor abrirá no modo visual. Existem vários modos de operação, onde as teclas funcionam de diferentes maneiras, sendo o <b>Ex Mode</b> o modo inicial, ao abrir o arquivo (Também considerado como modo de Visualização ou modo de Comandos). Para sair dos modos, basta usar a tecla 'Esc'. Ouve-se a frase de que um usuário estava usando o Vim há anos, não porque gostava, mas porque não sabia como sair do editor.</p>
             <h4>Ex Mode</h4>
-            <p>O antigo Ex editor permitia ao usuário somente trabalhar de 1 linha por vez, sendo o novo Vi o antigo 'modo visual' do Ex, onde o usuário visualizava todas as linhas do arquivo em questão. A evolução incorporou o modo Ex ao Vi. Neste modo, considerado modo de Comandos, é realizada a manipulação do arquivo de forma geral, onde, logicamente, não é possível editar conteúdo do arquivo. Para os comandos abaixo, o <b>!</b> realizará o comando forçadamente, descartando warnings e consequências, como por exemplo <i>:q!</i> sairá forçadamente do arquivo, não salvando-o e não informando mensagem para tal.</p>
+            <p>O antigo Ex editor permitia ao usuário somente trabalhar de 1 linha por vez, sendo o novo Vi o antigo 'modo visual' do Ex, onde o usuário visualizava todas as linhas do arquivo em questão. A evolução incorporou o modo Ex ao Vi. Neste modo, considerado modo de Comandos, é realizada a manipulação do arquivo de forma geral, onde, logicamente, não é possível editar conteúdo do arquivo. Para os comandos abaixo, o <b>!</b> realizará o comando forçadamente, descartando warnings e consequências, como por exemplo <i>:q!</i> sairá forçadamente do arquivo, não salvando-o e não informando mensagem para tal. Abaixo, seguem comandos do Ex Mode:</p>
 <small><pre><code>
-<b>Comandos Ex Mode:</b>
 <b>:i</b> - Entrar no modo Inserção
 <b>:w</b> - Salvar o arquivo atual no sistema de arquivos
 <b>:w nome_arquivo</b> - Salvar uma cópia do arquivo atual como nome_arquivo
@@ -597,7 +596,7 @@ Acessar pasta de meus lançadores: nautilus ~/.local/share/applications
 <b>Cntrl+r</b> - Repetir/Refazer comando
 <b>:X</b> - Criptografa o arquivo
 </small></pre></code>            
-            <h4>Movimentações</h4>
+            <h5>Movimentações</h5>
             <p>O Vim possibilita, além das teclas abaixo, movimentações por meio das setas direcionáveis.</p>
 <small><pre><code>
 <b>gg</b> - Ir para início do arquivo
@@ -620,7 +619,7 @@ Acessar pasta de meus lançadores: nautilus ~/.local/share/applications
 <u>Ex:</u> <b>3w</b> moverá o cursor 3 palavras para a direita
 <u>Ex2:</u> <b>5h</b> moverá o cursor 5 caracteres para a esquerda
 </small></pre></code>
-            <h4>Manipulações</h4>
+            <h5>Manipulações</h5>
 <small><pre><code>
 <b>Y</b> - Copiar linha
 <b>s</b> - Deletar caractere atual e Colar linha
@@ -637,7 +636,7 @@ Acessar pasta de meus lançadores: nautilus ~/.local/share/applications
 <b>R</b> - Substituir conjunto de caracteres
 <u>Ex:</u> <b>3y</b> copia as 3 letras em frente (cursor + 2 letras seguintes). <b>p</b> colará, após o cursor, essas 3 letras
 </small></pre></code>
-            <h4>Exclusões</h4>
+            <h5>Exclusões</h5>
 <small><pre><code>
 <b>x</b> - Excluir caractere sob cursor
 <b>dd</b> - Excluir linha atual
@@ -646,14 +645,14 @@ Acessar pasta de meus lançadores: nautilus ~/.local/share/applications
 <b>d3w</b> - Excluir as próximas 3 palavras
 <b>d4h</b> - Excluir 4 caracteres à esquerda
 </small></pre></code>
-            <h4>Modificações</h4>
+            <h5>Modificações</h5>
 <small><pre><code>
 <b>cc</b> - Mudar linha atual
 <b>cw</b> - Mudar palavra atual
 <b>c3w</b> - Mudar as próximas 3 palavras
 <b>c5h</b> - Mudar 5 caracteres para a esquerda
 </small></pre></code>
-            <h4>Arrancar (Yank)</h4>
+            <h5>Arrancar (Yank)</h5>
             <p>Yank coloca conteúdo no buffer sem excluí-lo (Copiar).</p>
 <small><pre><code>
 <b>yy</b> - Arranque a linha atual
@@ -661,12 +660,12 @@ Acessar pasta de meus lançadores: nautilus ~/.local/share/applications
 <b>yw</b> - Arranque as próximas 3 linhas
 <b>y$</b> - Arranque até o fim da linha
 </small></pre></code>
-            <h4>Pesquisa</h4>
+            <h5>Pesquisa</h5>
             <p>O Vi aceita termos e expressões regulares para pesquisa. Pesquise, no Ex Mode, a partir da posição atual do cursor, usando <b>/</b> para iniciar a pesquisa, digite o termo de pesquisa e pressione 'Enter' para pesquisar. O cursor se moverá para a 1ª correspondência que for encontrada. Use 'n' para seguir para as próximas correspondências, usando 'N' para retroceder. Para pesquisar para trás da posição do cursor, use <b>?</b> seguido do termo e pressione 'Enter'. No Ex mode, para substituir todas as palavras 'Caza' por 'Casa' utilize '<i>:%s/Caza/Casa/g</i>'.</p>
             <h4>Modo de Inserção (i)</h4>
             <p>Neste modo, o usuário poderá modificar o conteúdo interno do arquivo. Neste modo, utilize 'delete' para apagar conteúdo. Use 'esc' para sair do modo e voltar a utilizar o Ex Mode. O modo de Inserção, por padrão, faz a inserção de texto à esquerda do cursor. Caso desejar o contrário, informe a tecla <b>a</b> para inserção de texto à direita do cursor, ou seguindo as demais ações abaixo.</p>
 <small><pre><code>
-<b>Teclas de ações:</b>
+<b>Teclas de ações no Ex Mode:</b>
 <b>a</b> - Entrar no modo de inserção logo após o cursor
 <b>A</b> - Entrar no modo de inserção no final da linha
 <b>i</b> - Entrar no modo de inserção logo antes do cursor
