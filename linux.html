@@ -976,8 +976,25 @@ unalias j (descarta o alias)
     <div class="row">
         <div class="col-sm-8 shadow p-3 mb-5" id="licao2">
             <h3 id="serifada"><span id="capitulo">33. Localização</span></h3>
-            <h5>/ (Raíz):</h5>
-            <p>Dentro do diretório raíz(<b>/</b>) encontram-se todos os demais diretórios.</p>
+            <h4>Comando find:</h4>
+            <p>Utilizado para encontrar arquivos no sistema. Sintaxe: <i>find [diretório] [opção/expressão]</i></p>
+<small><pre><code>
+<b>Procurar arquivos pela 'extensão':</b> find /etc/ -name *.conf
+<b>Limitar recursividade em diretórios:</b> find /etc/ -maxdepth 1 -name *.conf (Apenas 1 diretório, ou seja, o atual)
+<b>Procurar arquivos acessados minutos atrás:</b> find / -amin -5 (Últimos 5min)
+<b>Procurar arquivos acessados dias atrás:</b> find / -atime 10 (Acessados a 10 dias atrás)
+<b>Procurar arquivos por id do usuário:</b> find / -uid 1000 (Arquivos do usuário id 1000)
+<b>Procurar arquivos por nome do usuário:</b> find / -user root (Arquivos do usuário root)
+<b>Procurar arquivos por permissão:</b> find / -perm 644 (Arquivos de permissão 644)
+<b>Procurar arquivos por tamanho:</b> find / -size +50M (Arquivos com mais de 50 megabytes)
+<b>Procurar arquivos por tipo (bloco, caractere, diretório...):</b> find /dev -type b (Arquivos de bloco)
+<b>Procurar arquivos vazios:</b> find / -type f -empty (Arquivos regulares vazios)
+<b>Procurar diretórios modificados nos últimos dias:</b> find / -mtime 50 (Últimos 50 dias)
+<b>Procurar diretórios modificados entre datas:</b> find / -mtyme +50 -mtyme -100 (Entre últimos 50 e 100 dias)
+<b>Procurar arquivos executando nos últimos minutos:</b> find / -cmin -60 (Últimos 60min)
+</small></pre></code>
+            <h4>Comando locate:</h4>
+            <p>Também utilizado para pesquisa, de forma mais simples, porém não utiliza recursividade para as buscas, mas sim uma base de dados (updatedb). Algumas distros não possuem este comando. Exemplo: <i>locate howto</i>.</p>
         </div>
     </div>
 
