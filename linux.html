@@ -581,7 +581,7 @@ Acessar pasta de meus lançadores: nautilus ~/.local/share/applications
     </div>
     <div class="row">
         <div class="col-sm-8 shadow p-3 mb-5" id="licao">
-            <h3 id="serifada"><span id="capitulo">22. Editor de Texto</span></h3>
+            <h3 id="serifada"><span id="capitulo">22. Editor de Texto 1</span></h3>
             <img src="anexos/linux/vim.png" width="90px" height="auto">
             <p>O principal editor de texto CLI Linux é o <b>Vi</b>, antigo <i>Ex editor</i>, porém existem outros, como <b>nano</b>, <b>emacs</b>, Joe, Pico, Mcedit, ed, entre outros. O <b>Vim</b>(Vi Improved) é a evolução do Vi, sendo o <b>gVim</b>, também conhecido como <i>vimtutor</i>, a evolução do Vim, onde há presença de GUI. Para criar/editar arquivos no Vi, basta seguir o comando 'vi nomearquivo'. O editor abrirá no modo visual. Existem vários modos de operação, onde as teclas funcionam de diferentes maneiras, sendo o <b>Ex Mode</b> o modo inicial, ao abrir o arquivo (Também considerado como modo de Visualização ou modo de Comandos). Para sair dos modos, basta usar a tecla 'Esc'. Ouve-se a frase de que um usuário estava usando o Vim há anos, não porque gostava, mas porque não sabia como sair do editor.</p>
             <h4>Ex Mode</h4>
@@ -995,6 +995,39 @@ unalias j (descarta o alias)
 </small></pre></code>
             <h4>Comando locate:</h4>
             <p>Também utilizado para pesquisa, de forma mais simples, porém não utiliza recursividade para as buscas, mas sim uma base de dados (updatedb). Algumas distros não possuem este comando. Exemplo: <i>locate howto</i>.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8 shadow p-3 mb-5" id="licao2">
+            <h3 id="serifada"><span id="capitulo">34. Editor de Texto 2</span></h3>
+            <h4>nano:</h4>
+            <p>Editor de texto simples padrão do Debian, baseado no Joe. É carregado automaticamente no modo de edição. Para utilizar o editor basta digitar o comando nano, podendo juntamente com o nome do arquivo que deseja criar/editar. Para abrir arquivo somente leitura, basta informar <i>nano -v arquivo</i>. Na legenda <b>^</b> é <i>Ctrl</i> e <b>M</b> é <i>alt</i>. Além dos atalhos típicos, o nano possui outros atalhos:</p>
+<small><pre><code>
+<b>Ctrl+g</b>: Ajuda
+<b>Ctrl+k</b>: Recorta a linha
+<b>Ctrl+u</b>: Cola linha copiada
+<b>Ctrl+_</b>: Vai para linha informada
+<b>Ctrl+y</b>: Sobe 1 página
+<b>Ctrl+v</b>: Desce 1 página
+<b>Alt+/</b>: Vai para última linha
+<b>Alt+\</b>: Vai para 1ª linha
+<b>Ctrl+a</b>: Move cursor para início da linha
+<b>Ctrl+e</b>: Move cursor para fim da linha
+<b>Ctrl+c</b>: Apresenta informações sobre a posição do cursor (<i>Ctrl+c</i> em procedimento cancela o mesmo)
+<b>Ctrl+j</b>: Texto justificado
+<b>Ctrl+t</b>: Aciona corretor ortográfico (Se o comando <i>spell</i> estiver instalado)
+<b>Ctrl+w</b>: Pesquisar (<i>Alt+w</i> segue a próxima ocorrência)
+<b>Ctrl+w, texto, depois Ctrl+r, novoTexto</b>: Substituir texto (<i>y</i> seleciona texto, <i>a</i> substitui todas ocorrências)
+<b>Alt+a</b>: Ativa/desativa selecionar texto (<i>Setas</i> fazem a seleção quando ativado)
+<b>Alt+6</b>: Copia seleção
+<b>Ctrl+o</b>: Salva arquivo (Pode salvar uma cópia do mesmo em outro local, com outro nome também, 'Salvar Como')
+<b>Ctrl+x</b>: Sair do editor
+<b>Alt+u</b>: Desfaz última alteração (Undo)
+<b>Alt+e</b>: Refaz última alteração, se desfeita (Redo)
+O nano possibilita a abertura de diversos arquivos ao mesmo tempo.
+<b>Alt+,</b>: Move para arquivo à esquerda (Ou <i>Alt+&lt;</i>)
+<b>Alt+.</b>: Move para arquivo à direita (Ou <i>Alt+&gt;</i>)
+</small></pre></code>
         </div>
     </div>
 
