@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ovo&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="anexos/icons/logoTit.png">
+    <link rel="stylesheet" href="estilo.css">
+    <title>UB Social</title>
+</head>
+<body id="fundo">
+<div class="container-fluid">
+
+
+    <div class="row">
+        <div class="col-sm-12" id="menu">
+            <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light shadow">
+                <div class="container-fluid">
+                    <a id="serifada" class="navbar-brand" href="index.html"><img src="anexos/icons/logo.png" id="logo"> UB Social</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="contato.html">Contato</a></li>
+                            <li class="nav-item"><a class="nav-link" href="livros.html">Livros</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12" id="titulo1">
+            <img src="anexos/linux/tux.png" width="70px" height="auto">
+            <h1 id="serifada">Mundo Linux</h1>
+        </div>
+        <div class="col-sm-12 text-center">
+            <p>Curiosidades sobre o mundo do Software Livre Linux. Cada card lhe apresentará novos conceitos do enredo que envolve o Linux, com objetivo de expandir seus horizontes e instigá-lo(a) a aderir alternativas de Software Livre. O conteúdo é totalmente gratuito e livre para compartilhamento e uso. Os comandos Bash aqui utilizados foram baseados em distros '.deb'.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            
+            <!--Card exemplo/modelo-->
+            <div class="card">
+                <h4 class="card-header" id="serifada">Titulo</h4>
+                <div class="card-body">
+                    conteúdo aqui
+                </div>
+            </div>
+            <br>
+
+            <div class="card">
+                <h4 class="card-header" id="serifada">1. Fundamento</h4>
+                <div class="card-body">
+                    <p>Linux não é um Sistema Operacional completo. É um Kernel livre baseado em padrão Unix (Ken Thompson e Dennis Ritchie), Minix, criado/finalizado em 1991 por Linus Torvalds (finladês de 21 anos), desenvolvido em C, sendo considerado, inicialmente, um emulador de terminal, para uso em Unix, o que resultou no Kernel. Inicialmente cogitava-se o nome Freax (Free And X), com alusão ao Unix, sendo o nome "Linux" descartado egocentricamente por Linus. Graças ao dono do servidor descartar o termo "Freax", foi-se então escolhido novamente "Linux". Sua 1ª versão possuia 10.239 linhas de código, sendo em torno de 13% linhas em branco para melhor organização. Sua 1ª distribuição comercial foi a Yggdrasil Linux/GNU/X, lançada em 1992, no formato Live CD. Atualmente, cerca de 1% das linhas do Kernel é desenvolvida por Linus, contendo em torno de 22 milhões de linhas de código, recebendo cerca de 1300 alterações semanais. Além disso, todos os supercomputadores no mundo são Linux, e 70% da web é gerenciada por servidores Unix. Ao contrário dos demais SOs populares, no Linux é possível personalizar a utilização dos componentes de hardware de forma dinâmica, de acordo com as necessidades do utilizador. Dessa forma, encontra-se, nas comunidades de desenvolvedores, a frase: "Linux: Se colocar roda vira carro, se jogá-lo para o alto vira satélite".</p>
+                    <ul>
+                        <li>The Linux Kernel Archives: <a id="btnLink" href="https://www.kernel.org" target="_blank">Acesse</a></li>
+                    </ul>
+                </div>
+            </div>
+            <br>
+
+            <div class="card">
+                <h4 class="card-header" id="serifada">2. Tux</h4>
+                <div class="card-body">
+                    <img src="anexos/linux/tuxMascote.png" width="80px" height="auto">
+                    <p>O mascote do Linux é o Tux (Torvalds' Unix). Linus havia sido bicado por um pinguim no Zoológico Nacional de Camberra, contraindo uma doença denominada "Penguinitis", o que lhe inspirou para criá-lo, além do seu gosto pelo animal. Suas formas, criadas no GIMP em 1996, referem-se à um pinguim saciado após um banquete, sugerido por Linus, seu criador. Supõe-se que os pinguins aparentam vestir um smoking (tuxedo), outro fato que ocasionou na escolha do nome.</p>
+                </div>
+            </div>
+            <br>
+
+            <div class="card">
+                <h4 class="card-header" id="serifada">3. Distros</h4>
+                <div class="card-body">
+                    <p>Uma distribuição Linux (distro) é um SO completo criado a partir do Kernel Linux. Há cerca de 600 distros atualmente, sendo a Debian a 'mãe' da maioria. Nem todas são totalmente gratuitas, como o Red Hat Enterprise Linux. Distros como Mint, Ubuntu e Kde são baseadas (criadas) a partir da Debian. A versão não modificada do Kernel Linux é chamada de 'Vanilla'. A 1ª distro foi a Yggdrasil Linux/GNU/X. A distro comunitária mais antiga é a Slackware, ainda ativa. Cada distro possui nomenclatura baseada em alguma referência cômica ou algo do tipo, como a Mint, que suas versões estáveis possuem nome feminino, e as instáveis, masculino (Por que supõe-se que, nas decisões da vida, as mulheres são mais estáveis do que os homens). A distro Debian possui nome como referência à esposa do criador, 'Debie', onde cada versão possui como nomenclatura um personagem do filme 'Toy Story'. Há uma teoria de que o logo da Debian, o redemoinho Magic Smoke, foi criado porque o personagem 'Buzz Lightyear' possui um redemoinho similar no queixo. As principais distros Linux são Mint, Ubuntu (mais usada), Fedora (Red Hat), RHEL(Red Hat Enterprise Linux), openSUSE, CentOS(Community Enterprise Operating System, Red Hat), Zorin OS, Kde Neon, Kali, Arch, Manjaro(Arch), Elementary OS, Raspbian, Arch, Oracle Linux(Red Hat), Pop!_OS, entre outras. O site DistroWatch possui o ranking das distros mais usadas e todas as novidades no mundo das distros Linux. Toda distro possui determinadas versões, sendo a <b>Stable(LTS, .04)</b> a versão mais estável atualmente publicada, geralmente com menos frequência de atualizações, onde a mesma nem sempre é a mais nova lançada. Esta versão é menos propensa a bugs. Há também versão <b>Testing(.10)</b>, sendo a mais moderna publicada, onde há maior frequência de atualizações e novidades em recursos/pacotes. Existe também a versão <b>Unstable</b>, versão mais nova, ainda não publicada, estando em fase de desenvolvimento, sendo mais propensa a bugs e falta de features. Versão muito utilizada pela comunidade, a fins de testes, para propor soluções de bugs e possíveis melhorias.</p>
+                    <ul>
+                        <li>Timeline Distros Linux: <a id="btnLink" href="http://futurist.se/gldt" target="_blank">Acesse</a></li>
+                        <li>DistroWatch: <a id="btnLink" href="https://distrowatch.com" target="_blank">Acesse</a></li>
+                    </ul>
+                </div>
+            </div>
+            <br>
+
+
+
+
+
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>
