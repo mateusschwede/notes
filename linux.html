@@ -15,8 +15,8 @@
 <div class="container-fluid">
     
     <!-- LISTA PRIORIDADES
-        localização
-        ajuda
+        OK- localização
+        OK- ajuda
         usuários
         terminais
         rede
@@ -236,75 +236,6 @@ unalias j (descarta o alias)
                 <li>Firefox(Browser): <a id="btnLink" href="https://www.mozilla.org/en-US/firefox/new" target="_blank">Acesse</a></li>
                 <li>VLC(Media Player): <a id="btnLink" href="https://www.videolan.org/vlc" target="_blank">Acesse</a></li>
             </ul>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-8 shadow p-3 mb-5" id="licao">
-            <h3 id="serifada"><span id="capitulo">31. Ajuda</span></h3>
-            <p>O Linux possui excelente mecanismo de ajuda e documentação sobre serviços e comandos relacionados. Geralmente a ajuda pode ser provida por meio dos manuais, as <b>Man Pages</b>. Para atualizar o banco de dados de pesquisa nas distros Debian, basta digitar o comando <i>catman</i>. Basicamente, existem 3 formas de ajuda/documentação:</p>
-            <ul>
-                <li><b>How-to</b>: Também conhecido como <b>Cookbook</b>, são documentos que focam uma necessidade específica, como montar um firewall, instalar uma webcam, configurar placas de som, etc. Podem ser encontrados nos formatos Html, Markdown, entre outros. Disponíveis em <i>/usr/share/doc</i>. Ex: How-to do comando iptables: <i>cd /usr/share/doc/iptables</i></li>
-                <li><b>Manual</b>: Informam ajuda de forma geral, mostrando todas as possíveis funcionalidades do software, descartando meios de passo a passo ou lista de afazeres.</li>
-                <li><b>Documentação</b>: Com a documentação de um projeto é possível entender absolutamente tudo sobre o mesmo, ou seja, essa documentação deve mostrar todas as partes relacionadas ao projeto. Geralmente os How-to’s e Manuais de determinado projeto estão indiretamente acoplados à documentação. A documentação geralmente é encontrada no site oficial do projeto.</li>
-            </ul>
-            <h4>Comando Help:</h4>
-            <p>Providencia ajuda, em manual, para comandos internos do próprio interpretador de comandos. Também muito útil para identificar se um determinado comando é interno ou não: Se o comando responder ao <i>help</i>, então é interno. Senão, é externo, precisando informar o parâmetro <i>--help</i>.</p>
-            <ul>
-                <li><b>help</b>: Ajuda geral de todos comandos do sistema</li>
-                <li><b>help type</b>: Ajuda para o comando <i>type</i></li>
-                <li><b>cp --help</b>: Ajuda para o comando externo <i>cp</i></li>
-            </ul>
-            <h4>Comando Apropos:</h4>
-            <p>Providencia ajuda em situação específica, como para que lembrar o nome do comando através de uma palavra/termo chave. Como por exemplo, usuário quer compactar arquivos, mas não sabe. Para isso, basta digitar <i>apropos compress</i>, que todos os comandos de compress serão listados. Pode-se utilizar várias palavras para busca, como por exemplo <i>apropos email address</i>. O comando alternativo do apropos é o <i>man -k termoPesquisa</i>.</p>
-            <h4>Comando Whatis:</h4>
-            <p>Diferente do apropos, o whatis é mais específico, buscando referências idênticas ao termo da pesquisa, como por exemplo <i>whatis passwd</i>, ou <i>whatis vim</i>. O comando alternativo do whatis é o <i>man -f termoPesquisa</i>.</p>
-            <h4>Comando Man:</h4>
-            <p>O comando man é o mais utilizado para pesquisa de documentações, pois é responsável por trazer os manuais mais completos de cada comando. Nos comandos de pesquisa, geralmente encontra-se o termo com o nº do manual indicado ao lado do mesmo, por exemplo <i>bunzip2(1)</i> refere-se ao man1, ou seja, é um programa ou executável. Os principais manuais são 1, 5 e 8. Sintaxe: <i>man [seção] [comando]</i>. A seção identificada pode alterar o manual do comando, como o passwd é um comando e arquivo de configuração. Então, o <i>man passwd</i> mostrará o man1, mas o <i>man 5 passwd</i> mostrará o man5 do passwd. Os manuais encontram-se em <i>/usr/share/man</i>, onde dentro desse estará cada man com seus respectivos conteúdos.</p>
-            <ul>
-                <li><b>man 1</b>: Programas e executáveis disponíveis ao usuário;</li>
-                <li><b>man 2</b>: Rotinas de sistema Unix e C;</li>
-                <li><b>man 3</b>: Rotinas de bibliotecas da linguagem C;</li>
-                <li><b>man 4</b>: Arquivos especiais (dispositivos em <i>/dev</i>);</li>
-                <li><b>man 5</b>: Arquivos de configuração e convenções;</li>
-                <li><b>man 6</b>: Games;</li>
-                <li><b>man 7</b>: Diversos (macros textuais, por exemplo, regex);</li>
-                <li><b>man 8</b>: Comandos administrativos;</li>
-                <li><b>man 9</b>: Rotinas internas do kernel.</li>
-            </ul>
-            <h4>Comando Info:</h4>
-            <p>As Info pages são muito similares às Man pages, com a diferença que possuem maiores recursos de navegação. Para pesquisar, basta digitar o comando <i>info [comando]</i>, como por exemplo <i>info vim</i>. Em algumas distros Debian, pode-se utilizar o <b>yelp</b>, que é a forma GUI de pesquisas a manuais do Gnome. Tem-se também o <b>xman</b>, serviço GUI para o comando man.</p>
-            <h4>Comando Whereis:</h4>
-            <p>Usado para localizar o binário. Por exemplo, o comando ls é alias ao <i>/bin/ls</i>. Por exemplo, para saber a localização do ifconfig, basta digitar o comando <i>whereis ifconfig</i>. O whereis mostrará, respectivamente, o comando, seu binário(localização) e localização de seu manual. Para identificar somente o binário, basta informar <i>whereis -b termoPesquisa</i>. Para localizar somente a Man page, basta informar <i>whereis -m termoPesquisa</i>.</p>
-            <h4>Comando Which:</h4>
-            <p>Assim como o whereis, o which mostrará somente a localização do binário. Por exemplo <i>which ls</i>.</p>
-        </div>
-    </div>
-
-
-
-    <!--Aqui-->
-    <div class="row">
-        <div class="col-sm-8 shadow p-3 mb-5" id="licao2">
-            <h3 id="serifada"><span id="capitulo">33. Localização</span></h3>
-            <h4>Comando find:</h4>
-            <p>Utilizado para encontrar arquivos no sistema. Sintaxe: <i>find [diretório] [opção/expressão]</i></p>
-<small><pre><code>
-<b>Procurar arquivos pela 'extensão':</b> find /etc/ -name *.conf
-<b>Limitar recursividade em diretórios:</b> find /etc/ -maxdepth 1 -name *.conf (Apenas 1 diretório, ou seja, o atual)
-<b>Procurar arquivos acessados minutos atrás:</b> find / -amin -5 (Últimos 5min)
-<b>Procurar arquivos acessados dias atrás:</b> find / -atime 10 (Acessados a 10 dias atrás)
-<b>Procurar arquivos por id do usuário:</b> find / -uid 1000 (Arquivos do usuário id 1000)
-<b>Procurar arquivos por nome do usuário:</b> find / -user root (Arquivos do usuário root)
-<b>Procurar arquivos por permissão:</b> find / -perm 644 (Arquivos de permissão 644)
-<b>Procurar arquivos por tamanho:</b> find / -size +50M (Arquivos com mais de 50 megabytes)
-<b>Procurar arquivos por tipo (bloco, caractere, diretório...):</b> find /dev -type b (Arquivos de bloco)
-<b>Procurar arquivos vazios:</b> find / -type f -empty (Arquivos regulares vazios)
-<b>Procurar diretórios modificados nos últimos dias:</b> find / -mtime 50 (Últimos 50 dias)
-<b>Procurar diretórios modificados entre datas:</b> find / -mtyme +50 -mtyme -100 (Entre últimos 50 e 100 dias)
-<b>Procurar arquivos executando nos últimos minutos:</b> find / -cmin -60 (Últimos 60min)
-</small></pre></code>
-            <h4>Comando locate:</h4>
-            <p>Também utilizado para pesquisa, de forma mais simples, porém não utiliza recursividade para as buscas, mas sim uma base de dados (updatedb). Algumas distros não possuem este comando. Exemplo: <i>locate howto</i>.</p>
         </div>
     </div>
 
