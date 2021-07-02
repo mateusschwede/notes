@@ -18,8 +18,8 @@
         OK- localização
         OK- ajuda
         OK- usuários
-        terminais
-        rede
+        OK- terminais
+        OK- rede
         pacotes
         Software terceiros (wine...)
         comunidade        
@@ -59,137 +59,9 @@
             <p>Todo Software Livre, assim como o Linux, possui em sua essência os conceitos de liberdade e igualdade. O Ubuntu tem como logotipo 3 pessoas dando-se as mãos, o termo Ubuntu é sul-africano zulu, em homenagem ao seu criador, significando "Eu sou o que sou porque nós somos", que fora até referenciada a Nelson Mandela. O próprio Debian possui seu logotipo personalizado, em homenagem à diversidade de cultura e gênero, conforme acima. O Kde possui uma das maiores e mais acolhedoras comunidades de desenvolvedores, tudo isso sem cobrar absolutamente nada. Linux é grátis, é aberto, é livre. Todas suas Distros possuem recursos avançados de acessibilidade, sendo muito recomendadas para a introdução à informática, àqueles que estão tendo seus primeiros contatos com um computador. Linux é leve, não necessita de hardware caro/avançado, a Distro ZorinOS Lite funciona, de forma completa, com apenas 300MB. O próprio slogan do Mint afirma "For freedom came elegance!"(Por liberdade e elegância!). O Dia da Liberdade de Software ocorre anualmente, a todo 3º sábado de setembro, homenageando o Software Livre. Outro grande marco é a Lei de Linus, que afirma "Given enough eyeballs, all bugs are shallow"(Dados olhos suficientes, todos os erros são óbvios), conceituando o fato de que todo software de código aberto pode ser aprimorado por outra pessoa(olho), assim como todo o conceito da ética hacker também envolvida. Organizações como a Free Software Foundation(FSF) têm lutado durante anos pela iniciativa do Software Livre, tendo como grande criações o projeto GNU, muito popularizado no mundo linux. Os termos FOSS(Free Open Source Software) e FLOSS(Free/Libre and Open Source Software) também estão presentes dentro da história do GNU e Software Livre.</p>
         </div>
     </div>
-    <div class="row">
-        <div class="col-sm-8 shadow p-3 mb-5" id="licao">
-            <h3 id="serifada"><span id="capitulo">26. Rede</span></h3>
-            <p>Muitas distros Linux possuem sincronização automática com contas populares, como documentos do Google Drive e eventos do Hotmail e Facebook. Entre os comandos no terminal para gerenciamento de redes, tem-se o <b>route</b>, como o <i>route -n</i>, usado para visualizar e manipular a tabela de roteamento IP(inet) e Gateway. O comando <b>ifconfig</b> é usado para gestão de informações sobre parâmetros TCP/IP, como endereçamento IP e Mac Address(Geralmente listado como HWaddr, no campo designado eth1 ou wlan0), geralmente dedicado à redes com fio. O ifconfig fora descontinuado, mas ainda encontra-se ativo. Atualmente tem-se os comandos <b>ip a</b>, <b>ip r</b>. O comando <b>iwconfig</b> possui o mesmo padrão, sendo dedicado à redes sem fio. O comando <b>netstat</b> mostra todas as conexões de entrada e saída de rede, tabelas de roteamento e estatísticas do protocolo de rede. <i>netstat -atunp</i> mostra com detalhes de PID, TCP e UDP. No Mint, se quiser achar o Mac Address, basta digitar o comando <b>inxi -Nn</b>, na opção em que o state é "up", esse é o MacAddress de sua máquina. Outro comando é o <b>ping</b>, que mostra o tempo de envio/recebimento de resposta em rede, verificando assim a conectividade entre 2 máquinas (Ex: <i>ping -c 4 192.168.1.2</i> (Ping para esse IPV4 limitado em 4 iterações), Ex2: <i>ping uol.com.br</i> (Ping no site do uol)). Por fim, o comando <b>host -opcao host</b> é um comando com função de localizar informações de rede, como, por exemplo, determinado IPV4(opção -4) ou IPV6(opção -6) de determinado host(localhost por exemplo). Através do <i>Gateway</i>, permite-se acessar outras redes. Para que tenha-se acesso à internet, é necessário conhecer o Gateway. É através do Gateway que permite-se a realização de ping para redes externas. <i>Broadcast</i> é a operação onde uma máquina 'fala' e todas 'ouvem', onde pode-se realizar o envio e recebimento como consequência disso.</p>
-            <h4>Máscara de Rede (netmask):</h4>
-            <p>Todo IP possui uma máscara correspondente. Nela é informado qual parte do IP faz parte da rede e qual faz parte do host. Tecnicamente, define quantos IPs serão destinados e quantos IPs serão definidos ao host(máquina local). O endereço IP sempre é um nº de 4 octetos, onde cada octeto é representado por um bloco numérico separado por ponto. Existem vários tipos de netmask, como Classe A, Classe B, Classe C e Classe D.<br>Classe C (Mais popular): Representada por /24, e 255.255.255.0, onde o IP inicia-se com 192.168.0.X</p>
-<small><pre><code>
-<b>CÁLCULO DE NETMASK:</b>
-Cada octeto representa essa tabela. Na Classe C, tem-se 24 bits setados para 1 (/24), sendo 1 true e 0 false.
-
-TABELA:  <b>128 | 64 | 32 | 16 | 8 | 4 | 2 | 1</b>
-EXEMPLO:  <b>1  | 1  | 1  | 1  | 1 | 1 | 1 | 1</b>, portanto todos são true. Somando todos os true, resulta-se 255.
-Para ter-se 255, precisa-se então 8 bits setados em 1, ou seja, 8 bits true.
-Dessa forma, 255 em binário é 11111111.11111111.11111111.0 (Então, tem-se 24 bits setados em 1 true)
-
-<b>Calcular netmask para /27 (Cálculo de sub máscara):</b>
-Se /24 é toda tabela, então /27 acrescenta-se mais três true (24+3=27):
-TABELA: <b>128 | 64 | 32 | 16 | 8 | 4 | 2 | 1</b>
-EXEMPLO: <b>1  | 1  | 1  | 0  | 0 | 0 | 0 | 0</b>, onde a soma dos true, <i>128+64+32=224</i>
-<b>Netmask:</b> <i>255.255.255.224</i>
-<b>Binário:</b> <i>11111111.11111111.11111111.11100000</i>
-</small></pre></code>
-        </div>
-    </div>
 
 
-    <!--Aqui -feito -->
-    <div class="row">
-        <div class="col-sm-8 shadow p-3 mb-5" id="licao">
-            <h3 id="serifada"><span id="capitulo">28. Terminais</span></h3>
-            <img src="anexos/linux/terminal.png" width="250px" height="auto">
-            <ul>
-                <li><b>Terminal(TTY):</b> Era um hardware(teletype ou terminal de vídeo) que os usuários utilizavam para se conectar ao mainframe;</li>
-                <li><b>Emulador de Terminal:</b> Programa que consegue emular um terminal para que o usuário possa trabalhar, usando o próprio vídeo e teclado do computador. Pode ser o próprio Kernel ou algum outro emulador de terminai(xterm, Konsole, etc.);</li>
-                <li><b>Console:</b> Era um hardware que os usuários conectavam no computador para administrá-lo;</li>
-                <li><b>Console Virtual</b> Interface de administração do Linux, que transformou o antigo console em vários consoles virtuais, separados logicamente, mas acessados pelo mesmo par teclado/vídeo. Utiliza o emulador de terminal do Kernel;</li>
-                <li><b>Pseudo-Terminal(PTS):</b> Par de terminais master/slave que o Kernel utiliza para se comunicar com um emulador de terminais que roda no espaço do usuário, em alguma interface gráfica, e não no próprio Kernel;</li>
-                <li><b>Janela de Termial:</b> Apresentação na interface gráfica do emulador de terminal(Konsole, Gnome Terminal, xterm, etc.);</li>
-                <li><b>Linha de Comando(CLI):</b> Interface que recebe comandos inputs, retornando em outputs via texto.</li>
-            </ul>
-            <p><b>Funcionamento</b></p>
-            <ol>
-                <li>Um console virtual é uma interface de administração acessada pelo par vídeo/teclado do computador, que apresenta uma linha de comando para o usuário, utilizando um emulador de terminal próprio do Kernel e drivers TTY para interagir com os processos do usuário.</li>
-                <li>Uma janela de terminal é uma janela gráfica acessada pelo vídeo/teclado do computador, que apresenta uma linha de comando para o usuário, utilizando um emulador de terminal externo ao Kernel, e pseudo-terminais master/slave para interagir com os processos do usuário.</li>
-            </ol>
-            <h4>Terminais Virtuais (tty):</h4>
-            <p>No ambiente gráfico, para acessar a tty, basta utilizar as teclas <i>cntrl+alt+Fnumtty</i> (Ex: cntrl+alt+F2 acessa a tty2). Para alternar entre as ttys, basta utilizar <i>alt+Fnumtty</i> (Ex: alt+F4 altera para a tty4). As ttys 1 à 6 são modo texto. A tty7 é Interface Gráfica, então <i>alt+F7</i> voltará para a tty7.</p>
-            <h4>Sessões:</h4>
-            <p>Após iniciar um dispositivo Linux modo texto, tem-se a conexão a uma sessão, que solicitará login. Uma sessão é composta pelos dados gerados após o login de um usuário válido cadastrado no sistema e efetuado com sucesso no ambiente. Tudo o que o usuário fizer, como comandos, ficará armazenado na respectiva sessão. Um mesmo usuário pode possuir várias sessões abertas ao mesmo tempo. As sessões são iniciadas através dos terminais, que são caracterizados como um terminal virtual somente em modo texto (Pseudo-terminais), inicializados a partir de um modo gráfico. A única diferença entre eles é a forma de acesso: Em um SO modo texto, o acesso é direto. Em um SO gráfico, basta acessar o Bash (Cada Bash aberto, ao mesmo tempo, é a criação de um terminal virtual). Programas como <b>ssh</b>, <b>telnet</b> acessam terminais virtuais remotamente ou localmente. Comandos como <b>sudo su</b> e <b>bash</b> abrem sessões, comandos como <b>exit</b>, <b>cntrl+d</b> e <b>logout</b>(algumas distros) saem da respectiva sessão, onde usados repetitivamente sairão das sessões abertas do usuário até o ponto de sair do Bash.</p>
-            <h4>Shell</h4>
-            <p>Entre as camadas do dispositivo, tem-se Hardware, Kernel, Programas e Shell. Shell é a camada de acesso ao sistema básico, que pode ser acessado por modo gráfico ou texto, sendo totalmente personalizado, como automatização de tarefas repetitivas, através de Alias e recursos. Há diversos tipos de shell disponíveis para distribuições GNU/Linux:</p>
-            <ul>
-                <li>sh (Bourne Shell, desenvolvido por Stephen R. Bourne)</li>
-                <li>bash (Bourne Again Shell, evolução do sh)</li>
-                <li>csh (C Shell)</li>
-                <li>tcsh (Turbo C Shell, evolução do csh)</li>
-                <li>ksh (Korn Shell)</li>
-                <li>zsh (Z Shell)</li>
-            </ul>
-            <p>Para chamar outro tipo de shell, basta digitar o nome do mesmo, ou através do comando <i>chsh -s /bin/sh</i> (chsh - change shell). O comando <i>exit</i> voltará para o shell padrão.</p>
-            <h4>Variáveis:</h4>
-            <p>Espaços de memória que armazenam valores. Têm função de fornecimento de dados variáveis para o dispositivo, envolvendo seus programas. A chamada de conteúdo na tela do shell é através do comando <b>echo</b> (Ex: <i>echo olá</i>, mostrará olá na tela do shell). Para mostrar todas as variáveis do SO, têm-se os comandos <i>set</i>(locais), <i>env</i>(globais) e <i>printenv</i>.</p>
-            <ul>
-                <li><b>Variáveis Locais:</b> Disponíveis somente para o shell atual, ou seja, são voláteis, possuindo assim visibilidade restrita ao ambiente ao qual foi definida. Sintaxe: <i>nome=valor</i></li>
-                <li><b>Variáveis Globais (De ambiente)</b>: Não possuem restrição de ambiente, sendo visíveis e utilizáveis a todo o restante do sistema, como subprocessos, outros shells e demais ambientes em que não foi definida. Sintaxe: <i>export nome=valor</i></li>
-            </ul>
-<small><pre><code>
-<b>Exemplo:</b>
-idade=22
-export NOME=”mateus”
-echo $idade (Toda vez que idade for chamada, representará seu valor, no caso, 22)
-unset idade (Desabilita variável)
-
-<b>Exemplo2:</b>
-Variável global HOME (echo $HOME)
-</small></pre></code>
-            <h5>Variáveis Globais:</h5>
-            <ul>
-                <li>HOME: Identifica o diretório do usuário</li>
-                <li>HOSTTYPE: Identifica a plataforma do dispositivo</li>
-                <li>HISTSIZE: Armazena limite de comando armazenados em histórico (Histfile)</li>
-                <li>HISTFILE: Identifica local onde histórico de comandos é armazenado</li>
-                <li>HISTFILESIZE: Armazena limite de linhas que o histórico (Histfile) pode possuir</li>
-                <li>SHELL: Identifica o shell atual</li>
-                <li>TERM: Identifica o terminal atual</li>
-                <li>USER: Identifica o usuário atual</li>
-                <li>PATH: Identifica caminhos que determinam onde os diretórios devem pesquisar (Separados por <b>:</b>)</li>
-                <li>PS1: Representa as informações exibidas no prompt(Na linha do shell para comando, como <i>usuario@nomeMaquina:~$</i>)</li>
-                <li>LOGNAME: Identifica nome do usuário logado atual</li>
-                <li>OSTYPE: Identifica SO atual</li>
-            </ul>
-            <h4>Arquivos de configuração shell:</h4>
-            <h5>Arquivos de variáveis:</h5>
-            <p>Arquivos que contém variáveis, alias e demais comandos do sistema. Alias é um apelido que pode ser dado à determinada rotina, para que haja maior facilidade no momento de sua chamada.</p>
-<small><pre><code>
-<b>Exemplo Alias:</b>
-alias j="ls -l"
-j (ao digitar j será executado seu valor, no caso, o comando descrito)
-unalias j (descarta o alias)
-</small></pre></code>
-            <ol>
-                <b>Geral:</b>
-                <li><i>/etc/profile:</i> Arquivo lido antes que os demais, no momento do login, por definir e armazenar comandos e variáveis para usuários do sistema.</li>
-                <li><i>/etc/environment:</i> Arquivo de distros <i>.deb</i> para definição de variáveis globais, sendo inicializado no momento do login, juntamente com o profile.</li>
-                <br><b>Diretório home (Usuário específico):</b>
-                <li><i>.bashrc</i></li>
-                <li><i>.profile</i></li>
-                <li><i>._profile</i> (Algumas distros)</li>
-                <li><i>._login</i></li>
-                <li><i>._logout</i></li>
-            </ol>
-            <p>Voltar ao padrão, utiliza-se o comando <b>source</b>, como <i>source /etc/profile</i>.</p>
-            <h5>Arquivos de exibição de mensagens:</h5>
-            <p>Responsáveis por armazenar as mensagens padrão que o Linux traz consigo.</p>
-            <ol>
-                <li><i>/etc/issue:</i> Armazena mensagens antes do login do sistema</li>
-                <li><i>/etc/motd:</i> Armazena mensagens após o login do sistema</li>
-                <li><i>/etc/issue.net:</i> Armazena mensagens via rede, logins remotos</li>
-                <li><i>~/.bash_history:</i> Armazena histórico dos comandos</li>
-            </ol>
-        </div>
-    </div>
-
-
-
-
-
-
-
-
-
+    
 
 
 

@@ -977,6 +977,32 @@ unalias j (descarta o alias)
             </div>
             <br>
 
+            <div class="card">
+                <h4 class="card-header" id="serifada">28. Rede</h4>
+                <div class="card-body">
+                    <p>Muitas distros Linux possuem sincronização automática com contas populares, como documentos do Google Drive e eventos do Hotmail e Facebook. Entre os comandos no terminal para gerenciamento de redes, tem-se o <b>route</b>, como o <i>route -n</i>, usado para visualizar e manipular a tabela de roteamento IP (inet) e Gateway. O comando <b>ifconfig</b> é usado para gestão de informações sobre parâmetros TCP/IP, como endereçamento IP e Mac Address (Geralmente listado como <i>HWaddr</i>, no campo designado eth1 ou wlan0), geralmente dedicado à redes com fio. O ifconfig fora descontinuado, mas ainda encontra-se ativo. Atualmente tem-se os comandos <b>ip a</b>, <b>ip r</b>. O comando <b>iwconfig</b> possui o mesmo padrão, sendo dedicado à redes sem fio. O comando <b>netstat</b> mostra todas as conexões de entrada e saída de rede, tabelas de roteamento e estatísticas do protocolo de rede. <i>netstat -atunp</i> mostra com detalhes de PID, TCP e UDP. No Mint, se quiser achar o Mac Address, basta digitar o comando <b>inxi -Nn</b>, na opção em que o state é "up", esse é o MacAddress de sua máquina. Outro comando é o <b>ping</b>, que mostra o tempo de envio/recebimento de resposta em rede, verificando assim a conectividade entre 2 máquinas (Ex: <i>ping -c 4 192.168.1.2</i> (Ping para esse IPV4 limitado em 4 iterações), Ex2: <i>ping uol.com.br</i> (Ping no site do uol)). Por fim, o comando <b>host -opcao host</b> é um comando com função de localizar informações de rede, como, por exemplo, determinado IPV4 (opção -4) ou IPV6 (opção -6) de determinado host (localhost por exemplo). Através do <i>Gateway</i>, permite-se acessar outras redes. Para que tenha-se acesso à internet, é necessário conhecer o Gateway. É através do Gateway que permite-se a realização de ping para redes externas. <i>Broadcast</i> é a operação onde uma máquina 'fala' e todas 'ouvem', onde pode-se realizar o envio e recebimento como consequência disso.</p>
+                    <h4>Máscara de Rede (netmask):</h4>
+                    <p>Todo IP possui uma máscara correspondente. Nela é informado qual parte do IP faz parte da rede e qual faz parte do host. Tecnicamente, define quantos IPs serão destinados e quantos IPs serão definidos ao host (máquina local). O endereço IP sempre é um nº de 4 octetos, onde cada octeto é representado por um bloco numérico separado por ponto. Existem vários tipos de netmask, como Classe A, Classe B, Classe C e Classe D.<br><u>Classe C (Mais popular):</u> Representada por /24, e 255.255.255.0, onde o IP inicia-se com 192.168.0.X</p>
+<small><pre><code>
+<b>CÁLCULO DE NETMASK:</b>
+Cada octeto representa essa tabela. Na Classe C, tem-se 24 bits setados para 1 (/24), sendo 1 true e 0 false.
+
+TABELA:  <b>128 | 64 | 32 | 16 | 8 | 4 | 2 | 1</b>
+EXEMPLO:  <b>1  | 1  | 1  | 1  | 1 | 1 | 1 | 1</b>, portanto todos são true. Somando todos os true, resulta-se 255.
+Para ter-se 255, precisa-se então 8 bits setados em 1, ou seja, 8 bits true.
+Dessa forma, 255 em binário é <i>11111111.11111111.11111111.0</i> (Então, tem-se 24 bits setados em 1 true)
+
+<b>Calcular netmask para /27 (Cálculo de sub máscara):</b>
+Se /24 é toda tabela, então /27 acrescenta-se mais três true (24+3=27):
+TABELA: <b>128 | 64 | 32 | 16 | 8 | 4 | 2 | 1</b>
+EXEMPLO: <b>1  | 1  | 1  | 0  | 0 | 0 | 0 | 0</b>, onde a soma dos true, <i>128+64+32=224</i>
+<b>Netmask:</b> <i>255.255.255.224</i>
+<b>Binário:</b> <i>11111111.11111111.11111111.11100000</i>
+</small></pre></code>
+                </div>
+            </div>
+            <br>
+
 
 
 
