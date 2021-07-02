@@ -158,13 +158,15 @@
             <p>Em 1994, a FSSTND(Filesystem Standard) criou a estrutura básica de organização de arquivos no Linux. Linux compõe-se da seguinte estrutura de arquivos, baseada na FHS(Filesystem Hierarchy Standard), mantida pela FSG(Free Standard Group), no padrão Posix:</p>
             <ul>
                 <li><b>bin:</b> Onde estão os comandos do bash, acessíveis ao usuário (Binaries)</li>
-                <li><b>boot:</b> Onde está a imagem do kernel e arquivos estáticos de boot</li>
+                <li><b>boot:</b> Onde está a imagem do kernel e arquivos estáticos de boot</li>                
                 <li><b>dev:</b> Onde estão os dispositivos (Devices) da máquina (Ex: hd é o 'sda', usb onde ficam os usb's plugados(dispositivo usb geralmente tem nome sdb,sdb1...))</li>
-                <li><b>etc:</b> Onde estão os arquivos de configuração usados pelos softwares e scripts especiais de módulos de programas
+                <li><b>etc:</b> Onde estão os arquivos de configuração usados pelos softwares e scripts especiais de módulos de programas            
                 <li><b>home(~):</b> Onde estão os arquivos dos usuários. A pasta ~ representa a pasta de usuário, contida dentro da pasta home</li>
                 <li><b>lib, lib32, libx32 e lib64:</b> Onde estão as bibliotecas (Libraries) dos sistema</li>
-                <li><b>lost+found:</b> Pasta, geralmente oculta, de 'achados e perdidos', usada para reparos no sistema, com fragmentos do mesmo</li>
+                <li><b>/lost+found:</b> Diretório, geralmente oculto, de 'achados e perdidos', usado para reparos no sistema, com fragmentos do mesmo</li>
                 <li><b>media e mnt:</b> media ficam montadas todas as mídias removíveis, mnt fica o espaço temporário para montagens pelos admins</li>
+                
+                
                 <li><b>opt:</b> Onde estão os aplicativos adicionais/proprietários, não essenciais para o sistema</li>
                 <li><b>proc:</b> Sistema de arquivos, dos quais trazem informações sobre o SO (Ex: cat /proc/cpuinfo mostra informações sobre a cpu, também pode ser substituído pelo comando lscpu). É diretório virtual (volátil)</li>
                 <li><b>root:</b> Onde estão os arquivos do usuário root</li>
@@ -178,6 +180,10 @@
             </ul>
         </div>
     </div>
+
+
+
+
     <div class="row">
         <div class="col-sm-8 shadow p-3 mb-5" id="licao">
             <h3 id="serifada"><span id="capitulo">11. Licenças</span></h3>
@@ -977,6 +983,8 @@ unalias j (descarta o alias)
             <p>Contém arquivos pessoais do usuário administrador root, onde pode-se manipular interface de rede, usuários e grupos, alterar prioridades, entre outras funções avançadas fundamentais ao sistema.</p>
         </div>
     </div>
+    <!--FIM-->
+
     <div class="row">
         <div class="col-sm-8 shadow p-3 mb-5" id="licao2">
             <h3 id="serifada"><span id="capitulo">33. Localização</span></h3>

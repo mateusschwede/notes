@@ -152,6 +152,53 @@
             </div>
             <br>
 
+            <div class="card">
+                <h4 class="card-header" id="serifada">10. Estrutura</h4>
+                <div class="card-body">
+                    <img src="anexos/linux/arquivos.png" width="250px" height="auto">
+                    <p>Derivado do Unix, no Linux não existem, de fato, programas/drivers/extensões: Tudo é considerado arquivo. Diretório/pasta são arquivos que contém arquivos. Por exemplo, todo movimento do mouse é baseado na incrementação de conteúdo no arquivo correspondente, fazendo com que o cursor mova-se de acordo com este conteúdo. No Linux não existe extensão de arquivos, já que não existem programas. A extensão, no contexto Linux, é a expressão definida dos nomes de arquivos. Todo arquivo possui caminho de passagem, por meio de seus antecessores e sucessores. Caminho Absoluto origina-se a partir do root/raíz (<i>/</i>), até sua localização atual (Ex arquivo sysadmin: <i>/home/Documents/Admin/sysadmin</i>). Caminho Relativo origina-se a partir de um diretório qualquer como a localização atual (Ex arquivo sysadmin: <i>Admin/sysadmin</i>). O caractere <i>.</i> (ponto) representa o diretório atual. O caractere <i>~</i> representa o diretório home. O diretório <b>root/raíz(/)</b> é o primeiro de todos diretórios, ou seja, onde estão todos os diretórios e arquivos do Linux para acesso, sendo somente acessado pelo usuário root(#). Todo arquivo oculto inicia-se com um ponto na frente. Linux dispensa uso de ambiente gráfico para ser operado, pois todo o sistema é dividido em camadas(layers): Possui Kernel como centro do sistema, que comunica-se com o hardware, fazendo a interface de gerenciamento de usuários, aplicações e processos/execuções.</p>
+                    <h4>Caminhos de diretórios:</h4>
+                    <ul>
+                        <li>(<b>/</b>) Diretório Raíz/Root (<i>cd /</i>)</li>
+                        <li>(<b>.</b>) Diretório Corrente (<i>cd .</i>)</li>
+                        <li>(<b>..</b>) Diretório Pai (<i>cd ..</i>)</li>
+                        <li>(<b>-</b>) Diretório Anterior (<i>cd -</i>)</li>
+                    </ul>
+                    <h4>Funcionamento da máquina:</h4>
+                    <ol>
+                        <li>Aperta botão power</li>
+                        <li>Aciona BIOS/MBR</li>
+                        <li>Gerenciador de Boot (Grub2)</li>
+                        <li>Usuário escolhe o Kernel</li>
+                        <li>Kernel chamará processo init, que carregará os serviços</li>
+                        <li>Gerenciador de login, que dará acesso direto ao interpretador de comandos</li>
+                        <li>Desktop Environment</li>
+                    </ol>
+                    <h4>Camadas distro Linux:</h4>
+                    <ol>
+                        <li><b>Hardware:</b> Ambientação física da máquina</li>
+                        <li><b>Kernel Linux:</b> Núcleo mediador entre hardware e camadas superiores</li>
+                        <li><b>Sistema Operacional:</b> Camada que auxilia e hospeda todos os programas das camadas superiores</li>
+                        <li><b>Teletypes (tty1, tty2, tty3, tty4, tty5, tty6):</b> Terminais virtuais, responsável por interpretar/converter os comandos(programas) introduzidos pelo usuário à máquina. Por padrão, tem-se 6 ttys, mas ao todo tem-se 63 (<i>ls /dev tty*</i>)</li>
+                        <li><b>DM (Display Manager):</b> Gerenciamento de logins, selecionando tipo de ambiente gráfico</li>
+                        <li><b>Ambiente de Trabalho (Desktop Environment):</b> Ambiente de hospedagem dos programas, cujo funcionamento depende do uso de Interface Gráfica(GUI)</li>
+                    </ol>
+                    <h4>Estrutura de arquivos:</h4>
+                    <p>Em 1994, a FSSTND(Filesystem Standard) criou a estrutura básica de organização de arquivos no Linux. Linux compõe-se da seguinte estrutura de arquivos, baseada na FHS(Filesystem Hierarchy Standard), mantida pela FSG(Free Standard Group), no padrão Posix:</p>
+                    <p><b>/ (Raíz)</b><br>Dentro do diretório raíz(<b>/</b>) encontram-se todos os demais diretórios.</p>
+                    <p><b>/bin:</b><br>Todos os comandos(Binaries) alias acessíveis ao usuário, executáveis no Bash, são referenciados neste diretório. Por exemplo, o comando alias <i>ls</i> refere-se ao <i>/bin/ls</i>. Neste caso, <i>ls /boot/grub</i> é o mesmo que <i>/bin/ls /boot/grub</i>.</p>
+                    <p><b>/boot:</b><br>Onde ficam os arquivos estáticos necessários para a inicialização do sistema, como o gerenciador de boot(<i>grub</i>) e imagem do Kernel.</p>
+                    <p><b>/dev:</b><br>Onde ficam todos os dispositivos(Devices), como periféricos, onde a comunicação ocorre por meio de links. Por exemplo, o dispositivo controlador do mouse na movimentação do cursor na tela. Neste diretório encontram-se o hd(<i>sda</i> ou <i>vda</i>), periféricos (Usb geralmente é <i>sdb</i>, <i>sdb1</i>...), ttys, entre outros. Ao acessar o arquivo de escrita em disco, pode-se utilizar o <i>ctrl+h</i> para resetar e sair do mesmo.</p>
+                    <p><b>/etc:</b><br>Onde ficam todos os arquivos de configuração do sistema, como scripts de inicialização, scripts especiais de módulos de programas, tabela de sistema de arquivos, configuração de serviços, configuração de usuários. Arquivos de configuração de usuário como o <i>/etc/passwd</i>, que possui todas as informações dos usuários, cujas informações, separadas por '<b>:</b>', constitui, respectivamente, login do usuário, senha (Geralmente x, que determina que a senha está em <i>/etc/shadow</i>, ou <b>*</b>, determinando que o login está desabilitado, se linha em branco, determinando que a conta não possuirá senha), UID (User Identification), GID (Group Identification), GComs (Comentários do usuário, separados por vírgulas, como nome, id, telefone, endereço), localização home do usuário (Como <i>/home/nomeUsuario</i>) e, por fim, shell do usuário (Como <i>/bin/bash</i> ou <i>/usr/sbin/nologin</i>). No arquivo <i>/etc/shadow</i> encontram-se os seguintes campos para cada usuário: login do usuário, senha criptografada, data em nº de dias, desde 1970 até atual, com relação à última modificação de senha, nº de dias antes do sistema permitir nova modificação de senha, nº de dias que usuário pode permanecer com a mesma senha, nº de dias antes da expiração de senha, nº de dias após expiração de senha, nº de dias, de 1970 até expiração da senha e, por fim, reservado para campo futuro (Esses últimos 3 campos geralmente encontram-se em branco). Neste contexto, o comando <b>pwconv</b> é usado para criar o arquivo <i>/etc/shadow</i> a partir do <i>/etc/passwd</i>. O comando <b>pwunconv</b> realiza a operação inversa. O comando <i>getent passwd</i> é mais recomendado para abrir o passwd, do que acessar diretamente o arquivo em si.</p>
+                    <p><b>home(~):</b><br>Onde estão os arquivos dos usuários. O '<b>~</b>' representa o diretório de usuário, contido dentro do diretório home.</p>
+                    <p><b>/lib, /lib32, /libx32 e /lib64:</b><br>Onde ficam todas as bibliotecas compartilhadas, módulos do kernel. Bibliotecas (Libraries) são funções que podem ser utilizadas por programas (como se fossem dll's). Cada kernel possui suas respectivas libraries (também chamados de módulos). Para conferir todos os módulos do kernel, tem-se o comando <i>ls /lib/modules/$(uname -r)/kernel</i>.</p>
+                    <p><b>/lost+found:</b><br>Diretório, geralmente oculto, de 'achados e perdidos', usado para reparos no sistema, com fragmentos do mesmo.</p>
+                    <p><b>/media:</b><br>Serve de ponto de montagem para mídias removíveis, como cdrom, floppy, câmeras, hd externos, pendrives, entre outros.</p>
+                    <p><b>/mnt:</b><br>Usado para montagem temporária de sistemas de arquivos, como Windows, outros GNU/Linux. Este diretório geralmente encontra-se vazio, caso a máquina não possua tais operações no momento.</p>
+                </div>
+            </div>
+            <br>
+
 
 
 
