@@ -392,6 +392,7 @@ Durabilidade somente enquanto o terminal estiver aberto
 <b>Listar conteúdos com informações aprimoradas de armazenamento:</b> ls -l -h
 <b>Listar com arquivos ocultos:</b> ls -a (Todo arquivo oculto possui um ponto na frente)
 <b>Listar com informações incluindo armazenamento e arquivos ocultos e subpastas:</b> ls -Rlah (tipo do arquivo: d(diretório), arquivo comum(-), dispositivo de bloco(b), de caracteres(c), link(l))
+<b>Ver metadados de arquivo:</b> stat nomeArquivo (Metadados são usuárioCriador, datas e horas de criação/modificação...)
 <b>Listar conteúdo de arquivo:</b> cat nomearquivo.tipo
 <b>Listar conteúdo de arquivo de trás pra frente:</b> tac nomearquivo.tipo
 <b>Listar conteúdo de arquivo com paginação:</b> less /etc/services (Less: 'n' pula pra próxima página, '/palavra' procura palavra)
@@ -418,6 +419,77 @@ Durabilidade somente enquanto o terminal estiver aberto
 <b>Impressão avançada:</b> lp -d nomeImpressora -n 2 -P 1,3 Documents/arquivo.txt (2 cópias, pgs 1 e 3)
 <b>Nome da impressora:</b> lpstat -p -d
 <b>Ver fila de impressão:</b> lpq
+</code></pre></small>
+                </div>
+            </div>
+            <br>
+
+            <div class="card">
+                <h4 class="card-header" id="serifada">19. Bash 3: Manipulações</h4>
+                <div class="card-body">
+                    <h4>Movimentar-se nas pastas</h4>
+<small><pre><code>
+<b>Entrar em pasta na pasta atual:</b> cd nomepasta/ (Change Directory)
+<b>Entrar em arquivo na pasta atual:</b> cd arquivo.tipo
+<b>Entrar na pasta x:</b> cd ~/pastax/
+<b>Voltar 1 pasta da pasta atual(diretório pai):</b> cd ..
+<b>Voltar 2 pastas da pasta atual:</b> cd ../../ (e assim por diante)
+<b>Voltar à pasta de seu usuário(~):</b> cd ou cd ~
+<b>Volta à pasta raíz:</b> cd / (Na pasta raíz tem-se o acesso de todo o sistema)
+</code></pre></small>
+                    <h4>Caracteres globais(Globbing)</h4>
+                    <p>Também conhecidos como <b>Expressões Regulares</b>, quando caracteres Regex são utilizados em conjunto.</p>
+<small><pre><code>
+<b>.</b> Referência a qualquer caractere único
+<b>*</b> Referência a conjunto de caracteres (presente no prompt do Windows)
+<b>?</b> Referência a apenas 1 caractere / O padrão anterior é opcional(Quando usado de forma composta) (presente no prompt do Windows)
+<b>[ ]</b> Referência de faixa de caracteres (busca faixas de caracteres, como a até m, u até l)
+<b>[a-z][0-9]</b> Caracteres de 'a' até 'z', caracteres de '0' até '9'
+<b>[a,z][0,9]</b> Caracteres 'a' e 'z', caracteres '0' e '9'
+<b>[a-z,1,0]</b> Caracteres de 'a' até 'z' ou '1' ou '0'
+<b>[^ ]</b> Referência de faixa de caracteres ausentes
+<b>{ }</b> Referência a padrões de caracteres / Especifique correspondências mínimas, máximas ou exatas do padrão anterior(Quando usado de forma composta)
+<b>x{ab,01}</b> Sequência de caracteres 'xab' ou 'x01'
+<b>x{a-c,f}</b> Sequência de caracteres 'xa', 'xb', 'xc' ou 'xf'
+<b>^</b> Se o 1º caractere do padrão, o padrão deve estar no início da linha para corresponder, senão, apenas um literal ^
+<b>$</b> Se o último caractere do padrão, o padrão deve estar no final da linha para corresponder, senão, apenas um literal $
+<b>+</b> 1 ou mais do padrão anterior
+<b>|</b> Alternativa ao <b>-</b> um 'ou' lógico
+<b>( )</b> Criar grupos
+<b>!</b> Exclui caractere da operação
+<u>Obs</u>: Há diferença entre maiúsculas e minúsculas
+
+<b>Criar 5 arquivos:</b> touch arquivo{1-5}.txt (Gerará 'arquivo1.txt', 'arquivo2.txt'...)
+<b>Listar tudo que começa com 'x':</b> ls /etc/x*
+<b>Listar tudo que tem 'x' no meio:</b> ls /etc/*x*
+<b>Listar tudo que termina com '.conf':</b> ls /etc/*.conf
+<b>Listar tudo que tem 2º caractere 'a', 3º 's', e depois qualquer coisa:</b> ls /etc/?as*
+<b>Listar tudo que tem 'a' na 4ª posição e depois qualquer coisa:</b> ls /etc/???a*
+<b>Listar tudo que começa com 'f', seguido de caractere na faixa entre 'a' e 'i', e depois qualquer coisa:</b> ls /etc/f[a-i]*
+<b>Listar tudo que começa com 'f', seguido de caractere 'a' ou 'c', depois qualquer coisa:</b> ls /etc/f[a,c]*
+<b>Listar tudo que começa com 'f', seguido de caractere entre 'a' até c, ou 'e', depois qualquer coisa:</b> ls /etc/f[a-c,e]*
+<b>Listar tudo que tenha no meio caracteres de 'a' até 'c', depois qualquer coisa:</b> ls /etc/*[a-c]*
+<b>Listar tudo que, por 2º, liste ou 'am' ou(OR) 'ul', depois qualquer coisa:</b> ls /etc/?{am,ul}*
+<b>Listar tudo que, por 2º, liste sequência do 'a' até 'm' ou do 'u' até 'l' (não é necessário o traço '-'), depois qualquer coisa:</b> ls /etc/?[am,ul]*
+<b>Listar tudo que termina com ou 'tab' ou 'swd':</b> ls /etc/*{tab,swd}
+<b>Procurar em 'arquivo.txt' termos que terminam com 'teste':</b> grep '$teste' arquivo.txt
+</code></pre></small>
+                    <h4>Manipulação de arquivos</h4>
+<small><pre><code>
+<b>Copiar e colar arquivo:</b> cp nomearquivo.tipo diretorioDestino/
+<b>Copiar e colar recursivamente:</b> cp -r diretorioOrigem diretorioDestino
+<b>Copiar e colar, mantendo metadados:</b> cp -p diretorioOrigem diretorioDestino (Mantém usuárioCriador, datas, horas, de criação intactas)
+<b>Mover arquivo:</b> mv nomearquivo.tipo Pastadestino/
+<b>Renomear arquivo:</b> mv pastaantiga/ Pastanova/
+<b>Copiar e colar tudo com final '.conf' para dentro de uma pasta:</b> cp /etc/*.conf Pastadestino/
+<b>Alterar propriedades:</b> chown root hello.sh (chown [parâmetros] [proprietário] arquivo)
+
+Comando de copiar <b>dd</b>, diferente do cp, faz cópia bit a bit, muito mais preciso, sendo muito utilizado para gerar backups.
+<b>Copiar e colar arquivo (Avançado):</b> dd if=/dev/zero of=/tmp/swapex bs=1M count=50
+<b>if:</b> Arquivo de entrada, a ser lido
+<b>of:</b> Arquivo de saída, a ser gravado/escrito
+<b>bs:</b> Tamanho do bloco, podendo esse ser Kilobyte, Megabyte, Gigabyte, Terabyte, etc.
+<b>count:</b> Contagem de blocos a serem lidos da entrada
 </code></pre></small>
                 </div>
             </div>
