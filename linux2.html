@@ -282,6 +282,77 @@
             </div>
             <br>
 
+            <div class="card">
+                <h4 class="card-header" id="serifada">17. Bash 1: Base</h4>
+                <div class="card-body">
+                    <img src="anexos/linux/bash.png" width="250px" height="auto">
+                    <p>Assim como GUI (Graphical User Interface), há também CLI (Command Line Interface), onde há somente texto e manuseio via teclado. Como exemplo, o <b>Bash</b> (Bourne Again Shell) é um dos interpretadores/shell de comandos Linux <small>(bash --version)</small>, geralmente o interpretador padrão. O interpretador de comandos tem função de interpretar comandos, juntamente com seus argumentos/parâmetros, executáveis localizados na pasta <i>bin</i>. Diferente do prompt do Windows, no Linux os comandos são externos, nos quais o interpretador tem a função de somente interpretá-los e executá-los. Linux opera de forma case-sensitive. Todo comando é minúsculo (exceção de nome de arquivos e pastas). CLI são muito usados para administração de servidores Linux para computação em nuvem. Todo comando possui parâmetros e/ou argumentos, dos quais modificam a saída do comando, parâmetros são seguidos de 1 traço e letra ou 2 traços e palavra. Argumento não possui traços antecessores. <small>(Ex: cd .. (cd comando, .. argumento))</small>. No caso, parâmetro altera o comportamento do comando, argumento especifica algo para o comando agir. Alguns autores, ao invés de 'parâmetros', nomeiam 'opções'. Todo SO possui uma entrada padrão(teclado) e saída padrão(tela e saída de erro). Essa, por sua vez, pode ser modificada, como a saída para criação de um arquivo ou algo do tipo. No Linux tudo é arquivo, inclusive os diretórios(pastas). Um pendrive, quando plugado, torna-se um arquivo, salvo na pasta 'device', assim como o teclado. Vale lembrar que esse conteúdo é baseado em distros <b>debian</b>!</p>
+                    <p><b>Sintaxe:</b> <i>comando [-parametro] &lt;argumento&gt;</i><br>No caso, o parâmetro modificará a saída do comando para determinado argumento.</p>
+                    <ul>
+                        <li>Site identificador de comandos (Explainshell): <a id="btnLink" href="https://explainshell.com" target="_blank">Clique</a></li>
+                    </ul>
+                    <h4>Atalhos úteis</h4>
+                    <ul>
+                        <li><b>Tab</b>: Autocompleta o comando</li>
+                        <li><b>Seta up</b>: Comando anterior</li>
+                        <li><b>Seta down</b>: Mostra o comando sucessor ao anterior</li>
+                        <li><b>^c</b>: Quer dizer <i>ctrl+c</i></li>
+                        <li><b>M-c</b>: Quer dizer <i>alt+c</i></li>
+                        <li><b>Ctrl+a</b>: Cursor ao começo da linha</li>
+                        <li><b>Ctrl+e</b>: Cursor ao final da linha</li>
+                        <li><b>Ctrl+u</b>: Deleta tudo à esquerda do cursor</li>
+                        <li><b>Alt+b</b>: Volta 1 palavra</li>
+                        <li><b>Ctrl+w</b>: Deleta 1 palavra</li>
+                        <li><b>Ctrl+p</b>: Comando anterior</li>
+                        <li><b>Ctrl+n</b>: Próximo comando</li>
+                        <li><b>Ctrl+c</b>: Abre nova linha a partir do cursor</li>
+                        <li><b>Ctrl+d</b>: Sair</li>
+                        <li><b>Alt+f</b>: Move 1 palavra</li>
+                        <li><b>Alt+d</b>: Deleta 1 palavra</li>
+                        <li><b>Ctrl+k</b>: Deleta tudo à direita do cursor</li>
+                        <li><b>Ctrl+r</b>: Iniciar/Próxima pesquisa</li>
+                        <li><b>Ctrl+g</b>: Cancelar pesquisa</li>
+                        <li><b>Ctrl+x</b> OU <b>+e</b>: Editar</li>
+                        <li><b>Ctrl+l</b>: Limpar terminal</li>
+                        <li><b>Ctrl+-</b>: Desfazer</li>
+                    </ul>
+                    <h4>Comandos gerais</h4>
+<small><pre><code>
+<b>Filme Star Wars modo Terminal:</b> telnet towel.blinkenlights.nl
+<b>Fechar o bash:</b> exit
+<b>Limpar bash:</b> clear
+<b>Ajuda no bash:</b> help
+<b>Ajuda com determinado comando:</b> comando --help
+<b>Manual sobre determinado comando:</b> man comando
+<b>Modo administrador:</b> sudo + outros comandos
+<b>Modo root(Super admin(cuidado!)):</b> sudo su (Comando 'su' (Substitute User / 'sudo' Super User Do) permite que atue temporariamente como um usuário diferente, criando novo shell com usuário root por padrão (Ex: 'sudo -'). Alternativo 'sudo -i'. 'exit' volta para usuário comum)
+<b>Mostrar caminho absoluto de arquivos:</b> pwd (print world directory)
+<b>Caminho relativo:</b> ./pasta/pasta/arquivo.tipo
+<b>Comentário no Bash:</b> #comentario aqui (Comentários não afetam/executam programas)
+<b>Executar 2 comandos em 1 só linha (;):</b> cd ../ ; ls | grep passwd
+
+<b>Histórico dos comandos executados:</b> history
+<b>Histórico dos 10 últimos comandos executados:</b> history 10 OU fc -l 10
+<b>Histórico dos comandos do 2 ao 6:</b> fc -l 2 6
+<b>Histórico dos comandos executados na última hora:</b> fc -l h
+<b>Repetir comando x do history:</b> !34 (executará o comando 34 do history)
+
+<b>Informações sobre hardware:</b> lshw
+<b>Ver versão do kernel:</b> uname -r (Release)
+<b>Ver detalhes do kernel:</b> uname -a
+
+<b>Desligamento:</b> <i>shutdown [parâmetros] tempo [mensagem]</i>
+Tempo: <i>dia_da_semana mês dia hora:minuto:segundo ano UTC</i>
+<b>Ex(Imediato):</b> shutdown now OU halt -p OU poweroff OU init 0
+<b>Ex2:</b> shutdown +1 "Goodbye World!"
+<b>Ex3:</b> shutdown -h 21:42 (Agendado desligamento para às 21:42)
+<b>Reiniciar(Imediato):</b> shutdown -r OU init 6 OU reboot OU ctrl+alt+del (Algumas distros)
+<b>Reiniciar daqui a 10min:</b> shutdown -r 10
+</code></pre></small>
+                </div>
+            </div>
+            <br>
+
 
 
 
