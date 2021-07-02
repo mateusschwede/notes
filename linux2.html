@@ -538,6 +538,105 @@ to-tgz -> Converte arquivo para .tgz
             </div>
             <br>
 
+            <div class="card">
+                <h4 class="card-header" id="serifada">21. Bash 5: Gestão</h4>
+                <div class="card-body">
+                    <h4>Permissões de acesso (chmod)</h4>
+                    <p>De forma nativa, no Linux nada pode ser executado por padrão. Precisa-se aplicar permissão para tal.</p>
+<small><pre><code>
+<b>Exemplo:</b> -rw-r--r-- 1 sysadmin sysadmin 647 Dec 20 2017 hello.sh
+<b>Ordenação:</b>
+1. (<b>rw-</b>) <b>Proprietário</b>, no caso o primeiro sysadmin
+2. (<b>r--</b>) <b>Grupo</b>, no caso o segundo sysadmin
+3. (<b>r--</b>) <b>Outros</b>, no caso outros usuários não proprietários do arquivo
+
+<b>Sintaxe:</b> <i>chmod [&lt;conjunto&gt;&lt;ação&gt;&lt;permissões&gt;] arquivo</i>
+
+<u><b>Conjunto:</b></u>
+<b>u</b> - User/Usuário (O usuário que possui o arquivo)
+<b>g</b> - Group/Grupo (O grupo que possui o arquivo)
+<b>o</b> - Others/Outros (Qualquer pessoa que não seja o proprietário do usuário ou membro do proprietário do grupo)
+<b>a</b> - All/Todos (Refere-se ao usuário, grupo e outros)
+
+<u><b>Ação:</b></u>
+<b>+</b> - Adicione a permissão, se necessário
+<b>=</b> - Especifique a permissão exata
+<b>-</b> - Remova a permissão, se necessário
+
+<u><b>Permissões:</b></u>
+<b>Simbólico:</b> Representado por letras (Altera um conjunto de permissões de cada vez)
+<b>r</b> - Read (leitura)
+<b>w</b> - Write (gravação/escrita)
+<b>x</b> - Exec (execução)
+<b>Octal:</b> Representado por números (Altera todos os três conjuntos de permissões (usuário, grupo e outros))
+<b>0</b> - Corresponde ao <b>"-rwx"</b> Nenhuma permissão
+<b>1</b> - Corresponde ao <b>"x"</b> Execução
+<b>2</b> - Corresponde ao <b>"w"</b> Escrita
+<b>3</b> - Corresponde ao <b>"wx"</b> Escrita e execução
+<b>4</b> - Corresponde ao <b>"r"</b> Leitura
+<b>5</b> - Corresponde ao <b>"rx"</b> Leitura e execução
+<b>6</b> - Corresponde ao <b>"rw"</b>  Leitura e escrita
+<b>7</b> - Corresponde ao <b>"rwx"</b> Leitura, escrita e execução (Cuidado!)
+<b>-R</b> - Permissão recursiva (afeta todos arquivo e subpastas) à listada. (Ex: sudo chmod -R 777 arquivo)
+
+<u>Ex1</u>: sudo chmod 764 teste (Da direita pra esquerda, permissão à <b>outros usuários(4)</b> com somente leitura, <b>grupo(6)</b> com leitura e gravação, e <b>dono(7)</b> com leitura, gravação e execução)
+<u>Ex2</u>: sudo chmod 40 teste (Da direita pra esquerda, permissão à outros usuários(0) nenhuma, grupo(4) somente leitura e dono não foi modificada)
+</code></pre></small>
+                    <h4>Criar lançador (atalho)</h4>
+<small><pre><code>
+<b>Conteúdo do arquivo do lançador (nomedoprograma.desktop)</b>
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Nome do aplicativo
+Comment=Uma breve descrição do aplicativo
+Icon=/endereço/do/ícone/icon.png do aplicativo
+Exec=/endereço/do/aplicativo/executável do aplicativo
+Terminal=false
+StartupNotify=false
+Categories=Network;
+
+<b>Criar Lançador</b>
+Crie o diretório dos lançadores: mkdir ~/.local/share/applications/
+Altere nomedoprograma para o nome do seu aplicativo: nano ~/.local/share/applications/nomedoprograma.desktop
+Cole as informações do lançador, similares à acima, no editor
+Com o lançador pronto, salve teclando Ctrl + x tecle 's'ou'y' e tecle 'Enter' para fechar.
+
+<b>Acessar Lançadores</b>
+Acessar pasta de lançadores: nautilus /usr/share/applications
+Acessar pasta de meus lançadores: nautilus ~/.local/share/applications
+
+<u><b>Categorias de Lançadores:</b></u>
+<b>Configurações:</b> Categories=Settings;
+<b>Desenvolvimento:</b> Categories=Development;Documentation;
+<b>Educação:</b> Categories=Education;
+<b>Ciências:</b> Categories=Science;
+<b>Escritório:</b> Categories=Office;
+<b>Gráficos:</b> Categories=Graphics;
+<b>Internet:</b> Categories=Network;
+<b>Jogos:</b> Categories=Game;
+<b>Multimídia:</b> Categories=AudioVideo;Audio;Video;AudioVideoEditing;
+<b>Sistema:</b> Categories=System;
+<b>Utilitários:</b> Categories=Utility;
+</code></pre></small>
+                    <h4>Processos</h4>
+                    <p>Todos processos possuem um <b>PID</b> (Process Identification) e, muitas vezes também, um <b>PPID</b> (PID pai do processo. O ID do processo que iniciou este processo específico), com prioridade de execução, que vai do -19 ao 20 (mais significativo). Processos criados pelo usuário comum possuem, por padrão, prioridade 0. O root possui poder de alterar a prioridade. Outros termos relevantes são o <b>TTY</b> (Nome do terminal do processo), <b>TIME</b> (Total de tempo usado pelo processador no processo) e <b>CMD</b> (Comando que iniciou o processo).</p>
+<small><pre><code>
+<b>Ver discos:</b> df -h / df -i (Inodes: buracos de memória no hardware de cada partição, arquivos em branco tbm ocupam)
+<b>Discos e uso:</b> du -sh *(Ver tudo no diretório, do maior pro menor)
+<b>Ver processos:</b> ps -ef / pf -aux / ps -r (-r para somente processos em execução)
+<b>Ver processos filtro:</b> ps -ef | grep init(Todos processos 'init') / ps --pid nº ou --ppid nº (Filtro por id)
+<b>Processos e detalhes:</b> top(Processos e detalhes da máquina)
+<b>Processos de usuário específico:</b> top -u usuario
+<b>Processos em tree:</b> pstree
+<b>Matar processo(cuidado!):</b> kill -9 PID(Nº processo)
+<b>Matar todos processos de software:</b> killall nomesoftware | pkill nomesoftware(associa palavra-chave informada)
+<b>Alterar prioridade:</b> renice numPrioridade -p numPid / nice -n numPrioridade nomeProcesso (Nice prioridade vai do -20 à 19, padrão 0)
+</small></pre></code>
+                </div>
+            </div>
+            <br>
+
 
 
 
