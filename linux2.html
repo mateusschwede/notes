@@ -353,6 +353,76 @@ Tempo: <i>dia_da_semana mês dia hora:minuto:segundo ano UTC</i>
             </div>
             <br>
 
+            <div class="card">
+                <h4 class="card-header" id="serifada">18. Bash 2: Arquivos</h4>
+                <div class="card-body">
+                    <h4>Criar</h4>
+<small><pre><code>
+<b>Criar pasta:</b> mkdir nomepasta1 nomepasta2 nomepasta3
+<b>Criar pasta com subpasta:</b> mkdir -p pasta1/pasta2/pasta\ 3/ (o '\' representa não interpretar o próximo espaço em branco como um comando, pode-se trocar o nome do arquivo com espaços por seu nome por extenso entre aspas duplas. O -p não sobrescreve, caso o nome já exista)
+<b>Criar arquivo:</b> touch nomearquivo.tipo (O comando touch nasceu com o intuito de modificar a data de criação e modificação de um arquivo)
+<b>Comando mais direto:</b> touch Documents/Cursos/Linux/Modulo\ 1/aula1.txt
+</code></pre></small>
+                    <h4>Editar</h4>
+<small><pre><code>
+<b>Editar arquivo com o editor bash 'nano':</b> nano nomearquivo.tipo
+(Comandos nano: 'cntrl+o(salvar)', 'cntrl+x(sair)', o 'M' representa o 'alt')
+(Ver card completo 'Editor Nano')
+</code></pre></small>
+                    <h4>Remover</h4>
+<small><pre><code>
+<b>Remover pasta/arquivo(cuidado):</b> rm nomepasta/ ('rm' remove definitivamente, não move à lixeira)
+<b>Remover arquivox na pasta Documents:</b> rm Documents/arquivox
+<b>Remover pasta:</b> rmdir nomepasta/ (Diretórios com conteúdo precisam ser removidos de forma recursiva, pois seu conteúdo também será removido)
+<b>Remover pasta com conteúdo dentro:</b> rm -rf nomepasta (Recursive Force)
+<b>Remover sob confirmação:</b> rm -i nomepasta (Interactive)
+<b>Remover sob confirmação com mais de 4 arquivos:</b> rm -I
+</code></pre></small>
+                    <h4>Apelidos (Alias)</h4>
+<small><pre><code>
+Durabilidade somente enquanto o terminal estiver aberto
+<b>Mostrar todos os apelidos:</b> alias
+<b>Criar apelido:</b> alias rm="rm -I" (Com isso, todo o comando 'rm' será seu conteúdo alias, ou seja, 'rm -I')
+</code></pre></small>
+                    <h4>Listar</h4>
+<small><pre><code>
+<b>Listar conteúdos dentro da pasta atual:</b> ls
+<b>Listar pastas e subpastas:</b> ls -R
+<b>Listar conteúdos dentro da pasta atual com informações:</b> ls -l
+<b>Listar conteúdos com informações aprimoradas de armazenamento:</b> ls -l -h
+<b>Listar com arquivos ocultos:</b> ls -a (Todo arquivo oculto possui um ponto na frente)
+<b>Listar com informações incluindo armazenamento e arquivos ocultos e subpastas:</b> ls -Rlah (tipo do arquivo: d(diretório), arquivo comum(-), dispositivo de bloco(b), de caracteres(c), link(l))
+<b>Listar conteúdo de arquivo:</b> cat nomearquivo.tipo
+<b>Listar conteúdo de arquivo de trás pra frente:</b> tac nomearquivo.tipo
+<b>Listar conteúdo de arquivo com paginação:</b> less /etc/services (Less: 'n' pula pra próxima página, '/palavra' procura palavra)
+<b>Listar conteúdo de pasta:</b> ls nomepasta/
+</code></pre></small>
+                    <p>Conceitos ls -l:</p>
+<small><pre><code>
+[tipoArquivo] [permissões(proprietário/grupo/outros)] [contagem linksFisicos] [proprietárioDoUsuario] [proprietárioDoGrupo] [tamanhoArquivoBouKB] [dthrRegistro] [nomeArquivo.extensao]
+<i><b>Exemplo (Arquivo):</b> -rw-r--r-- 1 root root 18047 Dec 20 2021 alternatives.log</i>
+<i><b>Exemplo (Diretório):</b> drwxr-x--- 2 root adm 4096 Dec 20 2021 apache2</i>
+
+<b>d:</b> Diretório
+<b>-:</b> Arquivo regular (Indica que é arquivo, não sendo diretório)
+<b>l:</b> Link simbólico (Aponta para outro arquivo)
+<b>s:</b> Arquivo é um socket (Comunicação entre processos)
+<b>p:</b> Arquivo é um fifo, named pipe (Comunicação entre processos. Fifo- FistIn FirstOut, muito usado para filas de elementos em lista de espera)
+<b>b:</b> Arquivo é dispositivo de bloco (Comunicação com hardware, com buffer: região temporária de memória para escrita/leitura)
+<b>c:</b> Arquivo é dispositivo de caractere (Comunicação com hardware, sem buffer)
+<b>u:</b> O mesmo que <i>c</i>
+</code></pre></small>
+                    <h4>Impressão (Básica)</h4>
+<small><pre><code>
+<b>Impressão simples:</b> lp arquivo.txt
+<b>Impressão avançada:</b> lp -d nomeImpressora -n 2 -P 1,3 Documents/arquivo.txt (2 cópias, pgs 1 e 3)
+<b>Nome da impressora:</b> lpstat -p -d
+<b>Ver fila de impressão:</b> lpq
+</code></pre></small>
+                </div>
+            </div>
+            <br>
+
 
 
 
