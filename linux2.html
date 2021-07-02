@@ -857,6 +857,29 @@ O nano possibilita a abertura de diversos arquivos ao mesmo tempo.
             </div>
             <br>
 
+            <div class="card">
+                <h4 class="card-header" id="serifada">26. Usuários</h4>
+                <div class="card-body">
+                    <p>O <b>administradors(sudo)</b> possui permissão total de utilização do sistema, como gerenciar arquivos e diretórios, além de executar aplicações, instalá-las e removê-las. Também pode executar qualquer comando do terminal. O <b>usuário comum ($)</b> é aquele padrão no Linux, para seu uso, possuindo algumas restrições em terminal e sistema. Entretanto, o usuário comum que instalou o Linux tem permissão para executar comandos/programas no modo administrador, utilizando o comando "sudo". O <b>usuário de sistema</b> é um usuário fictício criado durante a instalação de algum programa, a fim de executar tarefas específicas do mesmo. Não possui capacidade de login no sistema. Por fim, tem-se o <b>root (#, id 0)</b> (sudo su), como sendo um "super-usuário", capaz de fazer absolutamente TUDO no Linux. O que difere o root de outros usuários é o fato dele ser o único capaz de gerenciar coisas fora de seu diretório pessoal. Por essa razão, priva-se a utilização com este usuário.</p>
+<small><pre><code>
+<b>whoami</b>: Ver usuário atual
+<b>w</b>: Ver detalhes de usuários conectados
+<b>su - nomeUsuario</b>: Sai do root e vai para usuário descrito
+<b>Atualizar senha de usuários:</b> <i>passwd [parâmetros] [utilizador]</i>
+<u>Ex:</u> passwd -S sysadmin
+<b>Username:</b> Nome do usuário. Ex: <i>sysadmin</i>
+<b>Password Status:</b> P(Senha utilizável), L(Senha bloqueada), NP(Não há senha). Ex: <i>P</i>
+<b>Change Date:</b> Data de última modificação da senha. Ex: <i>30/07/2021</i>
+<b>Minimum:</b> Nº mínimo de dias que deve passar antes que a senha atual possa ser alterada pelo usuário. Ex: <i>0</i>
+<b>Maximum:</b> Nª máximo de dias restantes para a senha expirar. Ex: <i>99999</i>
+<b>Warn:</b> Nº de dias antes da expiração da senha que o usuário é avisado. Ex: <i>7</i>
+<b>Inactive:</b> Nº de dias após a expiração da senha que a conta do usuário permanece ativa. Ex: <i>-1</i>
+</small></pre></code>
+                    <p>"<i>Acima de Deus somente root</i>".</p>
+                </div>
+            </div>
+            <br>
+
 
 
 
