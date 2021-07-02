@@ -437,7 +437,7 @@ Durabilidade somente enquanto o terminal estiver aberto
 <b>Voltar à pasta de seu usuário(~):</b> cd ou cd ~
 <b>Volta à pasta raíz:</b> cd / (Na pasta raíz tem-se o acesso de todo o sistema)
 </code></pre></small>
-                    <h4>Caracteres globais(Globbing)</h4>
+                    <h4>Caracteres globais (Globbing)</h4>
                     <p>Também conhecidos como <b>Expressões Regulares</b>, quando caracteres Regex são utilizados em conjunto.</p>
 <small><pre><code>
 <b>.</b> Referência a qualquer caractere único
@@ -490,6 +490,49 @@ Comando de copiar <b>dd</b>, diferente do cp, faz cópia bit a bit, muito mais p
 <b>of:</b> Arquivo de saída, a ser gravado/escrito
 <b>bs:</b> Tamanho do bloco, podendo esse ser Kilobyte, Megabyte, Gigabyte, Terabyte, etc.
 <b>count:</b> Contagem de blocos a serem lidos da entrada
+</code></pre></small>
+                </div>
+            </div>
+            <br>
+
+            <div class="card">
+                <h4 class="card-header" id="serifada">20. Bash 4: Aplicações</h4>
+                <div class="card-body">
+                    <h4>Instalar</h4>
+<small><pre><code>
+(Maiores detalhes, ver card completo 'Pacotes')
+<b>Procurar pacotes apt para instalação:</b> sudo apt search
+<b>Pacote com apt:</b> sudo apt install nomearquivo
+<b>Pacote .deb:</b> sudo dpkg -i nomearquivo.deb
+<b>Pacote .run / .bin:</b> sudo chmod +x nomearquivo.run && sudo ./nomearquivo.run / nomearquivo.bin
+<b>Pacote .tar:</b> sudo tar -xvf nomearquivo.tar
+<b>Pacote .tar.gz:</b> sudo tar -zxvf nomearquivo.tar.gz
+<b>Pacote .tar.bz2/.xz:</b> sudo tar -jxvf nomearquivo.tar.bz2
+(Softwares compactados geralmente possuem um arquivo de instruções de instalação, juntamente com um arquivo '.configure', do qual terá de ser executado(./configure), após realizar o 'make' do software, 'make clean' e, após isso, montar o programa 'make install' usando 'sudo')
+(Ver card completo 'Empacotamento e Compactação')
+
+<b>Converter .rpm para .deb (Alien):</b>
+1- Instale Alien: sudo apt install alien
+2- Converta: sudo alien &lt;opção&gt; arquivo.rpm
+Opções (opcionais):
+to-deb -> Converte arquivo para .deb
+to-rpm -> Converte arquivo para .rpm
+to-tgz -> Converte arquivo para .tgz 
+</code></pre></small>
+                    <h4>Desinstalar / Limpar</h4>
+<small><pre><code>
+<b>Remover 'lixo':</b> sudo apt autoremove (bibliotecas) //ou apt clean (cache)
+<b>Reconstruir dependências faltando/corrompidas:</b> sudo apt --fix-broken install
+<b>Desinstalar somente software:</b> sudo apt remove nomesoftware
+<b>Desinstalar .deb:</b> sudo dpkg --remove nomesoftware
+<b>Desinstalar software e bibliotecas (cuidado!):</b> sudo apt purge nomesoftware //ou sudo apt purge --auto-remove nomesoftware
+</code></pre></small>
+                    <h4>Atualizar</h4>
+<small><pre><code>
+<b>Atualizar bibliotecas:</b> sudo apt update
+<b>Atualizar programas:</b> sudo apt upgrade
+<b>Atualizar bibliotecas e programas(comando único):</b> sudo apt update && sudo apt upgrade
+<b>Atualizar distro e programas:</b> sudo apt dist-upgrade / sudo apt full-upgrade
 </code></pre></small>
                 </div>
             </div>
