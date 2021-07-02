@@ -1032,8 +1032,22 @@ EXEMPLO: <b>1  | 1  | 1  | 0  | 0 | 0 | 0 | 0</b>, onde a soma dos true, <i>128+
                     <p><b>dnf</b><br>O dnf é o gerenciador de pacotes, geralmente o principal, utilizado no Fedora e demais distros Red Hat, sendo um fork do Yun, funcionando da mesma maneira que tal. O dnf utiliza Python 3, enquanto o yun a versão 2.</p>
                     <p><b>zypper</b><br>O ZYpp é o gerenciador de pacotes de distros SUSE, utilizando gerenciamento de pacotes rpm, distribuindo pacotes na mesma. Possui utilização similar ao yun, com alguns argumentos extras, como <b>list-updates</b>, <b>verify</b>, <b>what-providers</b>, <b>refresh</b>.</p>
                     <p><b>synaptic</b><br>Gerenciador de pacotes criados por Brasileiros para uso em conjunto com o sistema de empacotamento Codecs, funcionando como, basicamente, um front-end para o apt, que serve para manipulação de repositórios, para baixar instalações de pacotes. Serve mais para atualização de pacotes em geral, assim como até mesmo a Distro em si.</p>
-                    <p><b>snap</b> e <b>flatpack</b><br>Sistemas de empacotamento universal para repositórios. Com algum desses atualizados em qualquer distro, haverá a compatibilidade e simplicidade no processo de instalação, mesmo em Debian e Red Hat. Como Stores GUI para facilitar a instalação, tem-se a <b>Snapstore</b>, <b>Gnome Software</b>, <b>Flathub</b>, entre outras. Existem Stores de determinadas distros, como no ZorinOS, que combinam os gerenciadores snap e flatpack, onde o usuário pode selecionar a origem de seus pacotes a cada instalação.</p>
+                    <p><b>snap</b> e <b>flatpack</b><br>Sistemas de empacotamento universal para repositórios. Com algum desses atualizados em qualquer distro, haverá a compatibilidade e simplicidade no processo de instalação, mesmo em Debian e Red Hat. Como Stores GUI para facilitar a instalação, tem-se a <b>Snapstore</b>, <b>Snapcraft</b>, <b>Gnome Software</b>, <b>Flathub</b>, entre outras. Existem Stores de determinadas distros, como no ZorinOS, que combinam os gerenciadores snap e flatpack, onde o usuário pode selecionar a origem de seus pacotes a cada instalação.</p>
                     <p><b>appimage</b><br>Assim como snap e flatpack, o appimage funciona como um container de aplicações para fácil instalação e compatibilidade nas mais diversas distros Linux. O appimage não requer permissões root para proceder, não precisando instalar o pacote, apenas baixá-lo e sair usando-o.</p>
+                </div>
+            </div>
+            <br>
+
+            <div class="card">
+                <h4 class="card-header" id="serifada">30. Compatibilidade</h4>
+                <div class="card-body">
+                    <img src="anexos/linux/wine.png" width="50px" height="auto">
+                    <p><b>Wine</b> (Wine Is Not Emulator) tem função de interpretar chamadas de sistemas de um software nativo Windows, traduzindo-o para Linux. É uma implementação livre da Api do Windows, com seus trabalhos em progresso. Juntamente com o Wine, tem-se o <b>PlayOnLinux</b>, aplicação de gestão de softwares Windows compatíveis com interpretação Linux, como jogos e outros softwares (Microsoft Office, Adobe Photoshop...). Todo o processo de interpretação é realizado com Engenharia Reversa de produtos Windows e no SO, que não são abertos, o que dificulta no progresso de soluções do tipo. Para utilizar MacOS Catalina diretamente no Linux, via VM, pode-se baixar o snap <b>Sosumi</b>.</p>
+                    <ul>
+                        <li>Wine: <a id="btnLink" href="https://www.winehq.org" target="_blank">Acesse</a></li>
+                        <li>PlayOnLinux: <a id="btnLink" href="https://www.playonlinux.com/en" target="_blank">Acesse</a></li>
+                        <li>Sosumi: <a id="btnLink" href="https://github.com/popey/sosumi-snap" target="_blank">Acesse</a></li>
+                    </ul>
                 </div>
             </div>
             <br>
