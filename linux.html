@@ -1123,6 +1123,21 @@ EXEMPLO: <b>1  | 1  | 1  | 0  | 0 | 0 | 0 | 0</b>, onde a soma dos true, <i>128+
 <b>Descompactar mostrando tempo (Funciona no gzip também)</b>: time bzip2 -d pastaEmpacotada.tar.bz2
 <b>Ver arquivo compactado .bz2, sem descompactá-lo</b>: bzcat arquivo.bz2 (Há outros comandos, como <i>bzgrep</i>, <i>zless</i> e <i>zmore</i>)
 </small></pre></code>
+                    <h4>xz</h4>
+                    <p>O utilitário xz também é utilizado para compactar/descompactar arquivos. Arquivos compactados com xz possuem final <i>.xz</i>. As flags são as mesmas dos utilitários acima. Sintaxe: <i>xz [opções] &lt;arquivo&gt;</i></p>
+<small><pre><code>
+<b><u>Exemplos:</u></b>
+<b>Compactar diretório teste:</b> xz -c teste > testinho.xz
+<b>Descompactar:</b> xz -d teste.xz
+<b>Empacotar (tar) e compactar (xz):</b> tar -cJf ./arquivoCompactado.tar.xz diretorioAlvo/
+<b>Descompactar (xz) e desempacotar (tar):</b> tar -xJf arquivoCompactado.tar.xz
+</small></pre></code>
+                    <h4>gunzip</h4>
+                    <p>Utilizado apenas para descompactar, tendo exatamente a mesma função de <i>gzip -d</i>. Utiliza as mesmas principais flags acima. Sintaxe: <i>gunzip [opções] &lt;arquivo&gt;</i><br><u>Exemplo:</u> <i>gunzip arquivoCompactado.tar.gz</i></p>
+                    <h4>bunzip2</h4>
+                    <p>Utilizado apenas para descompactar arquivos, tendo exatamente a mesma função de <i>bzip2 -d</i>. Utiliza as mesmas principais flags acima. Sintaxe: <i>bunzip2 [opções] &lt;arquivo&gt;</i><br><u>Exemplo:</u> <i>bunzip2 arquivoCompactado.tar.bz2</i></p>
+                    <h4>unxz</h4>
+                    <p>Utilizado apenas para descompactar arquivos, tendo exatamente a mesma função de <i>xz -d</i>. Utiliza as mesmas principais flags acima. Sintaxe: <i>unxz [opções] &lt;arquivo&gt;</i><br><u>Exemplo:</u> <i>unxz arquivoCompactado.tar.xz</i></p>
                 </div>
             </div>
             <br>
