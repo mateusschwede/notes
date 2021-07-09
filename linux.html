@@ -144,7 +144,20 @@
             <br>
 
             <div class="card">
-                <h4 class="card-header" id="serifada">10. Estrutura</h4>
+                <h4 class="card-header" id="serifada">10. Servidores</h4>
+                <div class="card-body">
+                    <p>Linux é o SO mais vasto na linhagem de servidores. Toda empresa precisa de um servidor para gerenciar seus dados. Da mesma forma, toda empresa procura seriedade, ou seja, qualidade e <b>integridade</b> em sua infraestrutura. Versões estáveis (<b>LTS</b>) de um servidor Linux tendem a possuir somente recursos fundamentais, que não se tornam obsoletos da noite para o dia. Da mesma forma, não possuem atualizações frequentes em novidades de pacotes. Portanto, quando as mesmas recebem atualizações de pacotes, esses já possuem determinado tempo de utilização e circulação, onde já foram testados e aprimorados e, portanto, não são mais novidades no mercado, havendo assim melhor <b>compatibilidade</b> para funcionamento, <b>segurança</b> e <b>otimização</b>. As <i>raras atualizações</i> nesses SOs têm objetivo de não afetar a integridade do sistema e seus respectivos pacotes instalados e em funcionamento, como a solução implantada pelo cliente no mesmo. Por exemplo, uma empresa global de tráfego aéreo precisa de um SO servidor, para hospedar seu sistema de tráfego aéreo, que <i>não pare de funcionar</i> por razão de incompatibilidade ao realizar atualização de pacotes. Da mesma forma, deve-se haver nesse SO o mínimo de atualizações possíveis, para não afetar o desempenho e integridade do SO, que suporta o sistema de tráfego aéreo, funcionando em tempo real. As raras atualizações nele ocorrerão somente quando essenciais para seu funcionamento, segurança e, portanto, integridade, ou seja, para manter o sistema do cliente suportado, sem que o mesmo pare de funcionar, ou torne-se lento/inseguro... Outro ponto é que este SO precisa servir somente como <b>base</b>, possuindo <i>abstração em recursos</i>, onde há somente o fundamental, para que não haja recursos sem utilidade nele instalados. Sendo base, o mesmo poderá ser <b>personalizado</b> pelo cliente, de acordo com suas necessidades. Por fim, o objetivo de um servidor é manter-se em funcionamento, com desempenho e segurança, além de íntegro, causando o mínimo possível de "ruído" ao cliente, estando totalmente à disposição do mesmo, para personalização e funcionamento. Como principais exemplos de distros Linux para servidores, tem-se a <b>Debian</b>, <b>Ubuntu Server LTS</b> e <b>RHEL</b>. O <b>CentOS</b> é a versão grátis do RHEL, porém o mesmo fora descontinuado, dando espaço para o <b>Fedora Server</b>. Geralmente o acesso e gerenciamento a esses servidores é CLI, via Bash, sendo raras versões modernas com gerenciamento via cPanel.</p>
+                    <ul>
+                        <li>Debian: <a id="btnLink" href="https://www.debian.org/distrib" target="_blank">Acesse</a></li>
+                        <li>Ubuntu Server: <a id="btnLink" href="https://ubuntu.com/download/server" target="_blank">Acesse</a></li>
+                        <li>RHEL (Versão free, para desenvolvedores): <a id="btnLink" href="https://developers.redhat.com/products/rhel/download" target="_blank">Acesse</a></li>
+                    </ul>
+                </div>
+            </div>
+            <br>
+
+            <div class="card">
+                <h4 class="card-header" id="serifada">11. Estrutura</h4>
                 <div class="card-body">
                     <img src="anexos/linux/arquivos.png" width="250px" height="auto">
                     <p>Derivado do Unix, no Linux não existem, de fato, programas/drivers/extensões: Tudo é considerado arquivo. Diretório/pasta são arquivos que contém arquivos. Por exemplo, todo movimento do mouse é baseado na incrementação de conteúdo no arquivo correspondente, fazendo com que o cursor mova-se de acordo com este conteúdo. No Linux não existe extensão de arquivos, já que não existem programas. A extensão, no contexto Linux, é a expressão definida dos nomes de arquivos. Todo arquivo possui caminho de passagem, por meio de seus antecessores e sucessores. Caminho Absoluto origina-se a partir do diretório root/raíz (<i>/</i>), até seu diretório atual (Ex arquivo sysadmin: <i>/home/Documents/Admin/sysadmin</i>). Caminho Relativo origina-se a partir de um diretório qualquer como a localização atual (Ex arquivo sysadmin: <i>Admin/sysadmin</i>). O caractere <b>.</b> (ponto) representa o diretório atual. O caractere <b>~</b> representa o diretório home. O diretório <b>root/raíz (/)</b> é o primeiro de todos diretórios, ou seja, onde estão todos os diretórios e arquivos do Linux para acesso, sendo somente acessado pelo usuário root (<b>#</b>). Todo arquivo oculto inicia-se com um ponto na frente. Linux dispensa uso de ambiente gráfico para ser operado, pois todo o sistema é dividido em camadas (layers): Possui Kernel como centro do sistema, que comunica-se com o hardware, fazendo a interface de gerenciamento de usuários, aplicações e processos/execuções.</p>
@@ -201,7 +214,7 @@
             <br>
 
             <div class="card">
-                <h4 class="card-header" id="serifada">11. Licenças</h4>
+                <h4 class="card-header" id="serifada">12. Licenças</h4>
                 <div class="card-body">
                     <p>IEEE, o comitê POSIX, determinou um conjunto de regras para sistemas padrão Unix. Windows e MacOS seguem tais regras para uso dos SOs, já que possuem Unix em seu Kernel, com algumas modificações proprietárias de mais alto nível. Richard Stallman, com a desaprovação da liberação de código fonte das impressoras Xerox, criou o Manifesto <b>GNU (GNU Not Unix)</b>, interessado em produzir um SO padrão Unix livre, que estava sendo pago na época. Um SO, como uma cebola, é composto por 3 camadas: Kernel (núcleo), Bibliotecas de acesso ao Kernel e Utilitários. Stallman com parceiros desenvolveram as bibliotecas e utilitários. Posteriormente, Stallman saiu do MIT e criou a <b>Free Software Foundation (FSF)</b>, organização sem fins lucrativos, ao qual o projeto GNU faz parte, com principal foco em manter a GPL. O Kernel, Hurd, foi dado procedência com Linus, baseado no Minix do Tanenbaum, pra produzir algo totalmente livre. A biografia de Linus tem como título 'Just for Fun' para esboçar a liberdade do SO. O Linux é, na verdade, composto por camadas do projeto GNU, o que o torna GNU Linux. Todo software possui a <b>EULA (End-User License Agreement)</b>, dos quais citam os termos do produto, que, no caso, limita a redistribuição e modificações no sistema, além de punições. O Windows utiliza tal meio de licença. O licenciamento cede ou limita o direito ao uso de determinado programa ao consumidor final. MacOS é gratuito, porém é só permitido usá-lo em máquina Apple. A licença <b>GPL (GNU General Public License)</b>, <i>'Free as Freedom'</i>, criada pelo Stallman, permite o uso do Software Livre, com responsabilidades de uso ao usuário final. Existem mais de 70 licenças de software de código aberto, presentes no site Open Source Org. O site GNU Project possui a lista completa de licenças de Software Livre. A GPL, com 3 versões, garante 4 liberdades:</p>
                     <ol start="0">
@@ -221,7 +234,7 @@
             <br>
 
             <div class="card">
-                <h4 class="card-header" id="serifada">12. Origens</h4>
+                <h4 class="card-header" id="serifada">13. Origens</h4>
                 <div class="card-body">
                     <p>As 3 distros base (<i>From Scratch</i>) principais são <b>Slackware</b>, <b>Debian</b> e <b>Red Hat</b>. Gentoo, SUSE e Arch saem também direto do Linux Scratch (Raíz). O nome Debian origina-se de Debra (Esposa do criador) + Ian (Ian Murdock, criador), onde todas as versões possuem nomes de personagens do Toy Story, foi o progenitor de muitas distros, as populares .deb. Seu logo referencia a fumaça espiral saindo de uma lâmpada mágica. Debian é muito popular por sua grande estabilidade com seus pacotes. A Red Hat, vinculada à IBM, é inspiradora de distros .rpm, como a Fedora, versão free da distro oficial Red Hat Enterprise Linux (RHEL). A Ubuntu é baseada na Debian, todas as versões compõem-se de um adjetivo e nome de animal. Ubuntu é um termo africano zulu que significa 'comunidade através dos outros', conceituando 'eu sou o que sou porque nós somos', em homenagem ao seu criador Sul Africano, em parceria com a Canonical. Seu símbolo conceitua 3 pessoas dando-se as mãos, formando um círculo. Seu slogan é 'Linux for Humans Beings' (Linux para seres humanos). Distros Linux como Mint foram inspiradas no Ubuntu. O Red Hat Enterprise Linux, da empresa Red Hat, tem como logo o chapéu Fedora vermelho, cuja distro Fedora é sua versão free distribuída e auxiliada pela comunidade, já que o RHEL possui pagamentos relacionados com suporte, muito desejado nas grandes empresas que buscam seriedade e profissionalismo na administração de sistemas. A Slackware foi a 1ª distro Linux, o que faz dela a distro mais antiga mantida, sendo bastante usada até atualmente. É baseada na estabilidade e simplicidade. O nome deriva-se do termo "Slack", significando "Senso de liberdade, independência e originalidade para alcançar suas metas pessoais". Por outro lado, o termo "Slack" deriva-se de "Preguiça", e "Ware" de "Produto", sendo interpretado como um produto de lapidação lenta. Atualmente, existem distros Linux minúsculas, focadas para determinados serviços, como execução em Containers e funcionamento em sistemas embarcados.</p>
                 </div>
@@ -229,7 +242,7 @@
             <br>
 
             <div class="card">
-                <h4 class="card-header" id="serifada">13. Avançado</h4>
+                <h4 class="card-header" id="serifada">14. Avançado</h4>
                 <div class="card-body">
                     <p>A Distro considerada por muitos a mais 'difícil', essa é a Gentoo Linux. Com vantagens e desvantagens, sua dificuldade de uso explica-se por razão de ser de baixo nível, sendo praticamente toda manual e personalizável, a fim de que o desenvolvedor crie aplicações extremamente personalizadas para o ambiente, desfrutando de estabilidade e desempenho. Com ela, o usuário desfrutará de todo o poder de montagem do Kernel, personalizando-o para seu hardware. O objetivo da distro era a criação de um SO sem binários pré-compilados, com a minimalidade ao extremo. O nome é baseado no pinguim Gentoo, conhecido por ser muito veloz ao nadar. O Gentoo pode ser descrito como uma meta-distribuição, devido à suas características. Existem distros baseadas no Gentoo, como Sabayon e Redcore. O Gentoo, após instalado, é considerado um sistema sem versionamento, indicando que a versão instalada é sempre a final utilizada no hardware. Seu logo é um 'G' lembrando um Magatama ('Jóia curva' de miçangas japonesas). Seu mascote oficial é o Knurt, o pires voador. Mascote não oficial inclui Larry, o vaca. A instalação da distro é manual, porém fora desenvolvido um instalador CLI para facilitar os usuários, aumentando assim a produtividade.</p>
                     <ul>
@@ -240,7 +253,7 @@
             <br>
 
             <div class="card">
-                <h4 class="card-header" id="serifada">14. Migração</h4>
+                <h4 class="card-header" id="serifada">15. Migração</h4>
                 <div class="card-body">
                     <p>Ao realizar o processo de migração a uma distro Linux, tem-se algumas formas. Primeiramente, pode-se instalar a distro Linux na máquina, via <b>pendrive bootável</b>, substituindo o SO atual. Para isso, é necessário um pendrive de no mínimo 4GB, dependendo do tamanho de seu arquivo .iso. Vale lembrar que, dependendo da máquina, será necessária a instalação de uma distro do tipo <i>non-free</i>, como geralmente na instalação da Debian, que possua todas as dependências de conexão com hardware pré-instaladas localmente (Verifique com relação à distro e seu equipamento). O pendrive será formatado durante o processo, portanto todos os arquivos presentes nele serão perdidos. Nesse caso, exemplificando com Windows, instala-se o arquivo <i>.iso</i> da distro, após o software criador de pendrive bootável <i>Balena Etcher</i>. Após download dos softwares, pluga-se o pendrive e executa-se o Balena Etcher, informando pendrive e .iso. Após pendrive formatado, o computador deverá ser reiniciado, acessando a lista de Boot do sistema (F12), antes mesmo do boot com o SO atual. Nesta tela, seleciona-se o modo de Boot com pendrive, que inicializará a distro Linux, com o programa de instalação. Realizando o passo a passo da instalação, no particionamento de disco, poderá optar entre instalar a distro Linux 100% no dispositivo, removendo assim o SO atual e seus arquivos internos, ou instalar a distro Linux ao lado do SO atual (Dual Boot). No caso da 2ª opção, será instalado o gerenciador de inicialização Grub, onde será necessário, posteriormente à finalização da instalação da distro Linux, alterar, após reinicialização da máquina, antes mesmo do Boot com SO padrão, acessar na BIOS (F2), o ordenamento de Boot, movendo para 1º a inicialização com Grub e para 2º a inicialização que estava no topo, caso contrário iniciará o SO que já estava instalado na máquina selecionado para Boot. Após esse processo, pode-se remover o pendrive com segurança, não sendo o mesmo mais necessário para inicialização da distro Linux. Outro processo de instalação de distro Linux é através da criação e execução de <b>Máquinas Virtuais</b> (VM- Virtualbox, VMware Workstation) com a distro Linux como SO. Assim, até mesmo nativamente com Windows <b>Hyper-V</b> (Se o Windows 10 possuir recurso de acesso Gerenciador do Hyper-V). Além disso, pode-se utilizar distro Linux e softwares derivados Linux diretamente via Windows 10, ativando os recursos <b>WSL2</b>. Pode-se também testar distro Linux, via terminal, através do projeto Katacoda, de forma <b>online</b>, que proporciona máquinas em Containers.</p>
                     <ul>
@@ -255,7 +268,7 @@
             <br>
 
             <div class="card">
-                <h4 class="card-header" id="serifada">15. Ambiente</h4>
+                <h4 class="card-header" id="serifada">16. Ambiente</h4>
                 <div class="card-body">
                     <p>Conceitos gerais sobre Linux, ambiente Mint LMDE4, Snapshot (Timeshift), Cron, Grub, gestão de pacotes e instalações básicas. Para melhor entendimento, visualize o vídeo explicativo abaixo.</p>
                     <ul>
@@ -266,7 +279,7 @@
             <br>
 
             <div class="card">
-                <h4 class="card-header" id="serifada">16. Dispositivos</h4>
+                <h4 class="card-header" id="serifada">17. Dispositivos</h4>
                 <div class="card-body">
                     <p>O Linux tem suporte a vários sistemas de arquivos, inclusive os que o Windows suporta, como FAT32, exFAT, NTFS e EXT4. Há outros, como EXT3, EXT2, reiserfs, swap, xiafs, minix, msdos, vfat, proc, smbfs, iso9660, ufs, hpfs, entre outros. SOs como MacOS não suportam gravação NTFS, suportando apenas leitura. Linux era similar no passado, atualmente consegue. O <b>FAT32</b> não possibilita manipular arquivos com mais de 4GB. <b>exFAT</b> é compatível com arquivos maiores que 4GB, mas não tão compatível quanto FAT32. <b>NTFS</b> (New Technology FIle System) é compatível com Windows, apesar de problemas ocasionais com Linux serem ainda frequentes, pois a compatibilidade com o Linux está sendo feita por meio de Engenharia Reversa, sendo ainda não compatível com MacOS e maioria dos dispositivos de hardware. <b>EXT4</b> é moderno, estável, rápido e jornalizado(cria um jornal, algo como pastas temporárias para gravações e recuperações), suportando permissões de arquivos no Linux. Não é compatível com MacOS, Windows e maioria dos dispositivos de hardware. <i>A melhor opção, para arquivos pequenos, é o FAT32</i>. O EXT4 é mais rápido, mas não recomendado para pendrives. O NTFS precisa-se verificar segurança, por razão de vírus Windows via pendrive. SEMPRE ative o ejetar pendrive antes de, de fato, ejetá-lo. O dispositivo USB é Serial, com transmissão assíncrona, que se remover o pendrive sem ativar a ejeção, o processo será interrompido, correndo o risco de corromper algo. Outro ponto é o de que um dos pinos do pendrive passa corrente elétrica, e se removido antes da finalização do processo, correrá o risco de queimá-lo. Quando remove-se algo do pendrive, seus arquivos vão para a pasta da lixeira, .trash, que na verdade é linkada dentro do pendrive, guardando informações da lixeira sobre a localização do arquivo em pasta oculta, dentro do pendrive, o que pode ocupar mais espaço ao invés de diminuir. Para solucionar tal problema, precisa-se apagar o arquivo e limpar a lixeira, que removerá os arquivos da lixeira do pendrive também, ou removê-lo permanentemente com o uso conjunto do botão 'shift'. Isso serve para todos os dispositivos HDs plugados no Linux. Isso serve para qualquer SO. Linux trabalha com 3 tipos padrões de gerenciamento de dados: <b>stdin</b> 0 (standard input, como o teclado), <b>stdout</b> 1 (standard output, como a tela) e <b>stderr</b> 2 (standard error, como a tela também). Com isso, pode-se alterar tais padrões, como por exemplo: Alterar saída padrão de erro para, ao invés da tela, em arquivo (<i>ls mateus 2&gt; arquivoSaida</i>). Um sistema de arquivos tem o objetivo de organizar os arquivos dentro do dispositivo. O subdiretório <b>/dev</b> armazena os arquivos de todos os dispositivos periféricos, como hd, ssd, placa de som, placa de vídeo, teclado, mouse, webcam, entre outros. A exceção é que neste subdiretório não contém arquivos sobre placas de rede, que são carregadas via módulos do Kernel. Dentro do /dev há outro gerenciamento de arquivos, geralmente sendo <b>/devfs</b> ou <b>/udev</b> (atual, a partir do Kernel 2.6). Linux não trabalha com drivers, mas sim com o conceito de módulos. O /devfs carrega todos os tipos de módulos ao sistema, incluindo os que não estão presentes no hardware hospedeiro. Já o /udev carrega somente os módulos dos hardwares encontrados na máquina, além da configuração automatizada codeplug e hotplug. Seu arquivo de configuração é <i>/etc/udev/udev.conf</i>, e seus arquivos de regras ficam em <i>/etc/udev/rules.d/</i>. Com isso, tem-se os comandos <i>udevmonitor</i> e <i>udevadm monitor</i>, que permitem modificar os eventos que são armazenados no sistema de arquivos lógico sysfs, onde ficam registradas as informações de identificação dos dispositivos.</p>
                     <h4>Dispositivos em /dev</h4>
@@ -299,7 +312,7 @@
             <br>
 
             <div class="card">
-                <h4 class="card-header" id="serifada">17. Bash 1: Base</h4>
+                <h4 class="card-header" id="serifada">18. Bash 1: Base</h4>
                 <div class="card-body">
                     <img src="anexos/linux/bash.png" width="250px" height="auto">
                     <p>Assim como GUI (Graphical User Interface), há também CLI (Command Line Interface), onde há somente texto e manuseio via teclado. Como exemplo, o <b>Bash</b> (Bourne Again Shell) é um dos interpretadores/shell de comandos Linux <small>(bash --version)</small>, geralmente o interpretador padrão. O interpretador de comandos tem função de interpretar comandos, juntamente com seus argumentos/parâmetros, executáveis localizados na pasta <i>bin</i>. Diferente do prompt do Windows, no Linux os comandos são externos, nos quais o interpretador tem a função de somente interpretá-los e executá-los. Linux opera de forma case-sensitive. Todo comando é minúsculo (exceção de nome de arquivos e pastas). CLI são muito usados para administração de servidores Linux para computação em nuvem. Todo comando possui parâmetros e/ou argumentos, dos quais modificam a saída do comando, parâmetros são seguidos de 1 traço e letra ou 2 traços e palavra. Argumento não possui traços antecessores. <small>(Ex: cd .. (cd comando, .. argumento))</small>. No caso, parâmetro altera o comportamento do comando, argumento especifica algo para o comando agir. Alguns autores, ao invés de 'parâmetros', nomeiam 'opções' ou 'flags'. Todo SO possui uma entrada padrão(teclado) e saída padrão(tela e saída de erro). Essa, por sua vez, pode ser modificada, como a saída para criação de um arquivo ou algo do tipo. No Linux tudo é arquivo, inclusive os diretórios(pastas). Um pendrive, quando plugado, torna-se um arquivo, salvo na pasta 'device', assim como o teclado. Vale lembrar que esse conteúdo é baseado em distros <b>debian</b>!</p>
@@ -371,7 +384,7 @@ Tempo: <i>dia_da_semana mês dia hora:minuto:segundo ano UTC</i>
             <br>
 
             <div class="card">
-                <h4 class="card-header" id="serifada">18. Bash 2: Arquivos</h4>
+                <h4 class="card-header" id="serifada">19. Bash 2: Arquivos</h4>
                 <div class="card-body">
                     <h4>Criar</h4>
 <small><pre><code>
@@ -442,7 +455,7 @@ Durabilidade somente enquanto o terminal estiver aberto
             <br>
 
             <div class="card">
-                <h4 class="card-header" id="serifada">19. Bash 3: Manipulações</h4>
+                <h4 class="card-header" id="serifada">20. Bash 3: Manipulações</h4>
                 <div class="card-body">
                     <h4>Movimentar-se nas pastas</h4>
 <small><pre><code>
@@ -513,7 +526,7 @@ Comando de copiar <b>dd</b>, diferente do cp, faz cópia bit a bit, muito mais p
             <br>
 
             <div class="card">
-                <h4 class="card-header" id="serifada">20. Bash 4: Aplicações</h4>
+                <h4 class="card-header" id="serifada">21. Bash 4: Aplicações</h4>
                 <div class="card-body">
                     <h4>Instalar</h4>
 <small><pre><code>
@@ -556,7 +569,7 @@ to-tgz -> Converte arquivo para .tgz
             <br>
 
             <div class="card">
-                <h4 class="card-header" id="serifada">21. Bash 5: Gestão</h4>
+                <h4 class="card-header" id="serifada">22. Bash 5: Gestão</h4>
                 <div class="card-body">
                     <h4>Permissões de acesso (chmod)</h4>
                     <p>De forma nativa, no Linux nada pode ser executado por padrão. Precisa-se aplicar permissão para tal.</p>
@@ -678,7 +691,7 @@ Acessar pasta de meus lançadores: nautilus ~/.local/share/applications
             <br>
 
             <div class="card">
-                <h4 class="card-header" id="serifada">22. Nano editor</h4>
+                <h4 class="card-header" id="serifada">23. Nano editor</h4>
                 <div class="card-body">
                     <p>Editor CLI de texto simples padrão do Debian, baseado no Joe. Para alterar o editor de textos padrão, basta informar no comando <i>update-alternatives --config editor</i>. É carregado automaticamente no modo de edição. Para utilizar o editor basta digitar o comando nano, podendo juntamente com o nome do arquivo que deseja criar/editar. Para abrir arquivo somente leitura, basta informar <i>nano -v arquivo</i>. Na legenda <b>^</b> é <i>Ctrl</i> e <b>M</b> é <i>alt</i>. Além dos atalhos típicos, o nano possui outros atalhos:</p>
 <small><pre><code>
@@ -712,7 +725,7 @@ O nano possibilita a abertura de diversos arquivos ao mesmo tempo.
             <br>
 
             <div class="card">
-                <h4 class="card-header" id="serifada">23. Vim editor</h4>
+                <h4 class="card-header" id="serifada">24. Vim editor</h4>
                 <div class="card-body">
                     <p>O principal editor de texto CLI Linux é o <b>Vi</b>, antigo <i>Ex editor</i>, porém existem outros, como <b>nano</b>, <b>emacs</b>, Joe, Pico, Mcedit, ed, entre outros. O <b>Vim</b> (Vi Improved) é a evolução do Vi, sendo o <b>gVim</b>, também conhecido como <i>vimtutor</i>, a evolução do Vim, onde há presença de GUI. Há também o <b>Neovim</b>, a evolução do Vim modo CLI. Para criar/editar arquivos no Vi, basta seguir o comando 'vi nomearquivo'. O editor abrirá no modo visual. Existem vários modos de operação, onde as teclas funcionam de diferentes maneiras, sendo o <b>Ex Mode</b> o modo inicial, ao abrir o arquivo (Também considerado como modo de Visualização ou modo de Comandos). Para sair dos modos, basta usar a tecla 'Esc'. Na maioria das distribuições Linux, tem-se um alias para o Vim, como vi. Então, quando o comando vi é executado, abrirá na verdade o Vim. O Vim possui seu arquivo de configuração em <i>/etc/vim/vimrc</i>. Para executar o Vim, abrindo ou criando um arquivo, basta digitar o comando <i>vim nomearquivo</i>. A sintaxe é: <i>vim [opções] [arquivo]</i>. Ouve-se a frase de que um usuário estava usando o Vim há anos, não porque gostava, mas porque não sabia como sair do editor.</p>
                     <h4>Ex Mode</h4>
@@ -829,7 +842,7 @@ O nano possibilita a abertura de diversos arquivos ao mesmo tempo.
             <br>
 
             <div class="card">
-                <h4 class="card-header" id="serifada">24. Localização</h4>
+                <h4 class="card-header" id="serifada">25. Localização</h4>
                 <div class="card-body">
                     <h4>Comando find:</h4>
                     <p>Utilizado para encontrar arquivos no sistema. Sintaxe: <i>find [diretório] [opção/expressão]</i></p>
@@ -855,7 +868,7 @@ O nano possibilita a abertura de diversos arquivos ao mesmo tempo.
             <br>
 
             <div class="card">
-                <h4 class="card-header" id="serifada">25. Ajuda</h4>
+                <h4 class="card-header" id="serifada">26. Ajuda</h4>
                 <div class="card-body">
                     <p>O Linux possui excelente mecanismo de ajuda e documentação sobre serviços e comandos relacionados. Geralmente a ajuda pode ser provida por meio dos manuais, as <b>Man Pages</b>. Para atualizar o banco de dados de pesquisa nas distros Debian, basta digitar o comando <i>catman</i>. Basicamente, existem 3 formas de ajuda/documentação:</p>
                     <ul>
@@ -922,7 +935,7 @@ O nano possibilita a abertura de diversos arquivos ao mesmo tempo.
             <br>
 
             <div class="card">
-                <h4 class="card-header" id="serifada">26. Usuários</h4>
+                <h4 class="card-header" id="serifada">27. Usuários</h4>
                 <div class="card-body">
                     <p>O <b>administrador (sudo)</b> possui permissão total de utilização do sistema, como gerenciar arquivos e diretórios, além de executar aplicações, instalá-las e removê-las. Também pode executar qualquer comando do terminal. O <b>usuário comum ($)</b> é aquele padrão no Linux, para seu uso, possuindo algumas restrições em terminal e sistema. Entretanto, o usuário comum que instalou o Linux tem permissão para executar comandos/programas no modo administrador, utilizando o comando "sudo". O <b>usuário de sistema</b> é um usuário fictício criado durante a instalação de algum programa, a fim de executar tarefas específicas do mesmo. Não possui capacidade de login no sistema. Por fim, tem-se o <b>root (#, id 0)</b> (sudo su), como sendo um "super-usuário", capaz de fazer absolutamente TUDO no Linux. O que difere o root de outros usuários é o fato dele ser o único capaz de gerenciar coisas fora de seu diretório pessoal. Por essa razão, priva-se a utilização com este usuário.</p>
 <small><pre><code>
@@ -945,7 +958,7 @@ O nano possibilita a abertura de diversos arquivos ao mesmo tempo.
             <br>
 
             <div class="card">
-                <h4 class="card-header" id="serifada">27. Terminais</h4>
+                <h4 class="card-header" id="serifada">28. Terminais</h4>
                 <div class="card-body">
                     <img src="anexos/linux/terminal.png" width="250px" height="auto">
                     <ul>
@@ -1042,7 +1055,7 @@ unalias j (descarta o alias)
             <br>
 
             <div class="card">
-                <h4 class="card-header" id="serifada">28. Rede</h4>
+                <h4 class="card-header" id="serifada">29. Rede</h4>
                 <div class="card-body">
                     <p>Muitas distros Linux possuem sincronização automática com contas populares, como documentos do Google Drive e eventos do Hotmail e Facebook. Entre os comandos no terminal para gerenciamento de redes, tem-se o <b>route</b>, como o <i>route -n</i>, usado para visualizar e manipular a tabela de roteamento IP (inet) e Gateway. O comando <b>ifconfig</b> é usado para gestão de informações sobre parâmetros TCP/IP, como endereçamento IP e Mac Address (Geralmente listado como <i>HWaddr</i>, no campo designado eth1 ou wlan0), geralmente dedicado à redes com fio. O ifconfig fora descontinuado, mas ainda encontra-se ativo. Atualmente tem-se os comandos <b>ip a</b>, <b>ip r</b>. O comando <b>iwconfig</b> possui o mesmo padrão, sendo dedicado à redes sem fio. O comando <b>netstat</b> mostra todas as conexões de entrada e saída de rede, tabelas de roteamento e estatísticas do protocolo de rede. <i>netstat -atunp</i> mostra com detalhes de PID, TCP e UDP. No Mint, se quiser achar o Mac Address, basta digitar o comando <b>inxi -Nn</b>, na opção em que o state é "up", esse é o MacAddress de sua máquina. Outro comando é o <b>ping</b>, que mostra o tempo de envio/recebimento de resposta em rede, verificando assim a conectividade entre 2 máquinas (Ex: <i>ping -c 4 192.168.1.2</i> (Ping para esse IPV4 limitado em 4 iterações), Ex2: <i>ping uol.com.br</i> (Ping no site do uol)). Por fim, o comando <b>host -opcao host</b> é um comando com função de localizar informações de rede, como, por exemplo, determinado IPV4 (opção -4) ou IPV6 (opção -6) de determinado host (localhost por exemplo). Através do <i>Gateway</i>, permite-se acessar outras redes. Para que tenha-se acesso à internet, é necessário conhecer o Gateway. É através do Gateway que permite-se a realização de ping para redes externas. <i>Broadcast</i> é a operação onde uma máquina 'fala' e todas 'ouvem', onde pode-se realizar o envio e recebimento como consequência disso.</p>
                     <h4>Máscara de Rede (netmask):</h4>
@@ -1068,7 +1081,7 @@ EXEMPLO: <b>1  | 1  | 1  | 0  | 0 | 0 | 0 | 0</b>, onde a soma dos true, <i>128+
             <br>
 
             <div class="card">
-                <h4 class="card-header" id="serifada">29. Compactação e Empacotamento</h4>
+                <h4 class="card-header" id="serifada">30. Compactação e Empacotamento</h4>
                 <div class="card-body">
                     <p>A utilização de compactadores pode ser muito proveitosa quando utilizada em backups, pois a mesma reduz o espaço quando o conteúdo é compactado. Podem haver situações em que existem arquivos com final <i>.tar.gz</i>, o que significa que o mesmo fora empacotado com tar e compactado com gzip.</p>
                     <p><b>Empacotamento:</b><br>Quando vários arquivos são empacotados em um só arquivo. Exemplos de empacotadores são <b>tar</b> e <b>cpio</b>.</p>
@@ -1143,7 +1156,7 @@ EXEMPLO: <b>1  | 1  | 1  | 0  | 0 | 0 | 0 | 0</b>, onde a soma dos true, <i>128+
             <br>
 
             <div class="card">
-                <h4 class="card-header" id="serifada">30. Pacotes</h4>
+                <h4 class="card-header" id="serifada">31. Pacotes</h4>
                 <div class="card-body">
                     <p>Todo Linux trabalha com repositórios de pacotes, os <b>PPAs</b> (Personal Package Archive), que são atualizados em conjunto, de forma automática ou com 1 comando via terminal. Repositórios são servidores que hospedam pacotes. Determinados softwares não possuem seus repositórios inseridos por padrão nativos na Distro, portanto precisam ser acrescentados antes da instalação de seu determinado pacote. Toda Distro possui sua tabela de repositórios, que pode ser manipulada. Repositórios locais, no Brasil, tendem a ser mais rápidos que os demais, como o da Universidade Federal do Paraná por exemplo. Entre os principais gerenciadores de pacotes, tem-se o <b>apt</b> e <b>dpkg</b> para Distros Debian, o <b>yum</b>, <b>dnf</b> e <b>rpm</b> para Distros Red Hat (Red Hat Package Manager), o <b>yast</b> e <b>zypp</b> para Distros Suse e o <b>pacman</b> para Distros Arch. Dentro desse assunto, tem-se também o <b>launchpad</b>, plataforma colaborativa, criada pela Canonical, para desenvolvimento e instalação de Software Livre. O comando <i>aptitude</i> serve como ferramenta CLI para gerenciamento de pacotes, em alto nível. <i>aptitude search nomeprograma</i> localiza pacotes disponíveis. O comando <i>aptitude install nomeprograma</i> instala pacotes disponíveis. O comando para procurar pacotes apt é <i>sudo apt search pacotePesquisado</i>.</p>
                     <h4>Funcionamento</h4>
@@ -1176,19 +1189,6 @@ EXEMPLO: <b>1  | 1  | 1  | 0  | 0 | 0 | 0 | 0</b>, onde a soma dos true, <i>128+
                 </div>
             </div>
             <br>
-
-
-
-            <!--Card Processos-->
-            <div class="card">
-                <h4 class="card-header" id="serifada">31. Processos</h4>
-                <div class="card-body">
-                    Conteúdo sobre gerenciamento de processos e hardware aqui, em breve. Aguarde!
-                </div>
-            </div>
-            <br>
-
-
 
             <div class="card">
                 <h4 class="card-header" id="serifada">32. Compatibilidade</h4>
