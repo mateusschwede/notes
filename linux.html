@@ -316,7 +316,7 @@
                         <li><b>M-c</b>: Quer dizer <i>alt+c</i></li>
                         <li><b>Ctrl+a</b>: Cursor ao começo da linha</li>
                         <li><b>Ctrl+e</b>: Cursor ao final da linha</li>
-                        <li><b>Ctrl+u</b>: Deleta tudo à esquerda do cursor</li>
+                        <li><b>Ctrl+u</b>: Deleta tudo à esquerda do cursor (permite colar conteúdo apagado com Ctrl+y)</li>
                         <li><b>Alt+b</b>: Volta 1 palavra</li>
                         <li><b>Ctrl+w</b>: Deleta 1 palavra</li>
                         <li><b>Ctrl+p</b>: Comando anterior</li>
@@ -325,7 +325,7 @@
                         <li><b>Ctrl+d</b>: Sair</li>
                         <li><b>Alt+f</b>: Move 1 palavra</li>
                         <li><b>Alt+d</b>: Deleta 1 palavra</li>
-                        <li><b>Ctrl+k</b>: Deleta tudo à direita do cursor</li>
+                        <li><b>Ctrl+k</b>: Deleta tudo à direita do cursor (permite colar conteúdo apagado com Ctrl+y)</li>
                         <li><b>Ctrl+r</b>: Iniciar/Próxima pesquisa</li>
                         <li><b>Ctrl+g</b>: Cancelar pesquisa</li>
                         <li><b>Ctrl+x</b> OU <b>+e</b>: Editar</li>
@@ -871,7 +871,21 @@ O nano possibilita a abertura de diversos arquivos ao mesmo tempo.
                         <li><b>cp --help</b>: Ajuda para o comando externo <i>cp</i></li>
                     </ul>
                     <h4>Comando Apropos:</h4>
-                    <p>Providencia ajuda em situação específica, como para que lembrar o nome do comando através de uma palavra/termo chave. Como por exemplo, usuário quer compactar arquivos, mas não sabe. Para isso, basta digitar <i>apropos compress</i>, que todos os comandos de compress serão listados. Pode-se utilizar várias palavras para busca, como por exemplo <i>apropos email address</i>. O comando alternativo do apropos é o <i>man -k termoPesquisa</i>.</p>
+                    <p>Providencia ajuda em situação específica, como para que lembrar o nome do comando através de uma palavra/termo chave. Como por exemplo, usuário quer compactar arquivos, mas não sabe. Para isso, basta digitar <i>apropos compress</i>, que todos os comandos de compress serão listados. Pode-se utilizar várias palavras para busca, como por exemplo <i>apropos email address</i>. O comando alternativo do apropos é o <i>man -k termoPesquisa</i>. Abaixo, alguns parâmetros do comando apropos.</p>
+                    <ul>
+                        <li><b>-d</b>: Exibir mensagens de depuração</li>
+                        <li><b>-v</b>: Verbose, exibir mensagens de avisos detalhadas</li>
+                        <li><b>-e</b> ou <b>--exact</b>: Para correspondência de pesquisa exata</li>
+                        <li><b>-w</b> ou <b>--wildcard</b>: Quando termo de pesquisa contém caracteres curingas</li>
+                        <li><b>-a</b> ou <b>-and</b>: Quando há vários termos pesquisados e os mesmos correspondem</li>
+                        <li><b>-l</b> ou <b>--long</b>: Resultado de saída não word wrap</li>
+                        <li><b>-C</b>: Quando não queremos usar o padrão (/ manpath), mas o arquivo de configuração do usuário</li>
+                        <li><b>-L</b>: Definir local para pesquisa</li>
+                        <li><b>-m</b> ou <b>--systems</b>: Usar páginas de manuais de outros sistemas</li>
+                        <li><b>-M</b> ou <b>--manpath</b>: Definir caminho de pesquisa das páginas de manual para PATH em vez do $MANPATH padrão</li>
+                        <li><b>-s</b> ou <b>--sections</b> ou <b>-section</b>: Pesquisar somente em sessões específicas (separadas por <b>:</b>)</li>
+                        <li><b>-r</b> ou <b>--regex</b>: Interpretar cada termo pesquisado como regex</li>
+                    </ul>
                     <h4>Comando Whatis:</h4>
                     <p>Diferente do apropos, o whatis é mais específico, buscando referências idênticas ao termo da pesquisa, como por exemplo <i>whatis passwd</i>, ou <i>whatis vim</i>. O comando alternativo do whatis é o <i>man -f termoPesquisa</i>.</p>
                     <h4>Comando Man:</h4>
@@ -890,7 +904,17 @@ O nano possibilita a abertura de diversos arquivos ao mesmo tempo.
                     <h4>Comando Info:</h4>
                     <p>As Info pages são muito similares às Man pages, com a diferença que possuem maiores recursos de navegação. Para pesquisar, basta digitar o comando <i>info [comando]</i>, como por exemplo <i>info vim</i>. Em algumas distros Debian, pode-se utilizar o <b>yelp</b>, que é a forma GUI de pesquisas a manuais do Gnome. Tem-se também o <b>xman</b>, serviço GUI para o comando man.</p>
                     <h4>Comando Whereis:</h4>
-                    <p>Usado para localizar o binário. Por exemplo, o comando ls é alias ao <i>/bin/ls</i>. Por exemplo, para saber a localização do ifconfig, basta digitar o comando <i>whereis ifconfig</i>. O whereis mostrará, respectivamente, o comando, seu binário (localização) e localização de seu manual. Para identificar somente o binário, basta informar <i>whereis -b termoPesquisa</i>. Para localizar somente a Man page, basta informar <i>whereis -m termoPesquisa</i>.</p>
+                    <p>Usado para localizar o binário. Por exemplo, o comando ls é alias ao <i>/bin/ls</i>. Por exemplo, para saber a localização do ifconfig, basta digitar o comando <i>whereis ifconfig</i>. O whereis mostrará, respectivamente, o comando, seu binário (localização) e localização de seu manual. Para identificar somente o binário, basta informar <i>whereis -b termoPesquisa</i>. Para localizar somente a Man page, basta informar <i>whereis -m termoPesquisa</i>. Abaixo, alguns parâmetros do comando whereis.</p>
+                    <ul>
+                        <li><b>-b</b>: Pesquisar somente binários</li>
+                        <li><b>-m</b>: Pesquisar somente por seções manuais</li>
+                        <li><b>-s</b>: Pesquisar somente fontes</li>
+                        <li><b>-u</b>: Pesquisar termos incomuns, como arquivos de origem ou binários</li>
+                        <li><b>-B</b>: Alterar/limitar locais de pesquisa por binários (Comando seguido do diretório)</li>
+                        <li><b>-M</b>: Alterar/limitar locais de pesquisa por seções manuais (Comando seguido do diretório)</li>
+                        <li><b>-S</b>: Alterar/limitar locais de pesquisa por fontes (Comando seguido do diretório)</li>
+                        <li><b>-f</b>: Termina última lista de diretórios e sinaliza início dos nomes dos arquivos. Deve ser usado com opções -B , -M ou -S</li>
+                    </ul>
                     <h4>Comando Which:</h4>
                     <p>Assim como o whereis, o which mostrará somente a localização do binário. Por exemplo <i>which ls</i>.</p>
                 </div>
